@@ -132,8 +132,8 @@
     };
 
     info.update = function (props) {
-        const contents = props ? `<b>${props.name}</b><br />${props.density} people / mi<sup>2</sup>` : 'Hover over a state';
-        this._div.innerHTML = `<h4>US Population Density</h4>${contents}`;
+        const contents = props ? `<b>${props.name}</b><br />${props.density} people / mi<sup>2</sup>` : 'Bewegen Sie den Mauszeiger über ein Bundesland';
+        this._div.innerHTML = `<h4 class="text-center">Deutschland 🇩🇪</h4>${contents}`;
     };
 
 
@@ -201,7 +201,6 @@
     }
 
     map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
-
 
     const legend = L.control({position: 'bottomright'});
 
