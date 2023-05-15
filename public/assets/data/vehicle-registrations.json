@@ -1,0 +1,714 @@
+[
+  {
+    "2023": [
+      {
+        "Land": "Baden-Württemberg",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "5,066,772"
+      },
+      {
+        "Land": "Baden-Württemberg",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "2,856,117"
+      },
+      {
+        "Land": "Baden-Württemberg",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "48,021"
+      },
+      {
+        "Land": "Baden-Württemberg",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "177,930"
+      },
+      {
+        "Land": "Baden-Württemberg",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "351,320"
+      },
+      {
+        "Land": "Baden-Württemberg",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "143,016"
+      },
+      {
+        "Land": "Baden-Württemberg",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": "2,215"
+      },
+      {
+        "Land": "Bayern",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "6,005,725"
+      },
+      {
+        "Land": "Bayern",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "3,996,524"
+      },
+      {
+        "Land": "Bayern",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "54,081"
+      },
+      {
+        "Land": "Bayern",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "208,318"
+      },
+      {
+        "Land": "Bayern",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "433,938"
+      },
+      {
+        "Land": "Bayern",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "155,657"
+      },
+      {
+        "Land": "Bayern",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": "2,922"
+      },
+      {
+        "Land": "Berlin",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "975,320"
+      },
+      {
+        "Land": "Berlin",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "390,253"
+      },
+      {
+        "Land": "Berlin",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "14,892"
+      },
+      {
+        "Land": "Berlin",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "32,714"
+      },
+      {
+        "Land": "Berlin",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "84,189"
+      },
+      {
+        "Land": "Berlin",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "25,782"
+      },
+      {
+        "Land": "Berlin",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 567
+      },
+      {
+        "Land": "Brandenburg",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "1,147,710"
+      },
+      {
+        "Land": "Brandenburg",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "612,064"
+      },
+      {
+        "Land": "Brandenburg",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "15,932"
+      },
+      {
+        "Land": "Brandenburg",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "21,933"
+      },
+      {
+        "Land": "Brandenburg",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "57,386"
+      },
+      {
+        "Land": "Brandenburg",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "17,273"
+      },
+      {
+        "Land": "Brandenburg",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 642
+      },
+      {
+        "Land": "Bremen",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "211,312"
+      },
+      {
+        "Land": "Bremen",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "111,609"
+      },
+      {
+        "Land": "Bremen",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "3,014"
+      },
+      {
+        "Land": "Bremen",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "5,446"
+      },
+      {
+        "Land": "Bremen",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "15,441"
+      },
+      {
+        "Land": "Bremen",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "5,587"
+      },
+      {
+        "Land": "Bremen",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 200
+      },
+      {
+        "Land": "Hamburg",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "561,728"
+      },
+      {
+        "Land": "Hamburg",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "306,731"
+      },
+      {
+        "Land": "Hamburg",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "5,630"
+      },
+      {
+        "Land": "Hamburg",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "23,517"
+      },
+      {
+        "Land": "Hamburg",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "59,553"
+      },
+      {
+        "Land": "Hamburg",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "24,131"
+      },
+      {
+        "Land": "Hamburg",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 324
+      },
+      {
+        "Land": "Hessen",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "2,785,550"
+      },
+      {
+        "Land": "Hessen",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "1,519,612"
+      },
+      {
+        "Land": "Hessen",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "32,019"
+      },
+      {
+        "Land": "Hessen",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "107,291"
+      },
+      {
+        "Land": "Hessen",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "223,680"
+      },
+      {
+        "Land": "Hessen",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "87,468"
+      },
+      {
+        "Land": "Hessen",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": "1,781"
+      },
+      {
+        "Land": "Mecklenburg-Vorpommern",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "642,239"
+      },
+      {
+        "Land": "Mecklenburg-Vorpommern",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "417,970"
+      },
+      {
+        "Land": "Mecklenburg-Vorpommern",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "7,448"
+      },
+      {
+        "Land": "Mecklenburg-Vorpommern",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "10,290"
+      },
+      {
+        "Land": "Mecklenburg-Vorpommern",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "29,274"
+      },
+      {
+        "Land": "Mecklenburg-Vorpommern",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "7,531"
+      },
+      {
+        "Land": "Mecklenburg-Vorpommern",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 418
+      },
+      {
+        "Land": "Niedersachsen",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "3,455,373"
+      },
+      {
+        "Land": "Niedersachsen",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "2,239,452"
+      },
+      {
+        "Land": "Niedersachsen",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "54,225"
+      },
+      {
+        "Land": "Niedersachsen",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "115,272"
+      },
+      {
+        "Land": "Niedersachsen",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "183,207"
+      },
+      {
+        "Land": "Niedersachsen",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "72,861"
+      },
+      {
+        "Land": "Niedersachsen",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": "2,098"
+      },
+      {
+        "Land": "Nordrhein-Westfalen",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "7,700,957"
+      },
+      {
+        "Land": "Nordrhein-Westfalen",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "3,866,600"
+      },
+      {
+        "Land": "Nordrhein-Westfalen",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "142,083"
+      },
+      {
+        "Land": "Nordrhein-Westfalen",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "266,568"
+      },
+      {
+        "Land": "Nordrhein-Westfalen",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "529,667"
+      },
+      {
+        "Land": "Nordrhein-Westfalen",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "202,812"
+      },
+      {
+        "Land": "Nordrhein-Westfalen",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": "4,002"
+      },
+      {
+        "Land": "Rheinland-Pfalz",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "1,933,252"
+      },
+      {
+        "Land": "Rheinland-Pfalz",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "1,126,495"
+      },
+      {
+        "Land": "Rheinland-Pfalz",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "20,169"
+      },
+      {
+        "Land": "Rheinland-Pfalz",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "56,018"
+      },
+      {
+        "Land": "Rheinland-Pfalz",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "109,410"
+      },
+      {
+        "Land": "Rheinland-Pfalz",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "39,881"
+      },
+      {
+        "Land": "Rheinland-Pfalz",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 889
+      },
+      {
+        "Land": "Saarland",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "492,088"
+      },
+      {
+        "Land": "Saarland",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "242,484"
+      },
+      {
+        "Land": "Saarland",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "3,270"
+      },
+      {
+        "Land": "Saarland",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "12,564"
+      },
+      {
+        "Land": "Saarland",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "30,747"
+      },
+      {
+        "Land": "Saarland",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "10,242"
+      },
+      {
+        "Land": "Saarland",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 260
+      },
+      {
+        "Land": "Sachsen",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "1,702,859"
+      },
+      {
+        "Land": "Sachsen",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "862,004"
+      },
+      {
+        "Land": "Sachsen",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "16,913"
+      },
+      {
+        "Land": "Sachsen",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "26,565"
+      },
+      {
+        "Land": "Sachsen",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "85,497"
+      },
+      {
+        "Land": "Sachsen",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "23,979"
+      },
+      {
+        "Land": "Sachsen",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": "1,025"
+      },
+      {
+        "Land": "Sachsen-Anhalt",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "938,866"
+      },
+      {
+        "Land": "Sachsen-Anhalt",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "501,856"
+      },
+      {
+        "Land": "Sachsen-Anhalt",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "9,836"
+      },
+      {
+        "Land": "Sachsen-Anhalt",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "14,137"
+      },
+      {
+        "Land": "Sachsen-Anhalt",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "42,764"
+      },
+      {
+        "Land": "Sachsen-Anhalt",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "11,593"
+      },
+      {
+        "Land": "Sachsen-Anhalt",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 745
+      },
+      {
+        "Land": "Schleswig-Holstein",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "1,217,618"
+      },
+      {
+        "Land": "Schleswig-Holstein",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "798,358"
+      },
+      {
+        "Land": "Schleswig-Holstein",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "12,841"
+      },
+      {
+        "Land": "Schleswig-Holstein",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "42,911"
+      },
+      {
+        "Land": "Schleswig-Holstein",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "64,522"
+      },
+      {
+        "Land": "Schleswig-Holstein",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "23,734"
+      },
+      {
+        "Land": "Schleswig-Holstein",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 744
+      },
+      {
+        "Land": "Thüringen",
+        "Kraftstoffart": "Benzin",
+        "Ingesamt": "908,189"
+      },
+      {
+        "Land": "Thüringen",
+        "Kraftstoffart": "Diesel",
+        "Ingesamt": "527,919"
+      },
+      {
+        "Land": "Thüringen",
+        "Kraftstoffart": "Gas Insgesamt",
+        "Ingesamt": "8,189"
+      },
+      {
+        "Land": "Thüringen",
+        "Kraftstoffart": "Elektro (BEV)",
+        "Ingesamt": "17,136"
+      },
+      {
+        "Land": "Thüringen",
+        "Kraftstoffart": "Hybrid Insgesamt",
+        "Ingesamt": "45,757"
+      },
+      {
+        "Land": "Thüringen",
+        "Kraftstoffart": "Darunter Plug-In",
+        "Ingesamt": "13,166"
+      },
+      {
+        "Land": "Thüringen",
+        "Kraftstoffart": "Sonstige",
+        "Ingesamt": 477
+      }
+    ],
+    "2022": [
+      {
+        "Baden-Württemberg": {
+          "Benzin": 5113327,
+          "Diesel": 2906296,
+          "Gas insgesamt": 47503,
+          "Elektro (BEV)": 112908,
+          "Hybrid insgesamt": 253950,
+          "darunter Plug-in": 99195,
+          "Sonstige": 2213
+        },
+        "Bayern": {
+          "Benzin": 6038753,
+          "Diesel": 4049623,
+          "Gas insgesamt": 53846,
+          "Elektro (BEV)": 123887,
+          "Hybrid insgesamt": 312224,
+          "darunter Plug-in": 102047,
+          "Sonstige": 2900
+        },
+        "Berlin": {
+          "Benzin": 996089,
+          "Diesel": 397924,
+          "Gas insgesamt": 15359,
+          "Elektro (BEV)": 18659,
+          "Hybrid insgesamt": 60907,
+          "darunter Plug-in": 17519,
+          "Sonstige": 520
+        },
+        "Brandenburg": {
+          "Benzin": 1155449,
+          "Diesel": 615770,
+          "Gas insgesamt": 15956,
+          "Elektro (BEV)": 13147,
+          "Hybrid insgesamt": 41523,
+          "darunter Plug-in": 11208,
+          "Sonstige": 635
+        },
+        "Bremen": {
+          "Benzin": 215040,
+          "Diesel": 113166,
+          "Gas insgesamt": 3081,
+          "Elektro (BEV)": 3264,
+          "Hybrid insgesamt": 11308,
+          "darunter Plug-in": 3803,
+          "Sonstige": 150
+        },
+        "Hamburg": {
+          "Benzin": 577298,
+          "Diesel": 319054,
+          "Gas insgesamt": 5696,
+          "Elektro (BEV)": 14880,
+          "Hybrid insgesamt": 39327,
+          "darunter Plug-in": 14517,
+          "Sonstige": 283
+        },
+        "Hessen": {
+          "Benzin": 2815795,
+          "Diesel": 1542543,
+          "Gas insgesamt": 32328,
+          "Elektro (BEV)": 59374,
+          "Hybrid insgesamt": 154558,
+          "darunter Plug-in": 53604,
+          "Sonstige": 1549
+        },
+        "Mecklenburg-Vorpommern": {
+          "Benzin": 645586,
+          "Diesel": 420472,
+          "Gas insgesamt": 7465,
+          "Elektro (BEV)": 6120,
+          "Hybrid insgesamt": 20836,
+          "darunter Plug-in": 4724,
+          "Sonstige": 443
+        },
+        "Niedersachsen": {
+          "Benzin": 3484728,
+          "Diesel": 2263300,
+          "Gas insgesamt": 55412,
+          "Elektro (BEV)": 71383,
+          "Hybrid insgesamt": 132882,
+          "darunter Plug-in": 49262,
+          "Sonstige": 2078
+        },
+        "Nordrhein-Westfalen": {
+          "Benzin": 7789013,
+          "Diesel": 3926642,
+          "Gas insgesamt": 145083,
+          "Elektro (BEV)": 161162,
+          "Hybrid insgesamt": 376882,
+          "darunter Plug-in": 131305,
+          "Sonstige": 3830
+        },
+        "Rheinland-Pfalz": {
+          "Benzin": 1945645,
+          "Diesel": 1143415,
+          "Gas insgesamt": 20075,
+          "Elektro (BEV)": 31580,
+          "Hybrid insgesamt": 77285,
+          "darunter Plug-in": 25562,
+          "Sonstige": 886
+        },
+        "Saarland": {
+          "Benzin": 496867,
+          "Diesel": 248390,
+          "Gas insgesamt": 3191,
+          "Elektro (BEV)": 6585,
+          "Hybrid insgesamt": 21396,
+          "darunter Plug-in": 6023,
+          "Sonstige": 265
+        },
+        "Sachsen": {
+          "Benzin": 1717970,
+          "Diesel": 868313,
+          "Gas insgesamt": 16808,
+          "Elektro (BEV)": 16902,
+          "Hybrid insgesamt": 61572,
+          "darunter Plug-in": 15483,
+          "Sonstige": 1046
+        },
+        "Sachsen-Anhalt": {
+          "Benzin": 947556,
+          "Diesel": 506530,
+          "Gas insgesamt": 9872,
+          "Elektro (BEV)": 7702,
+          "Hybrid insgesamt": 30977,
+          "darunter Plug-in": 7396,
+          "Sonstige": 732
+        },
+        "Schleswig-Holstein": {
+          "Benzin": 1228776,
+          "Diesel": 807341,
+          "Gas insgesamt": 12966,
+          "Elektro (BEV)": 26098,
+          "Hybrid insgesamt": 47200,
+          "darunter Plug-in": 15999,
+          "Sonstige": 747
+        },
+        "Thüringen": {
+          "Benzin": 916453,
+          "Diesel": 534611,
+          "Gas insgesamt": 8156,
+          "Elektro (BEV)": 9636,
+          "Hybrid insgesamt": 32220,
+          "darunter Plug-in": 8285,
+          "Sonstige": 470
+        }
+      }
+    ]
+  }
+]
