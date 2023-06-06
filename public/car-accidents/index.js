@@ -31,7 +31,12 @@ info.addTo(map);
 
 
 // get color depending on population density value
-function getColor(d) {
+async function getColor(d) {
+    calculateAverage(2012).then(value => {
+        console.log(value);
+    })
+
+
     return d > 1000 ? '#800026' :
         d > 500 ? '#BD0026' :
             d > 200 ? '#E31A1C' :
@@ -48,7 +53,7 @@ function style(feature) {
         color: 'white',
         dashArray: '3',
         fillOpacity: 0.7,
-        fillColor: getColor(feature.properties.density)
+        fillColor: getColor(feature.properties.name)
     };
 }
 
@@ -89,8 +94,6 @@ function onEachFeature(feature, layer) {
     });
 }
 
-map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
-
 const legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
@@ -113,8 +116,55 @@ legend.onAdd = function (map) {
 
 legend.addTo(map);
 
-async function load(state, year) {
-    let url = '../assets/data/car-accidents.json';
-    return await (await (await fetch(url)).json());
+function load(state, year, callback) {
+    let accidents;
+
+    fetch('../assets/data/car-accidents.json')
+        .then(response => response.json())
+        .then(response => {
+            if (state === null && year !== null) {
+                Object.keys(response).forEach(currentState => {
+                    Object.keys(response[currentState]).forEach(currentYear => {
+                        if (parseInt(currentYear)!== parseInt(year)) {
+                            delete response[currentState][currentYear];
+                        }
+                    })
+                })
+                accidents = response;
+            } else if (state !== null && year !== null) {
+                accidents = response[state][year];
+            } else if (state !== null && year == null) {
+                accidents = response[state];
+            } else {
+                accidents = response;
+            }
+
+            callback(null, accidents);
+        })
+        .catch(error => {
+            console.error('Fehler beim Laden der JSON-Datei:', error);
+        });
+}
+
+async function calculateAverage(year) {
+    let average;
+
+    load(null, year, (err, data) => {
+        let sum = 0;
+        let count = 0;
+
+        Object.keys(data).forEach(state => {
+            Object.keys(data[state]).forEach(year => {
+                if (data[state][year].hasOwnProperty("Insgesamt")) {
+                    const value = data[state][year]["Insgesamt"];
+                    sum += value;
+                    count++;
+                }
+            });
+        });
+
+        return average = sum / count;
+    });
+
 }
 
