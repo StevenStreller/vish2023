@@ -14,17 +14,29 @@ info.onAdd = function (map) {
     return this._div;
 };
 
-info.update = async function (props) {
-
-
-    const contents = props ? `<b>${props.name}</b><br>
-        <i class="fa-solid fa-city fa-fw me-2"></i>${(await load())[props.name][2012]['innerorts'].toLocaleString('de-DE')} Unfälle innerots<br>
-        <i class="fa-solid fa-tree-city fa-fw me-2"></i>${(await load())[props.name][2012]['außerorts (ohne Autobahnen)'].toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
-        <i class="fa-solid fa-road fa-fw me-2"></i>${(await load())[props.name][2012]['auf Autobahnen'].toLocaleString('de-DE')} Autbahnunfälle<br>
-        <i class="fa-solid fa-equals fa-fw me-2"></i>${(await load())[props.name][2012]['Insgesamt'].toLocaleString('de-DE')} Unfälle insgesamt` : 'Bewegen Sie den Mauszeiger über ein Bundesland';
-    this._div.innerHTML = `<h4 class="text-center">🇩🇪 2012</h4>${contents}`;
-
+info.update = function (props) {
+    asyncFunction(props)
+        .then(result => {
+            this._div.innerHTML = `<h4 class="text-center">🇩🇪 2012</h4>${result}`;
+        })
 };
+
+async function asyncFunction(props) {
+    return new Promise((resolve) => {
+
+            if (props && props.name) {
+                load(props.name, 2012, async (err, data) => {
+                    const contents = `<b>${props.name}</b><br>
+        <i class="fa-solid fa-city fa-fw me-2"></i>${data['innerorts'].toLocaleString('de-DE')} Unfälle innerots<br>
+        <i class="fa-solid fa-tree-city fa-fw me-2"></i>${data['außerorts (ohne Autobahnen)'].toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
+        <i class="fa-solid fa-road fa-fw me-2"></i>${data['auf Autobahnen'].toLocaleString('de-DE')} Autbahnunfälle<br>
+        <i class="fa-solid fa-equals fa-fw me-2"></i>${data['Insgesamt'].toLocaleString('de-DE')} Unfälle insgesamt<br>
+        <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(2012).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
+                    resolve(contents);
+                })
+            }
+    });
+}
 
 
 info.addTo(map);
@@ -32,18 +44,17 @@ info.addTo(map);
 
 // get color depending on population density value
 async function getColor(d) {
-    calculateAverage(2012).then(value => {
-        console.log(value);
-    })
-
-
-    return d > 1000 ? '#800026' :
-        d > 500 ? '#BD0026' :
-            d > 200 ? '#E31A1C' :
-                d > 100 ? '#FC4E2A' :
-                    d > 50 ? '#FD8D3C' :
-                        d > 20 ? '#FEB24C' :
-                            d > 10 ? '#FED976' : '#FFEDA0';
+    return new Promise(function (resolve, reject) {
+        load(d, 2012, (err, data) => {
+            calculateAverage(2012).then(avg => {
+                if (data['Insgesamt'] > avg) {
+                    resolve('red');
+                } else {
+                    resolve('green');
+                }
+            });
+        });
+    });
 }
 
 function style(feature) {
@@ -53,7 +64,6 @@ function style(feature) {
         color: 'white',
         dashArray: '3',
         fillOpacity: 0.7,
-        fillColor: getColor(feature.properties.name)
     };
 }
 
@@ -74,11 +84,19 @@ function highlightFeature(e) {
 /* global statesData */
 const geojson = L.geoJson(statesData, {
     style,
-    onEachFeature
+    onEachFeature: async function (feature, layer) {
+        const color = await getColor(feature.properties.name);
+
+        layer.setStyle({ fillColor: color }).on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight,
+            click: zoomToFeature
+        });
+    }
 }).addTo(map);
 
 function resetHighlight(e) {
-    geojson.resetStyle(e.target);
+    // geojson.resetStyle(e.target);
     info.update();
 }
 
@@ -86,13 +104,6 @@ function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
 }
 
-function onEachFeature(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: zoomToFeature
-    });
-}
 
 const legend = L.control({position: 'bottomright'});
 
@@ -147,24 +158,34 @@ function load(state, year, callback) {
 }
 
 async function calculateAverage(year) {
-    let average;
+    return new Promise((resolve, reject) => {
+        load(null, year, (err, data) => {
+            if (err) {
+                reject(err);
+                return;
+            }
 
-    load(null, year, (err, data) => {
-        let sum = 0;
-        let count = 0;
+            let sum = 0;
+            let count = 0;
 
-        Object.keys(data).forEach(state => {
-            Object.keys(data[state]).forEach(year => {
-                if (data[state][year].hasOwnProperty("Insgesamt")) {
-                    const value = data[state][year]["Insgesamt"];
-                    sum += value;
-                    count++;
-                }
+            Object.keys(data).forEach(state => {
+                Object.keys(data[state]).forEach(year => {
+                    if (data[state][year].hasOwnProperty("Insgesamt")) {
+                        const value = data[state][year]["Insgesamt"];
+                        sum += value;
+                        count++;
+                    }
+                });
             });
+
+            if (count === 0) {
+                reject(new Error("No data available"));
+                return;
+            }
+
+            const average = sum / count;
+            resolve(parseInt(average));
         });
-
-        return average = sum / count;
     });
-
 }
 
