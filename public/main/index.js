@@ -27,12 +27,11 @@ async function asyncFunction(props) {
     return new Promise((resolve) => {
 
             if (props && props.name) {
-                load(props.name, currentYear.textContent, async (err, data) => {
+                loadStates(props.name, currentYear.textContent, async (err, data) => {
                     const contents = `<b>${props.name}</b><br>
-        <i class="fa-solid fa-city fa-fw me-2"></i>${data['innerorts'].toLocaleString('de-DE')} Unfälle innerots<br>
-        <i class="fa-solid fa-tree-city fa-fw me-2"></i>${data['außerorts (ohne Autobahnen)'].toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
-        <i class="fa-solid fa-road fa-fw me-2"></i>${data['auf Autobahnen'].toLocaleString('de-DE')} Autbahnunfälle<br>
-        <i class="fa-solid fa-equals fa-fw me-2"></i>${data['Insgesamt'].toLocaleString('de-DE')} Unfälle insgesamt<br>
+        <i class="fa-solid fa-tree-city fa-fw me-2"></i>${((data['außerorts (ohne Autobahnen)'] + data['innerorts']) / (await loadStreetInfrastructure(props.name))['Nicht Autobahnen']).toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
+        <i class="fa-solid fa-road fa-fw me-2"></i>${(data['auf Autobahnen'] / (await loadStreetInfrastructure(props.name))['Autobahnen']).toLocaleString('de-DE')} Autbahnunfälle pro Kilometer/Jahr<br>
+        <i class="fa-solid fa-equals fa-fw me-2"></i>${(data['Insgesamt'] / (await loadStreetInfrastructure(props.name))['Gesamt']).toLocaleString('de-DE')} Unfälle insgesamt pro Kilometer/Jahr<br>
         <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(currentYear.textContent).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
                     resolve(contents);
                 })
@@ -47,7 +46,7 @@ info.addTo(map);
 // get color depending on population density value
 async function getColor(state, year) {
     return new Promise(function (resolve, reject) {
-        load(state, year, (err, data) => {
+        loadStates(state, year, (err, data) => {
             calculateAverage(currentYear.textContent).then(avg => {
                 if (data['Insgesamt'] > avg) {
                     resolve('red');
@@ -76,26 +75,12 @@ function highlightFeature(e) {
         weight: 5,
         color: '#666',
         dashArray: '',
-        fillOpacity: 0.7
+        fillOpacity: 0.8
     });
 
     layer.bringToFront();
      info.update(layer.feature.properties);
 }
-
-/* global statesData */
-// const geojson = L.geoJson(statesData, {
-//     style,
-//     onEachFeature: async function (feature, layer) {
-//         const color = await getColor(feature.properties.name);
-//
-//         layer.setStyle({ fillColor: color }).on({
-//             mouseover: highlightFeature,
-//             mouseout: resetHighlight,
-//             click: zoomToFeature
-//         });
-//     }
-// }).addTo(map);
 
 let geojson;
 
@@ -121,7 +106,7 @@ function reloadGeoJSON() {
 
 
 function resetHighlight(e) {
-    // geojson.resetStyle(e.target);
+    e.target.setStyle(style());
     info.update();
 }
 
@@ -146,7 +131,7 @@ legend.onAdd = function (map) {
 
 legend.addTo(map);
 
-function load(state, year, callback) {
+function loadStates(state, year, callback) {
     let accidents;
 
     fetch('../assets/data/car-accidents.json')
@@ -176,9 +161,21 @@ function load(state, year, callback) {
         });
 }
 
+function loadStreetInfrastructure(state) {
+    return fetch('../assets/data/street-infrastructure.json')
+        .then(response => response.json())
+        .then(response => {
+            for (let key in response) {
+                if (response[key]['Bundesland'] === state) {
+                    return response[key];
+                }
+            }
+        })
+}
+
 async function calculateAverage(year) {
     return new Promise((resolve, reject) => {
-        load(null, year, (err, data) => {
+        loadStates(null, year, (err, data) => {
             if (err) {
                 reject(err);
                 return;
@@ -208,7 +205,7 @@ async function calculateAverage(year) {
     });
 }
 
-function updateSlider(value) {
+async function updateSlider(value) {
     currentYear.textContent = value;
     reloadGeoJSON();
 }
