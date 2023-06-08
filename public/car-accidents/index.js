@@ -45,9 +45,9 @@ info.addTo(map);
 
 
 // get color depending on population density value
-async function getColor(d) {
+async function getColor(state, year) {
     return new Promise(function (resolve, reject) {
-        load(d, 2012, (err, data) => {
+        load(state, year, (err, data) => {
             calculateAverage(currentYear.textContent).then(avg => {
                 if (data['Insgesamt'] > avg) {
                     resolve('red');
@@ -84,18 +84,41 @@ function highlightFeature(e) {
 }
 
 /* global statesData */
-const geojson = L.geoJson(statesData, {
-    style,
-    onEachFeature: async function (feature, layer) {
-        const color = await getColor(feature.properties.name);
+// const geojson = L.geoJson(statesData, {
+//     style,
+//     onEachFeature: async function (feature, layer) {
+//         const color = await getColor(feature.properties.name);
+//
+//         layer.setStyle({ fillColor: color }).on({
+//             mouseover: highlightFeature,
+//             mouseout: resetHighlight,
+//             click: zoomToFeature
+//         });
+//     }
+// }).addTo(map);
 
-        layer.setStyle({ fillColor: color }).on({
-            mouseover: highlightFeature,
-            mouseout: resetHighlight,
-            click: zoomToFeature
-        });
+let geojson;
+
+function reloadGeoJSON() {
+    if (geojson) {
+        map.removeLayer(geojson);
     }
-}).addTo(map);
+
+    // Neue GeoJSON-Schicht erstellen und zur Karte hinzufügen
+    geojson = L.geoJson(statesData, {
+        style,
+        onEachFeature: async function (feature, layer) {
+            const color = await getColor(feature.properties.name, currentYear.textContent);
+
+            layer.setStyle({ fillColor: color }).on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight,
+                click: zoomToFeature
+            });
+        }
+    }).addTo(map);
+}
+
 
 function resetHighlight(e) {
     // geojson.resetStyle(e.target);
@@ -112,9 +135,7 @@ const legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
 
     const div = L.DomUtil.create('div', 'bg-light p-2 rounded-3');
-    const grades = [0, 10, 20, 50, 100, 200, 500, 1000];
     const labels = [];
-    let from, to;
 
     labels.push(`<i class="pl-3 pe-3 me-2" style="background: red"></i> über Durchschnitt`);
     labels.push(`<i class="pl-3 pe-3 me-2" style="background: green"></i> unter Durchschnitt`);
@@ -189,5 +210,6 @@ async function calculateAverage(year) {
 
 function updateSlider(value) {
     currentYear.textContent = value;
+    reloadGeoJSON();
 }
 
