@@ -5,6 +5,8 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+const currentYear = document.getElementById('sliderValue');
+
 // control that shows state info on hover
 const info = L.control();
 
@@ -17,7 +19,7 @@ info.onAdd = function (map) {
 info.update = function (props) {
     asyncFunction(props)
         .then(result => {
-            this._div.innerHTML = `<h4 class="text-center">🇩🇪 2012</h4>${result}`;
+            this._div.innerHTML = `<h4 class="text-center">🇩🇪 ${currentYear.textContent}</h4>${result}`;
         })
 };
 
@@ -25,13 +27,13 @@ async function asyncFunction(props) {
     return new Promise((resolve) => {
 
             if (props && props.name) {
-                load(props.name, 2012, async (err, data) => {
+                load(props.name, currentYear.textContent, async (err, data) => {
                     const contents = `<b>${props.name}</b><br>
         <i class="fa-solid fa-city fa-fw me-2"></i>${data['innerorts'].toLocaleString('de-DE')} Unfälle innerots<br>
         <i class="fa-solid fa-tree-city fa-fw me-2"></i>${data['außerorts (ohne Autobahnen)'].toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
         <i class="fa-solid fa-road fa-fw me-2"></i>${data['auf Autobahnen'].toLocaleString('de-DE')} Autbahnunfälle<br>
         <i class="fa-solid fa-equals fa-fw me-2"></i>${data['Insgesamt'].toLocaleString('de-DE')} Unfälle insgesamt<br>
-        <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(2012).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
+        <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(currentYear.textContent).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
                     resolve(contents);
                 })
             }
@@ -46,7 +48,7 @@ info.addTo(map);
 async function getColor(d) {
     return new Promise(function (resolve, reject) {
         load(d, 2012, (err, data) => {
-            calculateAverage(2012).then(avg => {
+            calculateAverage(currentYear.textContent).then(avg => {
                 if (data['Insgesamt'] > avg) {
                     resolve('red');
                 } else {
@@ -114,12 +116,8 @@ legend.onAdd = function (map) {
     const labels = [];
     let from, to;
 
-    for (let i = 0; i < grades.length; i++) {
-        from = grades[i];
-        to = grades[i + 1];
-
-        labels.push(`<i class="pl-3 pe-3 me-2" style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
-    }
+    labels.push(`<i class="pl-3 pe-3 me-2" style="background: red"></i> über Durchschnitt`);
+    labels.push(`<i class="pl-3 pe-3 me-2" style="background: green"></i> unter Durchschnitt`);
 
     div.innerHTML = labels.join('<br>');
     return div;
@@ -187,5 +185,9 @@ async function calculateAverage(year) {
             resolve(parseInt(average));
         });
     });
+}
+
+function updateSlider(value) {
+    currentYear.textContent = value;
 }
 

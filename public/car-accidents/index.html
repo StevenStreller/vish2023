@@ -42,7 +42,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="index.html">
-                            <i class="fa-solid fa-chart-pie fa-fw me-2"></i>
+                            <i class="fa-solid fa-car-burst fa-fw me-2"></i>
                             Unfälle nach Bundesländer
                         </a>
                     </li>
@@ -95,6 +95,8 @@
                         </div>
                     </div>
                     <div id="map" class="mb-3 rounded-5"></div>
+                    <label for="slider"></label><input class="w-100" type="range" min="2016" max="2023" step="1" value="2016" id="slider" oninput="updateSlider(this.value)">
+                    <p>Aktueller Wert: <span id="sliderValue">2016</span></p>
                 </div>
             </div>
         </main>
