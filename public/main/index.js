@@ -1,4 +1,5 @@
 const map = L.map('map').setView([51.5, 9], 6);
+document.getElementById('refreshMapButton').addEventListener('click', () => reloadGeoJSON());
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -207,6 +208,5 @@ async function calculateAverage(year) {
 
 async function updateSlider(value) {
     currentYear.textContent = value;
-    reloadGeoJSON();
 }
 
