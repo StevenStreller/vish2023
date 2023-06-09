@@ -1,4 +1,11 @@
-const map = L.map('map').setView([51.5, 9], 6);
+const map = L.map('map').setView([51.1657, 10.4515], 6);
+
+let bounds = L.latLngBounds(L.latLng(47.2701, 5.8662), L.latLng(55.0998, 15.0419));
+map.setMaxBounds(bounds);
+map.on('drag', function() {
+    map.panInsideBounds(bounds, { animate: false });
+});
+
 document.getElementById('refreshMapButton').addEventListener('click', () => reloadGeoJSON());
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -211,3 +218,21 @@ async function updateSlider(value) {
     currentYear.value = value;
 }
 
+map.on('moveend', function () {
+    var mapBounds = map.getBounds();
+
+    // Überprüfe jeden Layer in der Karte
+    map.eachLayer(function (layer) {
+        // Überprüfe, ob der Layer ein GeoJSON-Layer ist
+        if (layer instanceof L.GeoJSON) {
+            // Überprüfe, ob sich die Layer-Grenzen innerhalb der Kartenansicht befinden
+            if (mapBounds.intersects(layer.getBounds())) {
+                // Zeige den Layer an
+                layer.setStyle({ opacity: 1 });
+            } else {
+                // Verstecke den Layer
+                layer.setStyle({ opacity: 0 });
+            }
+        }
+    });
+});
