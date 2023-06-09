@@ -217,22 +217,3 @@ async function updateSlider(value) {
     // currentYear.value = value;
     currentYear.value = value;
 }
-
-map.on('moveend', function () {
-    var mapBounds = map.getBounds();
-
-    // Überprüfe jeden Layer in der Karte
-    map.eachLayer(function (layer) {
-        // Überprüfe, ob der Layer ein GeoJSON-Layer ist
-        if (layer instanceof L.GeoJSON) {
-            // Überprüfe, ob sich die Layer-Grenzen innerhalb der Kartenansicht befinden
-            if (mapBounds.intersects(layer.getBounds())) {
-                // Zeige den Layer an
-                layer.setStyle({ opacity: 1 });
-            } else {
-                // Verstecke den Layer
-                layer.setStyle({ opacity: 0 });
-            }
-        }
-    });
-});
