@@ -20,7 +20,7 @@ info.onAdd = function (map) {
 info.update = function (props) {
     asyncFunction(props)
         .then(result => {
-            this._div.innerHTML = `<h4 class="text-center">🇩🇪 ${currentYear.textContent}</h4>${result}`;
+            this._div.innerHTML = `<h4 class="text-center">🇩🇪 ${currentYear.value}</h4>${result}`;
         })
 };
 
@@ -28,12 +28,12 @@ async function asyncFunction(props) {
     return new Promise((resolve) => {
 
             if (props && props.name) {
-                loadStates(props.name, currentYear.textContent, async (err, data) => {
+                loadStates(props.name, currentYear.value, async (err, data) => {
                     const contents = `<b>${props.name}</b><br>
         <i class="fa-solid fa-tree-city fa-fw me-2"></i>${((data['außerorts (ohne Autobahnen)'] + data['innerorts']) / (await loadStreetInfrastructure(props.name))['Nicht Autobahnen']).toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
         <i class="fa-solid fa-road fa-fw me-2"></i>${(data['auf Autobahnen'] / (await loadStreetInfrastructure(props.name))['Autobahnen']).toLocaleString('de-DE')} Autbahnunfälle pro Kilometer/Jahr<br>
         <i class="fa-solid fa-equals fa-fw me-2"></i>${(data['Insgesamt'] / (await loadStreetInfrastructure(props.name))['Gesamt']).toLocaleString('de-DE')} Unfälle insgesamt pro Kilometer/Jahr<br>
-        <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(currentYear.textContent).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
+        <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(currentYear.value).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
                     resolve(contents);
                 })
             }
@@ -48,7 +48,7 @@ info.addTo(map);
 async function getColor(state, year) {
     return new Promise(function (resolve, reject) {
         loadStates(state, year, (err, data) => {
-            calculateAverage(currentYear.textContent).then(avg => {
+            calculateAverage(currentYear.value).then(avg => {
                 if (data['Insgesamt'] > avg) {
                     resolve('red');
                 } else {
@@ -94,7 +94,7 @@ function reloadGeoJSON() {
     geojson = L.geoJson(statesData, {
         style,
         onEachFeature: async function (feature, layer) {
-            const color = await getColor(feature.properties.name, currentYear.textContent);
+            const color = await getColor(feature.properties.name, currentYear.value);
 
             layer.setStyle({ fillColor: color }).on({
                 mouseover: highlightFeature,
@@ -207,6 +207,7 @@ async function calculateAverage(year) {
 }
 
 async function updateSlider(value) {
-    currentYear.textContent = value;
+    // currentYear.value = value;
+    currentYear.value = value;
 }
 
