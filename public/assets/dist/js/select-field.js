@@ -1,19 +1,56 @@
-let options = {
-    option1: ["Option 1-1", "Option 1-2", "Option 1-3"],
-    option2: ["Option 2-1", "Option 2-2"],
-    option3: ["Option 3-1", "Option 3-2", "Option 3-3", "Option 3-4"]
-};
+generateOptions(document.getElementById('parentSelect'), document.getElementById('childSelect'), document.getElementById('years'));
+generateOptions(document.getElementById('parentSelect1'), document.getElementById('childSelect1'), document.getElementById('years1'));
 
-function updateSelect2() {
-    let select1 = document.getElementById("select1");
-    let select2 = document.getElementById("select2");
-    let selectedValue = select1.value;
 
-    select2.innerHTML = "";
+function generateOptions(parentElement, childElement, yearsElement) {
 
-    for (let i = 0; i < options[selectedValue].length; i++) {
-        let option = document.createElement("option");
-        option.text = options[selectedValue][i];
-        select2.add(option);
+    parentElement.addEventListener('change', function (event) {
+        updateSelect2(event.target.value, childElement, yearsElement);
+    })
+
+    loadData()
+        .then(function (data) {
+            for (let i = 0; i < data.length; i++) {
+                let option = document.createElement('option');
+                option.value = i;
+                option.innerHTML = data[i]['title'];
+                parentElement.appendChild(option);
+            }
+
+            reloadChildSelects(data, 0, childElement, yearsElement);
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+}
+
+
+
+function updateSelect2(currentParentIndex, childElement, yearsElement) {
+    childElement.innerHTML = "";
+    yearsElement.innerHTML = "";
+
+    loadData().then(function (data) {
+            reloadChildSelects(data, currentParentIndex, childElement, yearsElement);
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+
+}
+
+function reloadChildSelects(data, currentParentIndex, childElement, yearsElement) {
+    for (let j = 0; j < data[currentParentIndex]['options'].length; j++) {
+        let option = document.createElement('option');
+        option.value = j;
+        option.innerHTML = data[currentParentIndex]['options'][j];
+        childElement.appendChild(option);
+    }
+
+    for (let i = 0; i < data[currentParentIndex]['years'].length; i++) {
+        let option = document.createElement('option');
+        option.value = i;
+        option.innerHTML = data[currentParentIndex]['years'][i];
+        yearsElement.appendChild(option);
     }
 }

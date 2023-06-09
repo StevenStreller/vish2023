@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de" data-bs-theme="auto">
+<html data-bs-theme="auto" lang="de">
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <title>VISH 2023</title>
 
@@ -11,7 +11,7 @@
     <link href="../assets/dist/css/all-fontawesome.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="../assets/dist/css/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/dist/css/leaflet.css"/>
+    <link href="../assets/dist/css/leaflet.css" rel="stylesheet"/>
     <style>
         #map {
             height: 70vh;
@@ -21,8 +21,8 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a class="navbar-brand me-3 ms-3" href="#">VISH 2023</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarText" data-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse">
@@ -32,11 +32,11 @@
 
 <div class="container-fluid">
     <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+        <nav class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse" id="sidebarMenu">
             <div class="position-sticky pt-3 sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../index.html">
+                        <a aria-current="page" class="nav-link" href="../index.html">
                             <i class="fa-solid fa-house fa-fw me-2"></i>
                             Dashboard
                         </a>
@@ -59,30 +59,34 @@
                 </h6>
                 <div class="row nav flex-column ms-1 me-1">
                     <div class="col-12">
-                        <label for="select1"></label><select class="form-select" id="select1" onchange="updateSelect2()">
-                            <option value="option1">Neuzulassungen</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
+                        <label for="parentSelect"></label><select class="form-select" id="parentSelect">
                         </select>
                     </div>
                     <div class="col-12 mb-3">
-                        <label for="select2"></label><select class="form-select" id="select2"></select>
+                        <label for="childSelect"></label><select class="form-select" id="childSelect"></select>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-years"><i class="fa-solid fa-calendar-days fa-fw"></i></span>
+                            </div>
+                            <select aria-label="Years" class="form-select" id="years"></select>
+                        </div>
+                    </div>
+                    <div class="col-12"><label for="parentSelect1"></label><select class="form-select" id="parentSelect1"></select></div>
+                    <div class="col-12 mb-3">
+                        <label for="childSelect1"></label><select class="form-select" id="childSelect1"></select>
                     </div>
                     <div class="col-12">
-                        <div class="col-12">
-                            <label for="slider"></label><input class="w-100" type="range" min="2016" max="2023" step="1"
-                                                               value="2016" id="slider" oninput="updateSlider(this.value)">
-                        </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days fa-fw"></i></span>
                             </div>
-                            <input type="text" class="form-control disabled" id="sliderValue" disabled="disabled" placeholder="Jahr durch den Slider bestimmen" aria-label="Username" aria-describedby="basic-addon1">
+                            <select aria-label="Years" class="form-select" id="years1"></select>
                         </div>
                     </div>
-
                     <div class="col-12">
-                        <button id="refreshMapButton" type="button" class="btn btn-primary w-100"><i class="fa-solid fa-arrows-rotate fa-fw me-2"></i>Karte aktualisieren</button>
+                        <button class="btn btn-primary w-100" id="refreshMapButton" type="button"><i class="fa-solid fa-arrows-rotate fa-fw me-2"></i>Karte aktualisieren</button>
                     </div>
                 </div>
             </div>
@@ -100,7 +104,7 @@
                             <p class="card-text">Beschreibungstext</p>
                         </div>
                     </div>
-                    <div id="map" class="mb-3 rounded-5"></div>
+                    <div class="mb-3 rounded-5" id="map"></div>
                 </div>
             </div>
         </main>
@@ -108,12 +112,13 @@
 </div>
 
 
-<script type="text/javascript" src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="../assets/dist/js/all-fontawesome.js"></script>
-<script type="text/javascript" src="../assets/dist/js/leaflet.js"></script>
-<script type="text/javascript" src="../assets/dist/js/de-states.js"></script>
-<script type="text/javascript" src="../assets/dist/js/select-field.js"></script>
-<script type="text/javascript" src="index.js"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="../assets/dist/js/all-fontawesome.js" type="text/javascript"></script>
+<script src="../assets/dist/js/leaflet.js" type="text/javascript"></script>
+<script src="../assets/dist/js/de-states.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
+<script src="loadData.js" type="text/javascript"></script>
+<script src="../assets/dist/js/select-field.js" type="text/javascript"></script>
 
 </body>
 </html>

@@ -1,466 +1,472 @@
 {
-    "Baden-Württemberg": {
-        "2021": {
-            "Benzin": 5152920,
-            "Diesel": 2942115,
-            "Gas insgesamt": 47878,
-            "Elektro (BEV)": 59836,
-            "Hybrid insgesamt": 155449,
-            "darunter Plug-in": 51907,
-            "Sonstige": 2189
+    "title": "KFZ-Zulassungen",
+    "source": "KBA",
+    "options": ["Benzin", "Diesel", "Gas insgesamt", "Elektro (BEV)", "Hybrid insgesamt", "darunter Plug-in", "Sonstige"],
+    "years": [2021, 2022, 2023],
+    "data": {
+        "Baden-Württemberg": {
+            "2021": {
+                "Benzin": 5152920,
+                "Diesel": 2942115,
+                "Gas insgesamt": 47878,
+                "Elektro (BEV)": 59836,
+                "Hybrid insgesamt": 155449,
+                "darunter Plug-in": 51907,
+                "Sonstige": 2189
+            },
+            "2022": {
+                "Benzin": 5113327,
+                "Diesel": 2906296,
+                "Gas insgesamt": 47503,
+                "Elektro (BEV)": 112908,
+                "Hybrid insgesamt": 253950,
+                "darunter Plug-in": 99195,
+                "Sonstige": 2213
+            },
+            "2023": {
+                "Benzin": 5066772,
+                "Diesel": 2856117,
+                "Gas Insgesamt": 48021,
+                "Elektro (BEV)": 177930,
+                "Hybrid Insgesamt": 351320,
+                "Darunter Plug-In": 143016,
+                "Sonstige": 2215
+            }
         },
-        "2022": {
-            "Benzin": 5113327,
-            "Diesel": 2906296,
-            "Gas insgesamt": 47503,
-            "Elektro (BEV)": 112908,
-            "Hybrid insgesamt": 253950,
-            "darunter Plug-in": 99195,
-            "Sonstige": 2213
+        "Bayern": {
+            "2021": {
+                "Benzin": 6070946,
+                "Diesel": 4078818,
+                "Gas insgesamt": 54741,
+                "Elektro (BEV)": 66015,
+                "Hybrid insgesamt": 189501,
+                "darunter Plug-in": 52092,
+                "Sonstige": 2913
+            },
+            "2022": {
+                "Benzin": 6038753,
+                "Diesel": 4049623,
+                "Gas insgesamt": 53846,
+                "Elektro (BEV)": 123887,
+                "Hybrid insgesamt": 312224,
+                "darunter Plug-in": 102047,
+                "Sonstige": 2900
+            },
+            "2023": {
+                "Benzin": 6005725,
+                "Diesel": 3996524,
+                "Gas Insgesamt": 54081,
+                "Elektro (BEV)": 208318,
+                "Hybrid Insgesamt": 433938,
+                "Darunter Plug-In": 155657,
+                "Sonstige": 2922
+            }
         },
-        "2023": {
-            "Benzin": 5066772,
-            "Diesel": 2856117,
-            "Gas Insgesamt": 48021,
-            "Elektro (BEV)": 177930,
-            "Hybrid Insgesamt": 351320,
-            "Darunter Plug-In": 143016,
-            "Sonstige": 2215
-        }
-    },
-    "Bayern": {
-        "2021": {
-            "Benzin": 6070946,
-            "Diesel": 4078818,
-            "Gas insgesamt": 54741,
-            "Elektro (BEV)": 66015,
-            "Hybrid insgesamt": 189501,
-            "darunter Plug-in": 52092,
-            "Sonstige": 2913
+        "Berlin": {
+            "2021": {
+                "Benzin": 1007500,
+                "Diesel": 400217,
+                "Gas insgesamt": 16018,
+                "Elektro (BEV)": 10558,
+                "Hybrid insgesamt": 39704,
+                "darunter Plug-in": 9120,
+                "Sonstige": 490
+            },
+            "2022": {
+                "Benzin": 996089,
+                "Diesel": 397924,
+                "Gas insgesamt": 15359,
+                "Elektro (BEV)": 18659,
+                "Hybrid insgesamt": 60907,
+                "darunter Plug-in": 17519,
+                "Sonstige": 520
+            },
+            "2023": {
+                "Benzin": 975320,
+                "Diesel": 390253,
+                "Gas Insgesamt": 14892,
+                "Elektro (BEV)": 32714,
+                "Hybrid Insgesamt": 84189,
+                "Darunter Plug-In": 25782,
+                "Sonstige": 567
+            }
         },
-        "2022": {
-            "Benzin": 6038753,
-            "Diesel": 4049623,
-            "Gas insgesamt": 53846,
-            "Elektro (BEV)": 123887,
-            "Hybrid insgesamt": 312224,
-            "darunter Plug-in": 102047,
-            "Sonstige": 2900
+        "Brandenburg": {
+            "2021": {
+                "Benzin": 1158214,
+                "Diesel": 610402,
+                "Gas insgesamt": 16352,
+                "Elektro (BEV)": 6549,
+                "Hybrid insgesamt": 25660,
+                "darunter Plug-in": 5329,
+                "Sonstige": 651
+            },
+            "2022": {
+                "Benzin": 1155449,
+                "Diesel": 615770,
+                "Gas insgesamt": 15956,
+                "Elektro (BEV)": 13147,
+                "Hybrid insgesamt": 41523,
+                "darunter Plug-in": 11208,
+                "Sonstige": 635
+            },
+            "2023": {
+                "Benzin": 1147710,
+                "Diesel": 612064,
+                "Gas Insgesamt": 15932,
+                "Elektro (BEV)": 21933,
+                "Hybrid Insgesamt": 57386,
+                "Darunter Plug-In": 17273,
+                "Sonstige": 642
+            }
         },
-        "2023": {
-            "Benzin": 6005725,
-            "Diesel": 3996524,
-            "Gas Insgesamt": 54081,
-            "Elektro (BEV)": 208318,
-            "Hybrid Insgesamt": 433938,
-            "Darunter Plug-In": 155657,
-            "Sonstige": 2922
-        }
-    },
-    "Berlin": {
-        "2021": {
-            "Benzin": 1007500,
-            "Diesel": 400217,
-            "Gas insgesamt": 16018,
-            "Elektro (BEV)": 10558,
-            "Hybrid insgesamt": 39704,
-            "darunter Plug-in": 9120,
-            "Sonstige": 490
+        "Bremen": {
+            "2021": {
+                "Benzin": 218013,
+                "Diesel": 113614,
+                "Gas insgesamt": 3215,
+                "Elektro (BEV)": 1663,
+                "Hybrid insgesamt": 7012,
+                "darunter Plug-in": 2012,
+                "Sonstige": 120
+            },
+            "2022": {
+                "Benzin": 215040,
+                "Diesel": 113166,
+                "Gas insgesamt": 3081,
+                "Elektro (BEV)": 3264,
+                "Hybrid insgesamt": 11308,
+                "darunter Plug-in": 3803,
+                "Sonstige": 150
+            },
+            "2023": {
+                "Benzin": 211312,
+                "Diesel": 111609,
+                "Gas Insgesamt": 3014,
+                "Elektro (BEV)": 5446,
+                "Hybrid Insgesamt": 15441,
+                "Darunter Plug-In": 5587,
+                "Sonstige": 200
+            }
         },
-        "2022": {
-            "Benzin": 996089,
-            "Diesel": 397924,
-            "Gas insgesamt": 15359,
-            "Elektro (BEV)": 18659,
-            "Hybrid insgesamt": 60907,
-            "darunter Plug-in": 17519,
-            "Sonstige": 520
+        "Hamburg": {
+            "2021": {
+                "Benzin": 579925,
+                "Diesel": 325684,
+                "Gas insgesamt": 5879,
+                "Elektro (BEV)": 8490,
+                "Hybrid insgesamt": 23659,
+                "darunter Plug-in": 7360,
+                "Sonstige": 280
+            },
+            "2022": {
+                "Benzin": 577298,
+                "Diesel": 319054,
+                "Gas insgesamt": 5696,
+                "Elektro (BEV)": 14880,
+                "Hybrid insgesamt": 39327,
+                "darunter Plug-in": 14517,
+                "Sonstige": 283
+            },
+            "2023": {
+                "Benzin": 561728,
+                "Diesel": 306731,
+                "Gas Insgesamt": 5630,
+                "Elektro (BEV)": 23517,
+                "Hybrid Insgesamt": 59553,
+                "Darunter Plug-In": 24131,
+                "Sonstige": 324
+            }
         },
-        "2023": {
-            "Benzin": 975320,
-            "Diesel": 390253,
-            "Gas Insgesamt": 14892,
-            "Elektro (BEV)": 32714,
-            "Hybrid Insgesamt": 84189,
-            "Darunter Plug-In": 25782,
-            "Sonstige": 567
-        }
-    },
-    "Brandenburg": {
-        "2021": {
-            "Benzin": 1158214,
-            "Diesel": 610402,
-            "Gas insgesamt": 16352,
-            "Elektro (BEV)": 6549,
-            "Hybrid insgesamt": 25660,
-            "darunter Plug-in": 5329,
-            "Sonstige": 651
+        "Hessen": {
+            "2021": {
+                "Benzin": 2831638,
+                "Diesel": 1553174,
+                "Gas insgesamt": 32954,
+                "Elektro (BEV)": 26834,
+                "Hybrid insgesamt": 89887,
+                "darunter Plug-in": 24811,
+                "Sonstige": 1573
+            },
+            "2022": {
+                "Benzin": 2815795,
+                "Diesel": 1542543,
+                "Gas insgesamt": 32328,
+                "Elektro (BEV)": 59374,
+                "Hybrid insgesamt": 154558,
+                "darunter Plug-in": 53604,
+                "Sonstige": 1549
+            },
+            "2023": {
+                "Benzin": 2785550,
+                "Diesel": 1519612,
+                "Gas Insgesamt": 32019,
+                "Elektro (BEV)": 107291,
+                "Hybrid Insgesamt": 223680,
+                "Darunter Plug-In": 87468,
+                "Sonstige": 1781
+            }
         },
-        "2022": {
-            "Benzin": 1155449,
-            "Diesel": 615770,
-            "Gas insgesamt": 15956,
-            "Elektro (BEV)": 13147,
-            "Hybrid insgesamt": 41523,
-            "darunter Plug-in": 11208,
-            "Sonstige": 635
+        "Mecklenburg-Vorpommern": {
+            "2021": {
+                "Benzin": 649340,
+                "Diesel": 415482,
+                "Gas insgesamt": 7605,
+                "Elektro (BEV)": 3028,
+                "Hybrid insgesamt": 12629,
+                "darunter Plug-in": 2321,
+                "Sonstige": 424
+            },
+            "2022": {
+                "Benzin": 645586,
+                "Diesel": 420472,
+                "Gas insgesamt": 7465,
+                "Elektro (BEV)": 6120,
+                "Hybrid insgesamt": 20836,
+                "darunter Plug-in": 4724,
+                "Sonstige": 443
+            },
+            "2023": {
+                "Benzin": 642239,
+                "Diesel": 417970,
+                "Gas Insgesamt": 7448,
+                "Elektro (BEV)": 10290,
+                "Hybrid Insgesamt": 29274,
+                "Darunter Plug-In": 7531,
+                "Sonstige": 418
+            }
         },
-        "2023": {
-            "Benzin": 1147710,
-            "Diesel": 612064,
-            "Gas Insgesamt": 15932,
-            "Elektro (BEV)": 21933,
-            "Hybrid Insgesamt": 57386,
-            "Darunter Plug-In": 17273,
-            "Sonstige": 642
-        }
-    },
-    "Bremen": {
-        "2021": {
-            "Benzin": 218013,
-            "Diesel": 113614,
-            "Gas insgesamt": 3215,
-            "Elektro (BEV)": 1663,
-            "Hybrid insgesamt": 7012,
-            "darunter Plug-in": 2012,
-            "Sonstige": 120
+        "Niedersachsen": {
+            "2021": {
+                "Benzin": 3511265,
+                "Diesel": 2252280,
+                "Gas insgesamt": 57786,
+                "Elektro (BEV)": 39243,
+                "Hybrid insgesamt": 82212,
+                "darunter Plug-in": 26048,
+                "Sonstige": 1933
+            },
+            "2022": {
+                "Benzin": 3484728,
+                "Diesel": 2263300,
+                "Gas insgesamt": 55412,
+                "Elektro (BEV)": 71383,
+                "Hybrid insgesamt": 132882,
+                "darunter Plug-in": 49262,
+                "Sonstige": 2078
+            },
+            "2023": {
+                "Benzin": 3455373,
+                "Diesel": 2239452,
+                "Gas Insgesamt": 54225,
+                "Elektro (BEV)": 115272,
+                "Hybrid Insgesamt": 183207,
+                "Darunter Plug-In": 72861,
+                "Sonstige": 2098
+            }
         },
-        "2022": {
-            "Benzin": 215040,
-            "Diesel": 113166,
-            "Gas insgesamt": 3081,
-            "Elektro (BEV)": 3264,
-            "Hybrid insgesamt": 11308,
-            "darunter Plug-in": 3803,
-            "Sonstige": 150
+        "Nordrhein-Westfalen": {
+            "2021": {
+                "Benzin": 7872984,
+                "Diesel": 3949018,
+                "Gas insgesamt": 150650,
+                "Elektro (BEV)": 85554,
+                "Hybrid insgesamt": 221801,
+                "darunter Plug-in": 61722,
+                "Sonstige": 3674
+            },
+            "2022": {
+                "Benzin": 7789013,
+                "Diesel": 3926642,
+                "Gas insgesamt": 145083,
+                "Elektro (BEV)": 161162,
+                "Hybrid insgesamt": 376882,
+                "darunter Plug-in": 131305,
+                "Sonstige": 3830
+            },
+            "2023": {
+                "Benzin": 7700957,
+                "Diesel": 3866600,
+                "Gas Insgesamt": 142083,
+                "Elektro (BEV)": 266568,
+                "Hybrid Insgesamt": 529667,
+                "Darunter Plug-In": 202812,
+                "Sonstige": 4002
+            }
         },
-        "2023": {
-            "Benzin": 211312,
-            "Diesel": 111609,
-            "Gas Insgesamt": 3014,
-            "Elektro (BEV)": 5446,
-            "Hybrid Insgesamt": 15441,
-            "Darunter Plug-In": 5587,
-            "Sonstige": 200
-        }
-    },
-    "Hamburg": {
-        "2021": {
-            "Benzin": 579925,
-            "Diesel": 325684,
-            "Gas insgesamt": 5879,
-            "Elektro (BEV)": 8490,
-            "Hybrid insgesamt": 23659,
-            "darunter Plug-in": 7360,
-            "Sonstige": 280
+        "Rheinland-Pfalz": {
+            "2021": {
+                "Benzin": 1958913,
+                "Diesel": 1148089,
+                "Gas insgesamt": 20465,
+                "Elektro (BEV)": 15051,
+                "Hybrid insgesamt": 44628,
+                "darunter Plug-in": 11917,
+                "Sonstige": 906
+            },
+            "2022": {
+                "Benzin": 1945645,
+                "Diesel": 1143415,
+                "Gas insgesamt": 20075,
+                "Elektro (BEV)": 31580,
+                "Hybrid insgesamt": 77285,
+                "darunter Plug-in": 25562,
+                "Sonstige": 886
+            },
+            "2023": {
+                "Benzin": 1933252,
+                "Diesel": 1126495,
+                "Gas Insgesamt": 20169,
+                "Elektro (BEV)": 56018,
+                "Hybrid Insgesamt": 109410,
+                "Darunter Plug-In": 39881,
+                "Sonstige": 889
+            }
         },
-        "2022": {
-            "Benzin": 577298,
-            "Diesel": 319054,
-            "Gas insgesamt": 5696,
-            "Elektro (BEV)": 14880,
-            "Hybrid insgesamt": 39327,
-            "darunter Plug-in": 14517,
-            "Sonstige": 283
+        "Saarland": {
+            "2021": {
+                "Benzin": 501759,
+                "Diesel": 251640,
+                "Gas insgesamt": 3205,
+                "Elektro (BEV)": 3184,
+                "Hybrid insgesamt": 12670,
+                "darunter Plug-in": 2531,
+                "Sonstige": 270
+            },
+            "2022": {
+                "Benzin": 496867,
+                "Diesel": 248390,
+                "Gas insgesamt": 3191,
+                "Elektro (BEV)": 6585,
+                "Hybrid insgesamt": 21396,
+                "darunter Plug-in": 6023,
+                "Sonstige": 265
+            },
+            "2023": {
+                "Benzin": 492088,
+                "Diesel": 242484,
+                "Gas Insgesamt": 3270,
+                "Elektro (BEV)": 12564,
+                "Hybrid Insgesamt": 30747,
+                "Darunter Plug-In": 10242,
+                "Sonstige": 260
+            }
         },
-        "2023": {
-            "Benzin": 561728,
-            "Diesel": 306731,
-            "Gas Insgesamt": 5630,
-            "Elektro (BEV)": 23517,
-            "Hybrid Insgesamt": 59553,
-            "Darunter Plug-In": 24131,
-            "Sonstige": 324
-        }
-    },
-    "Hessen": {
-        "2021": {
-            "Benzin": 2831638,
-            "Diesel": 1553174,
-            "Gas insgesamt": 32954,
-            "Elektro (BEV)": 26834,
-            "Hybrid insgesamt": 89887,
-            "darunter Plug-in": 24811,
-            "Sonstige": 1573
+        "Sachsen": {
+            "2021": {
+                "Benzin": 1736699,
+                "Diesel": 861729,
+                "Gas insgesamt": 16997,
+                "Elektro (BEV)": 8914,
+                "Hybrid insgesamt": 37224,
+                "darunter Plug-in": 7168,
+                "Sonstige": 1067
+            },
+            "2022": {
+                "Benzin": 1717970,
+                "Diesel": 868313,
+                "Gas insgesamt": 16808,
+                "Elektro (BEV)": 16902,
+                "Hybrid insgesamt": 61572,
+                "darunter Plug-in": 15483,
+                "Sonstige": 1046
+            },
+            "2023": {
+                "Benzin": 1702859,
+                "Diesel": 862004,
+                "Gas Insgesamt": 16913,
+                "Elektro (BEV)": 26565,
+                "Hybrid Insgesamt": 85497,
+                "Darunter Plug-In": 23979,
+                "Sonstige": 1025
+            }
         },
-        "2022": {
-            "Benzin": 2815795,
-            "Diesel": 1542543,
-            "Gas insgesamt": 32328,
-            "Elektro (BEV)": 59374,
-            "Hybrid insgesamt": 154558,
-            "darunter Plug-in": 53604,
-            "Sonstige": 1549
+        "Sachsen-Anhalt": {
+            "2021": {
+                "Benzin": 959857,
+                "Diesel": 502806,
+                "Gas insgesamt": 10061,
+                "Elektro (BEV)": 3790,
+                "Hybrid insgesamt": 18417,
+                "darunter Plug-in": 3459,
+                "Sonstige": 688
+            },
+            "2022": {
+                "Benzin": 947556,
+                "Diesel": 506530,
+                "Gas insgesamt": 9872,
+                "Elektro (BEV)": 7702,
+                "Hybrid insgesamt": 30977,
+                "darunter Plug-in": 7396,
+                "Sonstige": 732
+            },
+            "2023": {
+                "Benzin": 938866,
+                "Diesel": 501856,
+                "Gas Insgesamt": 9836,
+                "Elektro (BEV)": 14137,
+                "Hybrid Insgesamt": 42764,
+                "Darunter Plug-In": 11593,
+                "Sonstige": 745
+            }
         },
-        "2023": {
-            "Benzin": 2785550,
-            "Diesel": 1519612,
-            "Gas Insgesamt": 32019,
-            "Elektro (BEV)": 107291,
-            "Hybrid Insgesamt": 223680,
-            "Darunter Plug-In": 87468,
-            "Sonstige": 1781
-        }
-    },
-    "Mecklenburg-Vorpommern": {
-        "2021": {
-            "Benzin": 649340,
-            "Diesel": 415482,
-            "Gas insgesamt": 7605,
-            "Elektro (BEV)": 3028,
-            "Hybrid insgesamt": 12629,
-            "darunter Plug-in": 2321,
-            "Sonstige": 424
+        "Schleswig-Holstein": {
+            "2021": {
+                "Benzin": 1237428,
+                "Diesel": 803547,
+                "Gas insgesamt": 13177,
+                "Elektro (BEV)": 13246,
+                "Hybrid insgesamt": 27984,
+                "darunter Plug-in": 7843,
+                "Sonstige": 657
+            },
+            "2022": {
+                "Benzin": 1228776,
+                "Diesel": 807341,
+                "Gas insgesamt": 12966,
+                "Elektro (BEV)": 26098,
+                "Hybrid insgesamt": 47200,
+                "darunter Plug-in": 15999,
+                "Sonstige": 747
+            },
+            "2023": {
+                "Benzin": 1217618,
+                "Diesel": 798358,
+                "Gas Insgesamt": 12841,
+                "Elektro (BEV)": 42911,
+                "Hybrid Insgesamt": 64522,
+                "Darunter Plug-In": 23734,
+                "Sonstige": 744
+            }
         },
-        "2022": {
-            "Benzin": 645586,
-            "Diesel": 420472,
-            "Gas insgesamt": 7465,
-            "Elektro (BEV)": 6120,
-            "Hybrid insgesamt": 20836,
-            "darunter Plug-in": 4724,
-            "Sonstige": 443
-        },
-        "2023": {
-            "Benzin": 642239,
-            "Diesel": 417970,
-            "Gas Insgesamt": 7448,
-            "Elektro (BEV)": 10290,
-            "Hybrid Insgesamt": 29274,
-            "Darunter Plug-In": 7531,
-            "Sonstige": 418
-        }
-    },
-    "Niedersachsen": {
-        "2021": {
-            "Benzin": 3511265,
-            "Diesel": 2252280,
-            "Gas insgesamt": 57786,
-            "Elektro (BEV)": 39243,
-            "Hybrid insgesamt": 82212,
-            "darunter Plug-in": 26048,
-            "Sonstige": 1933
-        },
-        "2022": {
-            "Benzin": 3484728,
-            "Diesel": 2263300,
-            "Gas insgesamt": 55412,
-            "Elektro (BEV)": 71383,
-            "Hybrid insgesamt": 132882,
-            "darunter Plug-in": 49262,
-            "Sonstige": 2078
-        },
-        "2023": {
-            "Benzin": 3455373,
-            "Diesel": 2239452,
-            "Gas Insgesamt": 54225,
-            "Elektro (BEV)": 115272,
-            "Hybrid Insgesamt": 183207,
-            "Darunter Plug-In": 72861,
-            "Sonstige": 2098
-        }
-    },
-    "Nordrhein-Westfalen": {
-        "2021": {
-            "Benzin": 7872984,
-            "Diesel": 3949018,
-            "Gas insgesamt": 150650,
-            "Elektro (BEV)": 85554,
-            "Hybrid insgesamt": 221801,
-            "darunter Plug-in": 61722,
-            "Sonstige": 3674
-        },
-        "2022": {
-            "Benzin": 7789013,
-            "Diesel": 3926642,
-            "Gas insgesamt": 145083,
-            "Elektro (BEV)": 161162,
-            "Hybrid insgesamt": 376882,
-            "darunter Plug-in": 131305,
-            "Sonstige": 3830
-        },
-        "2023": {
-            "Benzin": 7700957,
-            "Diesel": 3866600,
-            "Gas Insgesamt": 142083,
-            "Elektro (BEV)": 266568,
-            "Hybrid Insgesamt": 529667,
-            "Darunter Plug-In": 202812,
-            "Sonstige": 4002
-        }
-    },
-    "Rheinland-Pfalz": {
-        "2021": {
-            "Benzin": 1958913,
-            "Diesel": 1148089,
-            "Gas insgesamt": 20465,
-            "Elektro (BEV)": 15051,
-            "Hybrid insgesamt": 44628,
-            "darunter Plug-in": 11917,
-            "Sonstige": 906
-        },
-        "2022": {
-            "Benzin": 1945645,
-            "Diesel": 1143415,
-            "Gas insgesamt": 20075,
-            "Elektro (BEV)": 31580,
-            "Hybrid insgesamt": 77285,
-            "darunter Plug-in": 25562,
-            "Sonstige": 886
-        },
-        "2023": {
-            "Benzin": 1933252,
-            "Diesel": 1126495,
-            "Gas Insgesamt": 20169,
-            "Elektro (BEV)": 56018,
-            "Hybrid Insgesamt": 109410,
-            "Darunter Plug-In": 39881,
-            "Sonstige": 889
-        }
-    },
-    "Saarland": {
-        "2021": {
-            "Benzin": 501759,
-            "Diesel": 251640,
-            "Gas insgesamt": 3205,
-            "Elektro (BEV)": 3184,
-            "Hybrid insgesamt": 12670,
-            "darunter Plug-in": 2531,
-            "Sonstige": 270
-        },
-        "2022": {
-            "Benzin": 496867,
-            "Diesel": 248390,
-            "Gas insgesamt": 3191,
-            "Elektro (BEV)": 6585,
-            "Hybrid insgesamt": 21396,
-            "darunter Plug-in": 6023,
-            "Sonstige": 265
-        },
-        "2023": {
-            "Benzin": 492088,
-            "Diesel": 242484,
-            "Gas Insgesamt": 3270,
-            "Elektro (BEV)": 12564,
-            "Hybrid Insgesamt": 30747,
-            "Darunter Plug-In": 10242,
-            "Sonstige": 260
-        }
-    },
-    "Sachsen": {
-        "2021": {
-            "Benzin": 1736699,
-            "Diesel": 861729,
-            "Gas insgesamt": 16997,
-            "Elektro (BEV)": 8914,
-            "Hybrid insgesamt": 37224,
-            "darunter Plug-in": 7168,
-            "Sonstige": 1067
-        },
-        "2022": {
-            "Benzin": 1717970,
-            "Diesel": 868313,
-            "Gas insgesamt": 16808,
-            "Elektro (BEV)": 16902,
-            "Hybrid insgesamt": 61572,
-            "darunter Plug-in": 15483,
-            "Sonstige": 1046
-        },
-        "2023": {
-            "Benzin": 1702859,
-            "Diesel": 862004,
-            "Gas Insgesamt": 16913,
-            "Elektro (BEV)": 26565,
-            "Hybrid Insgesamt": 85497,
-            "Darunter Plug-In": 23979,
-            "Sonstige": 1025
-        }
-    },
-    "Sachsen-Anhalt": {
-        "2021": {
-            "Benzin": 959857,
-            "Diesel": 502806,
-            "Gas insgesamt": 10061,
-            "Elektro (BEV)": 3790,
-            "Hybrid insgesamt": 18417,
-            "darunter Plug-in": 3459,
-            "Sonstige": 688
-        },
-        "2022": {
-            "Benzin": 947556,
-            "Diesel": 506530,
-            "Gas insgesamt": 9872,
-            "Elektro (BEV)": 7702,
-            "Hybrid insgesamt": 30977,
-            "darunter Plug-in": 7396,
-            "Sonstige": 732
-        },
-        "2023": {
-            "Benzin": 938866,
-            "Diesel": 501856,
-            "Gas Insgesamt": 9836,
-            "Elektro (BEV)": 14137,
-            "Hybrid Insgesamt": 42764,
-            "Darunter Plug-In": 11593,
-            "Sonstige": 745
-        }
-    },
-    "Schleswig-Holstein": {
-        "2021": {
-            "Benzin": 1237428,
-            "Diesel": 803547,
-            "Gas insgesamt": 13177,
-            "Elektro (BEV)": 13246,
-            "Hybrid insgesamt": 27984,
-            "darunter Plug-in": 7843,
-            "Sonstige": 657
-        },
-        "2022": {
-            "Benzin": 1228776,
-            "Diesel": 807341,
-            "Gas insgesamt": 12966,
-            "Elektro (BEV)": 26098,
-            "Hybrid insgesamt": 47200,
-            "darunter Plug-in": 15999,
-            "Sonstige": 747
-        },
-        "2023": {
-            "Benzin": 1217618,
-            "Diesel": 798358,
-            "Gas Insgesamt": 12841,
-            "Elektro (BEV)": 42911,
-            "Hybrid Insgesamt": 64522,
-            "Darunter Plug-In": 23734,
-            "Sonstige": 744
-        }
-    },
-    "Thüringen": {
-        "2021": {
-            "Benzin": 926322,
-            "Diesel": 533726,
-            "Gas insgesamt": 8521,
-            "Elektro (BEV)": 6153,
-            "Hybrid insgesamt": 18671,
-            "darunter Plug-in": 4069,
-            "Sonstige": 469
-        },
-        "2022": {
-            "Benzin": 916453,
-            "Diesel": 534611,
-            "Gas insgesamt": 8156,
-            "Elektro (BEV)": 9636,
-            "Hybrid insgesamt": 32220,
-            "darunter Plug-in": 8285,
-            "Sonstige": 470
-        },
-        "2023": {
-            "Benzin": 908189,
-            "Diesel": 527919,
-            "Gas Insgesamt": 8189,
-            "Elektro (BEV)": 17136,
-            "Hybrid Insgesamt": 45757,
-            "Darunter Plug-In": 13166,
-            "Sonstige": 477
+        "Thüringen": {
+            "2021": {
+                "Benzin": 926322,
+                "Diesel": 533726,
+                "Gas insgesamt": 8521,
+                "Elektro (BEV)": 6153,
+                "Hybrid insgesamt": 18671,
+                "darunter Plug-in": 4069,
+                "Sonstige": 469
+            },
+            "2022": {
+                "Benzin": 916453,
+                "Diesel": 534611,
+                "Gas insgesamt": 8156,
+                "Elektro (BEV)": 9636,
+                "Hybrid insgesamt": 32220,
+                "darunter Plug-in": 8285,
+                "Sonstige": 470
+            },
+            "2023": {
+                "Benzin": 908189,
+                "Diesel": 527919,
+                "Gas Insgesamt": 8189,
+                "Elektro (BEV)": 17136,
+                "Hybrid Insgesamt": 45757,
+                "Darunter Plug-In": 13166,
+                "Sonstige": 477
+            }
         }
     }
 }
