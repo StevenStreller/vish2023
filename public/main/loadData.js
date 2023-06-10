@@ -51,6 +51,7 @@ function loadData(state = null, year = null, title = null, options = null) {
 
                         });
                     })
+                    customizedResponse = response;
                 }
 
                 return customizedResponse;
