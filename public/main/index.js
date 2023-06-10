@@ -61,7 +61,7 @@ function lerp(x1,x2,fx1,fx2,x){
 function HSVtoRGB(h, s, v) {
     var r, g, b, i, f, p, q, t;
     if (arguments.length === 1) {
-        s = h.s, v = h.v, h = h.h;
+        s = h.s; v = h.v; h = h.h;
     }
     i = Math.floor(h * 6);
     f = h * 6 - i;
@@ -69,12 +69,12 @@ function HSVtoRGB(h, s, v) {
     q = v * (1 - f * s);
     t = v * (1 - (1 - f) * s);
     switch (i % 6) {
-        case 0: r = v, g = t, b = p; break;
-        case 1: r = q, g = v, b = p; break;
-        case 2: r = p, g = v, b = t; break;
-        case 3: r = p, g = q, b = v; break;
-        case 4: r = t, g = p, b = v; break;
-        case 5: r = v, g = p, b = q; break;
+        case 0: r = v; g = t; b = p; break;
+        case 1: r = q; g = v; b = p; break;
+        case 2: r = p; g = v; b = t; break;
+        case 3: r = p; g = q; b = v; break;
+        case 4: r = t; g = p; b = v; break;
+        case 5: r = v; g = p; b = q; break;
     }
     return {
         r: Math.round(r * 255),
@@ -100,7 +100,7 @@ async function getColor(state, year) {
                     //interpolation zwischen gelb/rot
                     h = lerp(avgMinMax[0], avgMinMax[1],60,0,  data['Insgesamt']);
                 }
-                console.log("H=" + h);
+                //console.log("H=" + h);
                 h = (h / 360);
                 let rgb = HSVtoRGB(h, 1.0, 0.6);
                 //console.log("RGB = " + rgb.r + ", " + rgb.g + ", " + rgb.b);
@@ -273,41 +273,38 @@ async function calculateAverage(year) {
     });
 }
 
-async function calculateAverageMinMax(year) {
+async function calculateAverageMinMax(year, title, option) {
+    title = 'Autounfälle';
+    option = 'Insgesamt';
     return new Promise((resolve, reject) => {
-        loadStates(null, year, (err, data) => {
-            if (err) {
-                reject(err);
-                return;
-            }
-
+        loadData(null, 2012, title, option).then((data) => {
             let sum = 0;
             let count = 0;
             //TODO Insgesamt oder auch andere? Es muss bestimmt mit dem select feld selektierbar sein
             let min = 999999999;
             let max = 0;
-            Object.keys(data).forEach(state => {
-                Object.keys(data[state]).forEach(year => {
-                    if (data[state][year].hasOwnProperty("Insgesamt")) {
-                        const value = data[state][year]["Insgesamt"];
+
+            Object.keys(data).forEach(index => {
+                if (data[index]['title'] === title) {
+                    Object.keys(data[index]['data']).forEach(state => {
+                        const value = data[index]['data'][state][year][option];
                         sum += value;
                         count++;
                         if(min > value)
                             min = value;
                         if(max < value)
                             max = value;
-                    }
-                });
+                    });
+                }
             });
-
             if (count === 0) {
                 reject(new Error("No data available"));
                 return;
             }
-
             const average = sum / count;
             resolve([average, min, max]);
         });
+
     });
 }
 
