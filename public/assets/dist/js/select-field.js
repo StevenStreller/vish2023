@@ -1,5 +1,5 @@
-generateOptions(document.getElementById('parentSelect'), document.getElementById('childSelect'), document.getElementById('years'));
-generateOptions(document.getElementById('parentSelect1'), document.getElementById('childSelect1'), document.getElementById('years1'));
+generateOptions(document.getElementById('parentSelect[0]'), document.getElementById('childSelect[0]'), document.getElementById('years[0]'));
+generateOptions(document.getElementById('parentSelect[1]'), document.getElementById('childSelect[1]'), document.getElementById('years[1]'));
 
 
 function generateOptions(parentElement, childElement, yearsElement) {

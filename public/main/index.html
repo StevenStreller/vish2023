@@ -58,35 +58,65 @@
                     <span>Auswahl</span>
                 </h6>
                 <div class="row nav flex-column ms-1 me-1">
+                    <div class="col-12 mt-3">
+                        <div class="alert alert-primary mb-0" role="alert">
+                            @TODO: Infotext
+                        </div>
+                    </div>
                     <div class="col-12">
-                        <label for="parentSelect"></label><select class="form-select" id="parentSelect">
+                        <label for="parentSelect[0]"></label><select class="form-select" id="parentSelect[0]">
                         </select>
                     </div>
                     <div class="col-12 mb-3">
-                        <label for="childSelect"></label><select class="form-select" id="childSelect"></select>
+                        <label for="childSelect[0]"></label><select class="form-select" id="childSelect[0]"></select>
                     </div>
                     <div class="col-12 mb-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-years"><i class="p-1 fa-solid fa-calendar-days fa-fw"></i></span>
                             </div>
-                            <select aria-label="Years" class="form-select" id="years"></select>
+                            <select aria-label="Years" class="form-select" id="years[0]"></select>
                         </div>
                     </div>
-                    <div class="col-12"><label for="parentSelect1"></label><select class="form-select" id="parentSelect1"></select></div>
+                    <div class="col-12"><label for="parentSelect[1]"></label><select class="form-select" id="parentSelect[1]"></select></div>
                     <div class="col-12 mb-3">
-                        <label for="childSelect1"></label><select class="form-select" id="childSelect1"></select>
+                        <label for="childSelect[1]"></label><select class="form-select" id="childSelect[1]"></select>
                     </div>
                     <div class="col-12">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="p-1 fa-solid fa-calendar-days fa-fw"></i></span>
                             </div>
-                            <select aria-label="Years" class="form-select" id="years1"></select>
+                            <select aria-label="Years" class="form-select" id="years[1]"></select>
                         </div>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary w-100" id="refreshMapButton" type="button"><i class="fa-solid fa-arrows-rotate fa-fw me-2"></i>Karte aktualisieren</button>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <div class="card card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Auswahl 1</th>
+                                    <th scope="col">Auswahl 2</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">Durchschnitt</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Median</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
