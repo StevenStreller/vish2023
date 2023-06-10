@@ -13,7 +13,7 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-const currentYear = document.getElementById('sliderValue');
+const currentYear = document.getElementById('years[0]');
 
 // control that shows state info on hover
 const info = L.control();
@@ -27,20 +27,20 @@ info.onAdd = function (map) {
 info.update = function (props) {
     asyncFunction(props)
         .then(result => {
-            this._div.innerHTML = `<h4 class="text-center">🇩🇪 ${currentYear.value}</h4>${result}`;
+            this._div.innerHTML = `<h4 class="text-center">🇩🇪 ${currentYear.options[currentYear.selectedIndex].innerHTML}</h4>${result}`;
         })
 };
 
 async function asyncFunction(props) {
     return new Promise((resolve) => {
 
-            if (props && props.name) {
-                loadStates(props.name, currentYear.value, async (err, data) => {
+        if (props && props.name) {
+                loadStates(props.name, currentYear.options[currentYear.selectedIndex].innerHTML, async (err, data) => {
                     const contents = `<b>${props.name}</b><br>
         <i class="fa-solid fa-tree-city fa-fw me-2"></i>${((data['außerorts (ohne Autobahnen)'] + data['innerorts']) / (await loadStreetInfrastructure(props.name))['Nicht Autobahnen']).toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
         <i class="fa-solid fa-road fa-fw me-2"></i>${(data['auf Autobahnen'] / (await loadStreetInfrastructure(props.name))['Autobahnen']).toLocaleString('de-DE')} Autbahnunfälle pro Kilometer/Jahr<br>
         <i class="fa-solid fa-equals fa-fw me-2"></i>${(data['Insgesamt'] / (await loadStreetInfrastructure(props.name))['Gesamt']).toLocaleString('de-DE')} Unfälle insgesamt pro Kilometer/Jahr<br>
-        <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(currentYear.value).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
+        <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(currentYear.options[currentYear.selectedIndex].innerHTML).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
                     resolve(contents);
                 })
             }
@@ -51,16 +51,74 @@ async function asyncFunction(props) {
 info.addTo(map);
 
 
+
+
+function lerp(x1,x2,fx1,fx2,x){
+    //console.log(fx1 + "+ (" + x + "-" + x1 + ") * ((" + fx2 + "-"+fx1 +") / ("+x2 + "-" + x1 + "));");
+    return fx1 + (x - x1) * ((fx2 - fx1) / (x2 - x1));
+}
+
+function HSVtoRGB(h, s, v) {
+    var r, g, b, i, f, p, q, t;
+    if (arguments.length === 1) {
+        s = h.s, v = h.v, h = h.h;
+    }
+    i = Math.floor(h * 6);
+    f = h * 6 - i;
+    p = v * (1 - s);
+    q = v * (1 - f * s);
+    t = v * (1 - (1 - f) * s);
+    switch (i % 6) {
+        case 0: r = v, g = t, b = p; break;
+        case 1: r = q, g = v, b = p; break;
+        case 2: r = p, g = v, b = t; break;
+        case 3: r = p, g = q, b = v; break;
+        case 4: r = t, g = p, b = v; break;
+        case 5: r = v, g = p, b = q; break;
+    }
+    return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+    };
+}
+
+
 // get color depending on population density value
 async function getColor(state, year) {
     return new Promise(function (resolve, reject) {
         loadStates(state, year, (err, data) => {
-            calculateAverage(currentYear.value).then(avg => {
-                if (data['Insgesamt'] > avg) {
-                    resolve('red');
+            calculateAverageMinMax(year).then(avgMinMax => {
+                //console.log("get color avgminmax is "+ avgMinMax);
+                let h;
+                if (data['Insgesamt'] > avgMinMax[0]) {
+                    //interpolation zwischen gelb(60) und grün(120) in parametern
+                    h = lerp(avgMinMax[0], avgMinMax[2], 60,120, data['Insgesamt']);
+
+
                 } else {
-                    resolve('green');
+                    //interpolation zwischen gelb/rot
+                    h = lerp(avgMinMax[0], avgMinMax[1],60,0,  data['Insgesamt']);
                 }
+                console.log("H=" + h);
+                h = (h / 360);
+                let rgb = HSVtoRGB(h, 1.0, 0.6);
+                //console.log("RGB = " + rgb.r + ", " + rgb.g + ", " + rgb.b);
+
+                let hexR = rgb.r.toString(16);
+                if(hexR.length === 1) hexR = "0" + hexR;
+
+                let hexG = rgb.g.toString(16);
+                if(hexG.length === 1) hexG = "0" + hexG;
+
+                let hexB = rgb.b.toString(16);
+                if(hexB.length === 1) hexB = "0" + hexB;
+
+                let hexString = '#' + hexR + hexG + hexB; //#ff1234
+
+                //console.log("HEX = " + hexString);
+                resolve(hexString);
+
             });
         });
     });
@@ -101,7 +159,7 @@ function reloadGeoJSON() {
     geojson = L.geoJson(statesData, {
         style,
         onEachFeature: async function (feature, layer) {
-            const color = await getColor(feature.properties.name, currentYear.value);
+            const color = await getColor(feature.properties.name, currentYear.options[currentYear.selectedIndex].innerHTML);
 
             layer.setStyle({ fillColor: color }).on({
                 mouseover: highlightFeature,
@@ -182,6 +240,8 @@ function loadStreetInfrastructure(state) {
 }
 
 async function calculateAverage(year) {
+    console.log("calc avg called " + year);
+
     return new Promise((resolve, reject) => {
         loadStates(null, year, (err, data) => {
             if (err) {
@@ -212,6 +272,48 @@ async function calculateAverage(year) {
         });
     });
 }
+
+async function calculateAverageMinMax(year) {
+    return new Promise((resolve, reject) => {
+        loadStates(null, year, (err, data) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            let sum = 0;
+            let count = 0;
+            //TODO Insgesamt oder auch andere? Es muss bestimmt mit dem select feld selektierbar sein
+            let min = 999999999;
+            let max = 0;
+            Object.keys(data).forEach(state => {
+                Object.keys(data[state]).forEach(year => {
+                    if (data[state][year].hasOwnProperty("Insgesamt")) {
+                        const value = data[state][year]["Insgesamt"];
+                        sum += value;
+                        count++;
+                        if(min > value)
+                            min = value;
+                        if(max < value)
+                            max = value;
+                    }
+                });
+            });
+
+            if (count === 0) {
+                reject(new Error("No data available"));
+                return;
+            }
+
+            const average = sum / count;
+            resolve([average, min, max]);
+        });
+    });
+}
+
+
+
+
 
 async function updateSlider(value) {
     // currentYear.value = value;
