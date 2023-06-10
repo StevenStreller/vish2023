@@ -1,7 +1,7 @@
 {
   "title": "Autounfälle",
   "source": "",
-  "options": ["innerorts", "außerorts (ohne Autobahn)", "Autobahn", "Insgesamt"],
+  "options": ["innerorts", "außerorts (ohne Autobahnen)", "auf Autobahnen", "Insgesamt"],
   "years": [2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
   "data": {
     "Baden-Württemberg": {

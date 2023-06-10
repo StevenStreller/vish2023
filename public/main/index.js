@@ -85,40 +85,47 @@ function HSVtoRGB(h, s, v) {
 
 
 // get color depending on population density value
-async function getColor(state, year) {
+async function getColor(state, year, title, option) {
     return new Promise(function (resolve, reject) {
-        loadStates(state, year, (err, data) => {
-            calculateAverageMinMax(year).then(avgMinMax => {
+        loadData(state, parseInt(year), title, option).then(data => {
+            calculateAverageMinMax(parseInt(year), title, option).then(avgMinMax => {
+                Object.keys(data).forEach(index => {
+                    if (data[index]['title'] === title) {
+                        // console.log(data[index]['data']);
+                        Object.keys(data[index]['data']).forEach(state => {
+                            let h;
+                            if (data[index]['data'][state][year][option] > avgMinMax[0]) {
+                                //interpolation zwischen gelb(60) und grün(120) in parametern
+                                h = lerp(avgMinMax[0], avgMinMax[2], 60,0, data[index]['data'][state][year][option]);
+
+
+                            } else {
+                                //interpolation zwischen gelb/rot
+                                h = lerp(avgMinMax[0], avgMinMax[1],60,120,  data[index]['data'][state][year][option]);
+                            }
+                            //console.log("H=" + h);
+                            h = (h / 360);
+                            let rgb = HSVtoRGB(h, 1.0, 0.6);
+                            //console.log("RGB = " + rgb.r + ", " + rgb.g + ", " + rgb.b);
+
+                            let hexR = rgb.r.toString(16);
+                            if(hexR.length === 1) hexR = "0" + hexR;
+
+                            let hexG = rgb.g.toString(16);
+                            if(hexG.length === 1) hexG = "0" + hexG;
+
+                            let hexB = rgb.b.toString(16);
+                            if(hexB.length === 1) hexB = "0" + hexB;
+
+                            let hexString = '#' + hexR + hexG + hexB; //#ff1234
+
+                            //console.log("HEX = " + hexString);
+                            resolve(hexString);
+                        });
+                    }
+                });
+
                 //console.log("get color avgminmax is "+ avgMinMax);
-                let h;
-                if (data['Insgesamt'] > avgMinMax[0]) {
-                    //interpolation zwischen gelb(60) und grün(120) in parametern
-                    h = lerp(avgMinMax[0], avgMinMax[2], 60,120, data['Insgesamt']);
-
-
-                } else {
-                    //interpolation zwischen gelb/rot
-                    h = lerp(avgMinMax[0], avgMinMax[1],60,0,  data['Insgesamt']);
-                }
-                //console.log("H=" + h);
-                h = (h / 360);
-                let rgb = HSVtoRGB(h, 1.0, 0.6);
-                //console.log("RGB = " + rgb.r + ", " + rgb.g + ", " + rgb.b);
-
-                let hexR = rgb.r.toString(16);
-                if(hexR.length === 1) hexR = "0" + hexR;
-
-                let hexG = rgb.g.toString(16);
-                if(hexG.length === 1) hexG = "0" + hexG;
-
-                let hexB = rgb.b.toString(16);
-                if(hexB.length === 1) hexB = "0" + hexB;
-
-                let hexString = '#' + hexR + hexG + hexB; //#ff1234
-
-                //console.log("HEX = " + hexString);
-                resolve(hexString);
-
             });
         });
     });
@@ -151,6 +158,7 @@ function highlightFeature(e) {
 let geojson;
 
 function reloadGeoJSON() {
+    console.log(currentYear.options[currentYear.value].innerHTML);
     if (geojson) {
         map.removeLayer(geojson);
     }
@@ -159,7 +167,10 @@ function reloadGeoJSON() {
     geojson = L.geoJson(statesData, {
         style,
         onEachFeature: async function (feature, layer) {
-            const color = await getColor(feature.properties.name, currentYear.options[currentYear.selectedIndex].innerHTML);
+            const color = await getColor(feature.properties.name,
+                document.getElementById('years[0]').options[document.getElementById('years[0]').value].innerHTML,
+                document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML,
+                document.getElementById('childSelect[0]').options[document.getElementById('childSelect[0]').value].innerHTML);
 
             layer.setStyle({ fillColor: color }).on({
                 mouseover: highlightFeature,
@@ -274,10 +285,10 @@ async function calculateAverage(year) {
 }
 
 async function calculateAverageMinMax(year, title, option) {
-    title = 'Autounfälle';
-    option = 'Insgesamt';
+
     return new Promise((resolve, reject) => {
-        loadData(null, 2012, title, option).then((data) => {
+        loadData(null, year, title, option).then((data) => {
+            console.log(data);
             let sum = 0;
             let count = 0;
             //TODO Insgesamt oder auch andere? Es muss bestimmt mit dem select feld selektierbar sein
@@ -297,11 +308,14 @@ async function calculateAverageMinMax(year, title, option) {
                     });
                 }
             });
+            min = Math.max(min, 1);
+
             if (count === 0) {
                 reject(new Error("No data available"));
                 return;
             }
             const average = sum / count;
+            console.log([average, min, max]);
             resolve([average, min, max]);
         });
 
