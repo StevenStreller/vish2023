@@ -84,14 +84,20 @@ async function updateInfoData(props) {
                 
                 <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState] + " " + title0 + " " + option0 + " " + year0).toLocaleString('de-DE')}<br>
                 <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap1[selectedState] + " " + title1 + " " + option1 + " " + year1).toLocaleString('de-DE')}<br>
-                <i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState] + " " + title0 + " " + option0 + " / " + title1 + " " + option1).toLocaleString('de-DE')}<br>
                 `;
+
+                if (title0 === title1 && option0 === option1) {
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState] + " " + title0 + " " + option0 + " " + year0 + " / " + year1).toLocaleString('de-DE')}<br>`;
+                } else {
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState] + " " + title0 + " " + option0 + " / " + title1 + " " + option1).toLocaleString('de-DE')}<br>`;
+                }
             }
+
             let minMaxAvg = getMinMaxAvg(normalizedStateData);
             contents += `
              <i class="fa-solid fa-arrow-down fa-fw me-2"></i>${(minMaxAvg[0] + " Minimum").toLocaleString('de-DE')}<br>
              <i class="fa-solid fa-arrow-up fa-fw me-2"></i>${(minMaxAvg[1] + " Maximum").toLocaleString('de-DE')}<br>
-             <i class="fa-solid fa-gauge fa-fw me-2"></i>${(minMaxAvg[2] + " Average").toLocaleString('de-DE')}<br>
+             <i class="fa-solid fa-gauge fa-fw me-2"></i>${((Math.round(minMaxAvg[2]*1000)/1000) + " Average").toLocaleString('de-DE')}<br>
             `;
 
 
@@ -299,12 +305,12 @@ function reloadGeoJSON() {
         {//if equal selections then do not divide
 
             for (let state in stateValueMap0) {
-                normalizedStateData[state] = stateValueMap0[state];
+                normalizedStateData[state] = Math.round(stateValueMap0[state] * 1000) / 1000;
             }
         }
         else {
             for (let state in stateValueMap0) {
-                normalizedStateData[state] = (stateValueMap0[state] / stateValueMap1[state]);
+                normalizedStateData[state] = Math.round((stateValueMap0[state] / stateValueMap1[state])*1000) / 1000;
             }
         }
         //console.log(normalizedStateData);
@@ -357,8 +363,8 @@ function changeColors() {
     } else {
         ueberLabel.style.background = "#ff0000";
         unterLabel.style.background = "#00ff00";
-        currentUeberDurchschnittColor = 0;
-        currentUnterDurchschnittColor = 120;
+        currentUeberDurchschnittColor = 120;
+        currentUnterDurchschnittColor = 0;
     }
     reloadGeoJSON();
 }
@@ -368,9 +374,9 @@ legend.onAdd = function (map) {
     const div = L.DomUtil.create('div', 'bg-light p-2 rounded-3');
     let labels = [];
 
-    labels.push(`<i class="pl-3 pe-3 me-2" id="ueberDurchschnittLabel" style="background: #ff0000" onclick="changeColors()"></i> über Durchschnitt`);
+    labels.push(`<i class="pl-3 pe-3 me-2" id="ueberDurchschnittLabel" style="background: #00ff00" onclick="changeColors()"></i> über Durchschnitt`);
     labels.push(`<i class="pl-3 pe-3 me-2" style="background: #ffff00" onclick="changeColors()"></i> Durchschnitt`);
-    labels.push(`<i class="pl-3 pe-3 me-2" id="unterDurchschnittLabel" style="background: #00ff00" onclick="changeColors()"></i> unter Durchschnitt`);
+    labels.push(`<i class="pl-3 pe-3 me-2" id="unterDurchschnittLabel" style="background: #ff0000" onclick="changeColors()"></i> unter Durchschnitt`);
 
     div.innerHTML = labels.join('<br>');
 
