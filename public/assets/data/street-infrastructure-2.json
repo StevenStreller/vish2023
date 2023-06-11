@@ -10,7 +10,7 @@
         "Bundesstrassen": 4186,
         "Landstrassen": 10066,
         "Nicht Autobahnen": 14252,
-        "Gesamt": 15306
+        "Insgesamt": 15306
       }
     },
     "Bayern": {
@@ -19,7 +19,7 @@
         "Bundesstrassen": 6024,
         "Landstrassen": 14506,
         "Nicht Autobahnen": 20530,
-        "Gesamt": 23078
+        "Insgesamt": 23078
       }
     },
     "Berlin": {
@@ -28,7 +28,7 @@
         "Bundesstrassen": 161,
         "Landstrassen": 0,
         "Nicht Autobahnen": 161,
-        "Gesamt": 238
+        "Insgesamt": 238
       }
     },
     "Brandenburg": {
@@ -37,7 +37,7 @@
         "Bundesstrassen": 2740,
         "Landstrassen": 5649,
         "Nicht Autobahnen": 8389,
-        "Gesamt": 9195
+        "Insgesamt": 9195
       }
     },
     "Bremen": {
@@ -46,7 +46,7 @@
         "Bundesstrassen": 34,
         "Landstrassen": 0,
         "Nicht Autobahnen": 34,
-        "Gesamt": 114
+        "Insgesamt": 114
       }
     },
     "Hamburg": {
@@ -55,7 +55,7 @@
         "Bundesstrassen": 114,
         "Landstrassen": 0,
         "Nicht Autobahnen": 114,
-        "Gesamt": 190
+        "Insgesamt": 190
       }
     },
     "Hessen": {
@@ -64,7 +64,7 @@
         "Bundesstrassen": 2989,
         "Landstrassen": 7197,
         "Nicht Autobahnen": 10186,
-        "Gesamt": 11182
+        "Insgesamt": 11182
       }
     },
     "Mecklenburg-Vorpommern": {
@@ -73,7 +73,7 @@
         "Bundesstrassen": 1927,
         "Landstrassen": 3378,
         "Nicht Autobahnen": 5305,
-        "Gesamt": 5883
+        "Insgesamt": 5883
       }
     },
     "Niedersachsen": {
@@ -82,7 +82,7 @@
         "Bundesstrassen": 4658,
         "Landstrassen": 8248,
         "Nicht Autobahnen": 12906,
-        "Gesamt": 14358
+        "Insgesamt": 14358
       }
     },
     "Nordrhein-Westfalen": {
@@ -91,7 +91,7 @@
         "Bundesstrassen": 4424,
         "Landstrassen": 13081,
         "Nicht Autobahnen": 17505,
-        "Gesamt": 19765
+        "Insgesamt": 19765
       }
     },
     "Rheinland-Pfalz": {
@@ -100,7 +100,7 @@
         "Bundesstrassen": 2875,
         "Landstrassen": 7235,
         "Nicht Autobahnen": 10110,
-        "Gesamt": 10987
+        "Insgesamt": 10987
       }
     },
     "Saarland": {
@@ -109,7 +109,7 @@
         "Bundesstrassen": 310,
         "Landstrassen": 872,
         "Nicht Autobahnen": 1182,
-        "Gesamt": 1422
+        "Insgesamt": 1422
       }
     },
     "Sachsen": {
@@ -118,7 +118,7 @@
         "Bundesstrassen": 2302,
         "Landstrassen": 4773,
         "Nicht Autobahnen": 7075,
-        "Gesamt": 7650
+        "Insgesamt": 7650
       }
     },
     "Sachsen-Anhalt": {
@@ -127,7 +127,7 @@
         "Bundesstrassen": 2046,
         "Landstrassen": 4048,
         "Nicht Autobahnen": 6094,
-        "Gesamt": 6601
+        "Insgesamt": 6601
       }
     },
     "Schleswig-Holstein": {
@@ -136,7 +136,7 @@
         "Bundesstrassen": 1532,
         "Landstrassen": 3672,
         "Nicht Autobahnen": 5204,
-        "Gesamt": 5749
+        "Insgesamt": 5749
       }
     },
     "Thüringen": {
@@ -145,7 +145,7 @@
         "Bundesstrassen": 1503,
         "Landstrassen": 4137,
         "Nicht Autobahnen": 5640,
-        "Gesamt": 6161
+        "Insgesamt": 6161
       }
     }
   }
