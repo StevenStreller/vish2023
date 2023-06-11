@@ -75,29 +75,29 @@ async function updateInfoData(props) {
                 <h4 class="text-center">🇩🇪 ${props.name}</h4>
                 <b>${year0}</b>
                 <br>
-                    <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState] + " " + title0 + " " + option0).toLocaleString('de-DE')}<br>
+                    <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0}<br>
                    `;
             }
             else {
                 contents = `
                 <h4 class="text-center">🇩🇪 ${props.name}</h4>
                 
-                <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState] + " " + title0 + " " + option0 + " " + year0).toLocaleString('de-DE')}<br>
-                <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap1[selectedState] + " " + title1 + " " + option1 + " " + year1).toLocaleString('de-DE')}<br>
+                <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " " + year0}<br>
+                <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap1[selectedState]).toLocaleString('de-DE') + " " + title1 + " " + option1 + " " + year1}<br>
                 `;
 
                 if (title0 === title1 && option0 === option1) {
-                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState] + " " + title0 + " " + option0 + " " + year0 + " / " + year1).toLocaleString('de-DE')}<br>`;
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " " + year0 + " / " + year1}<br>`;
                 } else {
-                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState] + " " + title0 + " " + option0 + " / " + title1 + " " + option1).toLocaleString('de-DE')}<br>`;
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " / " + title1 + " " + option1}<br>`;
                 }
             }
 
             let minMaxAvg = getMinMaxAvg(normalizedStateData);
             contents += `
-             <i class="fa-solid fa-arrow-down fa-fw me-2"></i>${(minMaxAvg[0] + " Minimum").toLocaleString('de-DE')}<br>
-             <i class="fa-solid fa-arrow-up fa-fw me-2"></i>${(minMaxAvg[1] + " Maximum").toLocaleString('de-DE')}<br>
-             <i class="fa-solid fa-gauge fa-fw me-2"></i>${((Math.round(minMaxAvg[2]*1000)/1000) + " Average").toLocaleString('de-DE')}<br>
+             <i class="fa-solid fa-arrow-down fa-fw me-2"></i>${(minMaxAvg[0]).toLocaleString('de-DE') + " Minimum"}<br>
+             <i class="fa-solid fa-arrow-up fa-fw me-2"></i>${(minMaxAvg[1]).toLocaleString('de-DE') + " Maximum"}<br>
+             <i class="fa-solid fa-gauge fa-fw me-2"></i>${((Math.round(minMaxAvg[2]*1000)/1000)).toLocaleString('de-DE') + " Average"}<br>
             `;
 
 
