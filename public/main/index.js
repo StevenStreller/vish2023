@@ -14,6 +14,15 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const currentYear = document.getElementById('years[0]');
+function getCurrentYear() {
+    return currentYear.options[currentYear.selectedIndex].innerHTML;
+}
+
+
+let stateValueMap0 = {};
+let stateValueMap1 = {};
+let normalizedStateData = {};
+
 
 // control that shows state info on hover
 const info = L.control();
@@ -25,25 +34,69 @@ info.onAdd = function (map) {
 };
 
 info.update = function (props) {
-    asyncFunction(props)
+    updateInfoData(props)
         .then(result => {
-            this._div.innerHTML = `<h4 class="text-center">🇩🇪 ${currentYear.options[currentYear.selectedIndex].innerHTML}</h4>${result}`;
+            this._div.innerHTML = `${result}`;
         })
 };
 
-async function asyncFunction(props) {
+async function updateInfoData(props) {
+    //return new Promise((resolve) => {
+    //    let selectedState = props.name;
+    //    if (props && selectedState) {
+    //            loadStates(selectedState, getCurrentYear(), async (err, data) => {
+    //                const contents = `<b>${props.name}</b><br>
+    //    <i class="fa-solid fa-tree-city fa-fw me-2"></i>${((data['außerorts (ohne Autobahnen)'] + data['innerorts']) / (await loadStreetInfrastructure(props.name))['Nicht Autobahnen']).toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
+    //    <i class="fa-solid fa-road fa-fw me-2"></i>${(data['auf Autobahnen'] / (await loadStreetInfrastructure(props.name))['Autobahnen']).toLocaleString('de-DE')} Autbahnunfälle pro Kilometer/Jahr<br>
+    //    <i class="fa-solid fa-equals fa-fw me-2"></i>${(data['Insgesamt'] / (await loadStreetInfrastructure(props.name))['Gesamt']).toLocaleString('de-DE')} Unfälle insgesamt pro Kilometer/Jahr<br>
+    //    <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(getCurrentYear()).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
+    //                resolve(contents);
+    //            });
+    //    }
+    //});
+
     return new Promise((resolve) => {
 
-        if (props && props.name) {
-                loadStates(props.name, currentYear.options[currentYear.selectedIndex].innerHTML, async (err, data) => {
-                    const contents = `<b>${props.name}</b><br>
-        <i class="fa-solid fa-tree-city fa-fw me-2"></i>${((data['außerorts (ohne Autobahnen)'] + data['innerorts']) / (await loadStreetInfrastructure(props.name))['Nicht Autobahnen']).toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
-        <i class="fa-solid fa-road fa-fw me-2"></i>${(data['auf Autobahnen'] / (await loadStreetInfrastructure(props.name))['Autobahnen']).toLocaleString('de-DE')} Autbahnunfälle pro Kilometer/Jahr<br>
-        <i class="fa-solid fa-equals fa-fw me-2"></i>${(data['Insgesamt'] / (await loadStreetInfrastructure(props.name))['Gesamt']).toLocaleString('de-DE')} Unfälle insgesamt pro Kilometer/Jahr<br>
-        <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(currentYear.options[currentYear.selectedIndex].innerHTML).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
-                    resolve(contents);
-                })
+        let year0 = parseInt(document.getElementById('years[0]').options[document.getElementById('years[0]').value].innerHTML);
+        let title0 = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
+        let option0 = document.getElementById('childSelect[0]').options[document.getElementById('childSelect[0]').value].innerHTML;
+
+        let year1 = parseInt(document.getElementById('years[1]').options[document.getElementById('years[1]').value].innerHTML);
+        let title1 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
+        let option1 = document.getElementById('childSelect[1]').options[document.getElementById('childSelect[1]').value].innerHTML;
+
+
+        let selectedState = props.name;
+        if (props && selectedState) {
+            let contents;
+            if(year0 === year1 && title0 === title1 && option0 === option1) {
+
+                contents = `
+                <h4 class="text-center">🇩🇪 ${props.name}</h4>
+                <b>${year0}</b>
+                <br>
+                    <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState] + " " + title0 + " " + option0).toLocaleString('de-DE')}<br>
+                   `;
             }
+            else {
+                contents = `
+                <h4 class="text-center">🇩🇪 ${props.name}</h4>
+                
+                <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState] + " " + title0 + " " + option0 + " " + year0).toLocaleString('de-DE')}<br>
+                <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap1[selectedState] + " " + title1 + " " + option1 + " " + year1).toLocaleString('de-DE')}<br>
+                <i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState] + " " + title0 + " " + option0 + " / " + title1 + " " + option1).toLocaleString('de-DE')}<br>
+                `;
+            }
+            let minMaxAvg = getMinMaxAvg(normalizedStateData);
+            contents += `
+             <i class="fa-solid fa-arrow-down fa-fw me-2"></i>${(minMaxAvg[0] + " Minimum").toLocaleString('de-DE')}<br>
+             <i class="fa-solid fa-arrow-up fa-fw me-2"></i>${(minMaxAvg[1] + " Maximum").toLocaleString('de-DE')}<br>
+             <i class="fa-solid fa-gauge fa-fw me-2"></i>${(minMaxAvg[2] + " Average").toLocaleString('de-DE')}<br>
+            `;
+
+
+            resolve(contents);
+        }
     });
 }
 
@@ -85,21 +138,29 @@ function HSVtoRGB(h, s, v) {
     };
 }
 
-function getColorsFromData(data){
-    //data is Object with state: value
+function getMinMaxAvg(stateValueData){
     let min = Number.MAX_VALUE;
     let max = -Number.MAX_VALUE;
     let avg = 0;
     let cnt = 0;
-    for(let state in data){
-        if(isFinite(data[state])) { //skip weird values
-            max = Math.max(data[state], max);
-            min = Math.min(data[state], min);
-            avg += data[state];
+    for(let state in stateValueData){
+        if(isFinite(stateValueData[state])) { //skip weird values
+            max = Math.max(stateValueData[state], max);
+            min = Math.min(stateValueData[state], min);
+            avg += stateValueData[state];
             cnt++;
         }
     }
     avg /= cnt;
+    return [min, max, avg];
+}
+
+function getColorsFromData(data){
+    //data is Object with state: value
+    let minMaxAvg = getMinMaxAvg(data);
+    let min = minMaxAvg[0];
+    let max = minMaxAvg[1];
+    let avg = minMaxAvg[2];
     let colors = {};
     for(let state in data) {
         let h;
@@ -113,7 +174,7 @@ function getColorsFromData(data){
         //Rundungsfehler, deshalb round()
         h = Math.round(h / 0.36) / 1000;
         //console.log(state + " H=" + h);
-        let rgb = HSVtoRGB(h, 1.0, 0.6);
+        let rgb = HSVtoRGB(h, 1.0, 0.9);
         colors[state] = RGBtoHEX(rgb);
     }
     return colors;
@@ -194,6 +255,7 @@ function highlightFeature(e) {
 
 let geojson;
 
+
 function reloadGeoJSON() {
     //console.log(currentYear.options[currentYear.value].innerHTML);
     if (geojson) {
@@ -210,8 +272,7 @@ function reloadGeoJSON() {
 
     //Laden von daten hier, dann per Key-Value pairs get all A/B values and from that get avgs etc. and get color from that in "onEachFeature"
 
-    let stateValueMap0 = {};
-    let stateValueMap1 = {};
+
     let colors;
     loadData(null, year0, title0, option0).then( data0 =>{
         Object.keys(data0).forEach(index => {
@@ -233,10 +294,13 @@ function reloadGeoJSON() {
             }
         })
     })).then(() => {
-        let normalizedStateData = {};
+
         if(year0 === year1 && title0 === title1 && option0 === option1)
         {//if equal selections then do not divide
-            normalizedStateData = stateValueMap0;
+
+            for (let state in stateValueMap0) {
+                normalizedStateData[state] = stateValueMap0[state];
+            }
         }
         else {
             for (let state in stateValueMap0) {
@@ -277,34 +341,40 @@ function zoomToFeature(e) {
 
 
 const legend = L.control({position: 'bottomright'});
+let currentUeberDurchschnittColor = 0;
+let currentUnterDurchschnittColor = 120;
+
+
+function changeColors() {
+    let ueberLabel = document.getElementById('ueberDurchschnittLabel');
+    let unterLabel = document.getElementById('unterDurchschnittLabel');
+
+    if(currentUeberDurchschnittColor === 0){
+        ueberLabel.style.background = "#00ff00";
+        unterLabel.style.background = "#ff0000";
+        currentUeberDurchschnittColor = 120;
+        currentUnterDurchschnittColor = 0;
+    } else {
+        ueberLabel.style.background = "#ff0000";
+        unterLabel.style.background = "#00ff00";
+        currentUeberDurchschnittColor = 0;
+        currentUnterDurchschnittColor = 120;
+    }
+    reloadGeoJSON();
+}
 
 legend.onAdd = function (map) {
 
     const div = L.DomUtil.create('div', 'bg-light p-2 rounded-3');
-    const labels = [];
+    let labels = [];
 
-    labels.push(`<i class="pl-3 pe-3 me-2" style="background: red"></i> über Durchschnitt`);
-    labels.push(`<i class="pl-3 pe-3 me-2" style="background: green"></i> unter Durchschnitt`);
+    labels.push(`<i class="pl-3 pe-3 me-2" id="ueberDurchschnittLabel" style="background: #ff0000" onclick="changeColors()"></i> über Durchschnitt`);
+    labels.push(`<i class="pl-3 pe-3 me-2" style="background: #ffff00" onclick="changeColors()"></i> Durchschnitt`);
+    labels.push(`<i class="pl-3 pe-3 me-2" id="unterDurchschnittLabel" style="background: #00ff00" onclick="changeColors()"></i> unter Durchschnitt`);
 
     div.innerHTML = labels.join('<br>');
+
     return div;
-};
-//TODO
-let currentUeberDurchschnittColor = 0;
-let currentUnterDurchschnittColor = 120;
-legend.onClick = function changeLegendColors() {
-    console.log("onClick");
-    if(currentUeberDurchschnittColor === 0){
-        legend.labels[0].style.background = "green";
-        legend.labels[1].style.background = "red";
-        currentUeberDurchschnittColor = 120;
-        currentUnterDurchschnittColor = 0;
-    } else {
-        legend.labels[0].style.background = "red";
-        legend.labels[1].style.background = "green";
-        currentUeberDurchschnittColor = 0;
-        currentUnterDurchschnittColor = 120;
-    }
 };
 
 legend.addTo(map);
