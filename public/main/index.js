@@ -55,11 +55,13 @@ info.addTo(map);
 
 function lerp(x1,x2,fx1,fx2,x){
     //console.log(fx1 + "+ (" + x + "-" + x1 + ") * ((" + fx2 + "-"+fx1 +") / ("+x2 + "-" + x1 + "));");
-    return fx1 + (x - x1) * ((fx2 - fx1) / (x2 - x1));
+    if(Math.abs(x2-x1) < 0.00000001)
+        return fx1;
+    return (fx1 + (x - x1) * ((fx2 - fx1) / (x2 - x1)));
 }
 
 function HSVtoRGB(h, s, v) {
-    var r, g, b, i, f, p, q, t;
+    let r, g, b, i, f, p, q, t;
     if (arguments.length === 1) {
         s = h.s; v = h.v; h = h.h;
     }
@@ -83,9 +85,55 @@ function HSVtoRGB(h, s, v) {
     };
 }
 
+function getColorsFromData(data){
+    //data is Object with state: value
+    let min = Number.MAX_VALUE;
+    let max = -Number.MAX_VALUE;
+    let avg = 0;
+    let cnt = 0;
+    for(let state in data){
+        if(isFinite(data[state])) { //skip weird values
+            max = Math.max(data[state], max);
+            min = Math.min(data[state], min);
+            avg += data[state];
+            cnt++;
+        }
+    }
+    avg /= cnt;
+    let colors = {};
+    for(let state in data) {
+        let h;
+        if (data[state] > avg) {
+            //interpolation zwischen gelb(60) und grün(120) in parametern
+            h = lerp(avg, max, 60, currentUnterDurchschnittColor, data[state]);
+        } else {
+            //interpolation zwischen gelb/rot
+            h = lerp(avg, min,60, currentUeberDurchschnittColor, data[state]);
+        }
+        //Rundungsfehler, deshalb round()
+        h = Math.round(h / 0.36) / 1000;
+        //console.log(state + " H=" + h);
+        let rgb = HSVtoRGB(h, 1.0, 0.6);
+        colors[state] = RGBtoHEX(rgb);
+    }
+    return colors;
+}
 
-// get color depending on population density value
-async function getColor(state, year, title, option) {
+function RGBtoHEX(rgb){
+    let hexR = rgb.r.toString(16);
+    if(hexR.length === 1) hexR = "0" + hexR;
+
+    let hexG = rgb.g.toString(16);
+    if(hexG.length === 1) hexG = "0" + hexG;
+
+    let hexB = rgb.b.toString(16);
+    if(hexB.length === 1) hexB = "0" + hexB;
+
+    return '#' + hexR + hexG + hexB; //#ff1234
+}
+
+// get color depending on selected data
+/*async function getColor(state, year, title, option) {
     return new Promise(function (resolve, reject) {
         loadData(state, parseInt(year), title, option).then(data => {
             calculateAverageMinMax(parseInt(year), title, option).then(avgMinMax => {
@@ -96,31 +144,20 @@ async function getColor(state, year, title, option) {
                             let h;
                             if (data[index]['data'][state][year][option] > avgMinMax[0]) {
                                 //interpolation zwischen gelb(60) und grün(120) in parametern
-                                h = lerp(avgMinMax[0], avgMinMax[2], 60,0, data[index]['data'][state][year][option]);
+                                h = lerp(avgMinMax[0], avgMinMax[2], 60,currentUnterDurchschnittColor, data[index]['data'][state][year][option]);
 
 
                             } else {
                                 //interpolation zwischen gelb/rot
-                                h = lerp(avgMinMax[0], avgMinMax[1],60,120,  data[index]['data'][state][year][option]);
+                                h = lerp(avgMinMax[0], avgMinMax[1],60,currentUeberDurchschnittColor,  data[index]['data'][state][year][option]);
                             }
-                            //console.log("H=" + h);
-                            h = (h / 360);
+                            //Rundungsfehler, deshalb round()
+                            h = Math.round(h / 0.36) / 1000;
+
                             let rgb = HSVtoRGB(h, 1.0, 0.6);
                             //console.log("RGB = " + rgb.r + ", " + rgb.g + ", " + rgb.b);
-
-                            let hexR = rgb.r.toString(16);
-                            if(hexR.length === 1) hexR = "0" + hexR;
-
-                            let hexG = rgb.g.toString(16);
-                            if(hexG.length === 1) hexG = "0" + hexG;
-
-                            let hexB = rgb.b.toString(16);
-                            if(hexB.length === 1) hexB = "0" + hexB;
-
-                            let hexString = '#' + hexR + hexG + hexB; //#ff1234
-
                             //console.log("HEX = " + hexString);
-                            resolve(hexString);
+                            resolve(RGBtoHEX(rgb));
                         });
                     }
                 });
@@ -130,7 +167,7 @@ async function getColor(state, year, title, option) {
         });
     });
 }
-
+*/
 function style(feature) {
     return {
         weight: 2,
@@ -158,27 +195,74 @@ function highlightFeature(e) {
 let geojson;
 
 function reloadGeoJSON() {
-    console.log(currentYear.options[currentYear.value].innerHTML);
+    //console.log(currentYear.options[currentYear.value].innerHTML);
     if (geojson) {
         map.removeLayer(geojson);
     }
 
-    // Neue GeoJSON-Schicht erstellen und zur Karte hinzufügen
-    geojson = L.geoJson(statesData, {
-        style,
-        onEachFeature: async function (feature, layer) {
-            const color = await getColor(feature.properties.name,
-                document.getElementById('years[0]').options[document.getElementById('years[0]').value].innerHTML,
-                document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML,
-                document.getElementById('childSelect[0]').options[document.getElementById('childSelect[0]').value].innerHTML);
+    let year0 = parseInt(document.getElementById('years[0]').options[document.getElementById('years[0]').value].innerHTML);
+    let title0 = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
+    let option0 = document.getElementById('childSelect[0]').options[document.getElementById('childSelect[0]').value].innerHTML;
 
-            layer.setStyle({ fillColor: color }).on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlight,
-                click: zoomToFeature
-            });
+    let year1 = parseInt(document.getElementById('years[1]').options[document.getElementById('years[1]').value].innerHTML);
+    let title1 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
+    let option1 = document.getElementById('childSelect[1]').options[document.getElementById('childSelect[1]').value].innerHTML;
+
+    //Laden von daten hier, dann per Key-Value pairs get all A/B values and from that get avgs etc. and get color from that in "onEachFeature"
+
+    let stateValueMap0 = {};
+    let stateValueMap1 = {};
+    let colors;
+    loadData(null, year0, title0, option0).then( data0 =>{
+        Object.keys(data0).forEach(index => {
+            if (data0[index]['title'] === title0) {
+                Object.keys(data0[index]['data']).forEach(state => {
+                    stateValueMap0[state] = data0[index]['data'][state][year0][option0];
+
+                });
+            }
+        })
+    }).then( () =>
+
+    loadData(null, year1, title1, option1).then(data1 => {
+        Object.keys(data1).forEach(index => {
+            if (data1[index]['title'] === title1) {
+                Object.keys(data1[index]['data']).forEach(state => {
+                    stateValueMap1[state] = data1[index]['data'][state][year1][option1];
+                });
+            }
+        })
+    })).then(() => {
+        let normalizedStateData = {};
+        if(year0 === year1 && title0 === title1 && option0 === option1)
+        {//if equal selections then do not divide
+            normalizedStateData = stateValueMap0;
         }
-    }).addTo(map);
+        else {
+            for (let state in stateValueMap0) {
+                normalizedStateData[state] = (stateValueMap0[state] / stateValueMap1[state]);
+            }
+        }
+        //console.log(normalizedStateData);
+        colors = getColorsFromData(normalizedStateData);
+    }
+    ).then(() =>
+        {
+            // Neue GeoJSON-Schicht erstellen und zur Karte hinzufügen
+            geojson = L.geoJson(statesData, {
+                style,
+                onEachFeature: async function (feature, layer) {
+
+                    layer.setStyle({ fillColor: colors[feature.properties.name] }).on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight,
+                        click: zoomToFeature
+                    });
+                }
+            }).addTo(map);
+        }
+    );
+
 }
 
 
@@ -205,8 +289,27 @@ legend.onAdd = function (map) {
     div.innerHTML = labels.join('<br>');
     return div;
 };
+//TODO
+let currentUeberDurchschnittColor = 0;
+let currentUnterDurchschnittColor = 120;
+legend.onClick = function changeLegendColors() {
+    console.log("onClick");
+    if(currentUeberDurchschnittColor === 0){
+        legend.labels[0].style.background = "green";
+        legend.labels[1].style.background = "red";
+        currentUeberDurchschnittColor = 120;
+        currentUnterDurchschnittColor = 0;
+    } else {
+        legend.labels[0].style.background = "red";
+        legend.labels[1].style.background = "green";
+        currentUeberDurchschnittColor = 0;
+        currentUnterDurchschnittColor = 120;
+    }
+};
 
 legend.addTo(map);
+
+
 
 function loadStates(state, year, callback) {
     let accidents;
@@ -251,7 +354,6 @@ function loadStreetInfrastructure(state) {
 }
 
 async function calculateAverage(year) {
-    console.log("calc avg called " + year);
 
     return new Promise((resolve, reject) => {
         loadStates(null, year, (err, data) => {
@@ -288,11 +390,9 @@ async function calculateAverageMinMax(year, title, option) {
 
     return new Promise((resolve, reject) => {
         loadData(null, year, title, option).then((data) => {
-            console.log(data);
             let sum = 0;
             let count = 0;
-            //TODO Insgesamt oder auch andere? Es muss bestimmt mit dem select feld selektierbar sein
-            let min = 999999999;
+            let min = Number.MAX_VALUE;
             let max = 0;
 
             Object.keys(data).forEach(index => {
@@ -301,32 +401,21 @@ async function calculateAverageMinMax(year, title, option) {
                         const value = data[index]['data'][state][year][option];
                         sum += value;
                         count++;
-                        if(min > value)
-                            min = value;
-                        if(max < value)
-                            max = value;
+                        min = Math.min(min, value);
+                        max = Math.max(max, value);
                     });
                 }
             });
-            min = Math.max(min, 1);
 
             if (count === 0) {
                 reject(new Error("No data available"));
                 return;
             }
             const average = sum / count;
-            console.log([average, min, max]);
+            //console.log([average, min, max]);
             resolve([average, min, max]);
         });
 
     });
 }
 
-
-
-
-
-async function updateSlider(value) {
-    // currentYear.value = value;
-    currentYear.value = value;
-}
