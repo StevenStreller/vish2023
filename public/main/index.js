@@ -282,7 +282,7 @@ function reloadGeoJSON() {
 
                 });
             }
-        })
+        });
     }).then( () =>
 
     loadData(null, year1, title1, option1).then(data1 => {
@@ -320,7 +320,7 @@ function reloadGeoJSON() {
                     layer.setStyle({ fillColor: colors[feature.properties.name] }).on({
                         mouseover: highlightFeature,
                         mouseout: resetHighlight,
-                        click: zoomToFeature
+                        click: createChart
                     });
                 }
             }).addTo(map);
@@ -489,3 +489,41 @@ async function calculateAverageMinMax(year, title, option) {
     });
 }
 
+
+function createChart(e) {
+    let chartStatus = Chart.getChart("timechart")
+    if (chartStatus != undefined) {
+        chartStatus.destroy();
+    }
+    let name = e.target.feature.properties.name;
+    console.log(name);
+    zoomToFeature(e)
+    // prepareData(name, "../assets/data/car-accidents.json").then(data => {
+    //     console.log(data);
+    //     let chart = buildChart(data, name)
+    //     fillChart(chart, data)
+    // })
+    let title = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
+    loadData(name, null, title).then(data => {
+        Object.keys(data).forEach(index => {
+            if (data[index]['title']  === title) {
+                data = data[index]['data'][name];
+                console.log(data);
+                console.log('TEST');
+                let chart = buildChart(data, name)
+                fillChart(chart, data)
+            }
+        });
+
+
+    })
+
+}
+function prepareData(state, dataPath) {
+    d = fetch(dataPath)
+        .then(response => response.json())
+        .then(response => {
+            return response[state]
+        })
+    return d
+}
