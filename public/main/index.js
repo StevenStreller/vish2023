@@ -22,7 +22,7 @@ function getCurrentYear() {
 let stateValueMap0 = {};
 let stateValueMap1 = {};
 let normalizedStateData = {};
-
+let secondChoiceCheckBoxWasChecked = false;
 
 // control that shows state info on hover
 const info = L.control();
@@ -65,11 +65,26 @@ async function updateInfoData(props) {
         let title1 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
         let option1 = document.getElementById('childSelect[1]').options[document.getElementById('childSelect[1]').value].innerHTML;
 
-
         let selectedState = props.name;
         if (props && selectedState) {
             let contents;
-            if(year0 === year1 && title0 === title1 && option0 === option1) {
+            if(secondChoiceCheckBoxWasChecked) {
+                contents = `
+                <h4 class="text-center">🇩🇪 ${props.name}</h4>
+                
+                <i class="fa-solid fa-divide fa-fw me-2" style="visibility:hidden; "></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " " + year0}<br>
+                <div class="me-4" style="border-bottom: solid 2px #1e3050 ;">
+                <i class="fa-solid fa-divide fa-fw me-2" ></i>${(stateValueMap1[selectedState]).toLocaleString('de-DE') + " " + title1 + " " + option1 + " " + year1}<br>
+                </div>                
+`;
+
+                if (title0 === title1 && option0 === option1) {
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " " + year0 + " / " + year1}<br>`;
+                } else {
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " / " + title1 + " " + option1}<br>`;
+                }
+            }
+            else {
 
                 contents = `
                 <h4 class="text-center">🇩🇪 ${props.name}</h4>
@@ -77,20 +92,6 @@ async function updateInfoData(props) {
                 <br>
                     <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0}<br>
                    `;
-            }
-            else {
-                contents = `
-                <h4 class="text-center">🇩🇪 ${props.name}</h4>
-                
-                <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " " + year0}<br>
-                <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap1[selectedState]).toLocaleString('de-DE') + " " + title1 + " " + option1 + " " + year1}<br>
-                `;
-
-                if (title0 === title1 && option0 === option1) {
-                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " " + year0 + " / " + year1}<br>`;
-                } else {
-                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " / " + title1 + " " + option1}<br>`;
-                }
             }
 
             let minMaxAvg = getMinMaxAvg(normalizedStateData);
@@ -199,42 +200,7 @@ function RGBtoHEX(rgb){
     return '#' + hexR + hexG + hexB; //#ff1234
 }
 
-// get color depending on selected data
-/*async function getColor(state, year, title, option) {
-    return new Promise(function (resolve, reject) {
-        loadData(state, parseInt(year), title, option).then(data => {
-            calculateAverageMinMax(parseInt(year), title, option).then(avgMinMax => {
-                Object.keys(data).forEach(index => {
-                    if (data[index]['title'] === title) {
-                        // console.log(data[index]['data']);
-                        Object.keys(data[index]['data']).forEach(state => {
-                            let h;
-                            if (data[index]['data'][state][year][option] > avgMinMax[0]) {
-                                //interpolation zwischen gelb(60) und grün(120) in parametern
-                                h = lerp(avgMinMax[0], avgMinMax[2], 60,currentUnterDurchschnittColor, data[index]['data'][state][year][option]);
 
-
-                            } else {
-                                //interpolation zwischen gelb/rot
-                                h = lerp(avgMinMax[0], avgMinMax[1],60,currentUeberDurchschnittColor,  data[index]['data'][state][year][option]);
-                            }
-                            //Rundungsfehler, deshalb round()
-                            h = Math.round(h / 0.36) / 1000;
-
-                            let rgb = HSVtoRGB(h, 1.0, 0.6);
-                            //console.log("RGB = " + rgb.r + ", " + rgb.g + ", " + rgb.b);
-                            //console.log("HEX = " + hexString);
-                            resolve(RGBtoHEX(rgb));
-                        });
-                    }
-                });
-
-                //console.log("get color avgminmax is "+ avgMinMax);
-            });
-        });
-    });
-}
-*/
 function style(feature) {
     return {
         weight: 2,
@@ -275,6 +241,8 @@ function reloadGeoJSON() {
     let year1 = parseInt(document.getElementById('years[1]').options[document.getElementById('years[1]').value].innerHTML);
     let title1 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
     let option1 = document.getElementById('childSelect[1]').options[document.getElementById('childSelect[1]').value].innerHTML;
+    //At time of update click
+    secondChoiceCheckBoxWasChecked = document.getElementById('secondChoiceActive').checked;
 
     //Laden von daten hier, dann per Key-Value pairs get all A/B values and from that get avgs etc. and get color from that in "onEachFeature"
 
@@ -301,16 +269,15 @@ function reloadGeoJSON() {
         })
     })).then(() => {
 
-        if(year0 === year1 && title0 === title1 && option0 === option1)
+        if(secondChoiceCheckBoxWasChecked)
         {//if equal selections then do not divide
-
             for (let state in stateValueMap0) {
-                normalizedStateData[state] = Math.round(stateValueMap0[state] * 1000) / 1000;
+                normalizedStateData[state] = Math.round((stateValueMap0[state] / stateValueMap1[state]) * 1000) / 1000;
             }
         }
         else {
             for (let state in stateValueMap0) {
-                normalizedStateData[state] = Math.round((stateValueMap0[state] / stateValueMap1[state])*1000) / 1000;
+                normalizedStateData[state] = Math.round(stateValueMap0[state] * 1000) / 1000;
             }
         }
         //console.log(normalizedStateData);
@@ -332,7 +299,6 @@ function reloadGeoJSON() {
             }).addTo(map);
         }
     );
-
 }
 
 
@@ -363,8 +329,8 @@ function changeColors() {
     } else {
         ueberLabel.style.background = "#ff0000";
         unterLabel.style.background = "#00ff00";
-        currentUeberDurchschnittColor = 120;
-        currentUnterDurchschnittColor = 0;
+        currentUeberDurchschnittColor = 0;
+        currentUnterDurchschnittColor = 120;
     }
     reloadGeoJSON();
 }
@@ -428,73 +394,6 @@ function loadStreetInfrastructure(state) {
             }
         })
 }
-
-async function calculateAverage(year) {
-
-    return new Promise((resolve, reject) => {
-        loadStates(null, year, (err, data) => {
-            if (err) {
-                reject(err);
-                return;
-            }
-
-            let sum = 0;
-            let count = 0;
-
-            Object.keys(data).forEach(state => {
-                Object.keys(data[state]).forEach(year => {
-                    if (data[state][year].hasOwnProperty("Insgesamt")) {
-                        const value = data[state][year]["Insgesamt"];
-                        sum += value;
-                        count++;
-                    }
-                });
-            });
-
-            if (count === 0) {
-                reject(new Error("No data available"));
-                return;
-            }
-
-            const average = sum / count;
-            resolve(parseInt(average));
-        });
-    });
-}
-
-async function calculateAverageMinMax(year, title, option) {
-
-    return new Promise((resolve, reject) => {
-        loadData(null, year, title, option).then((data) => {
-            let sum = 0;
-            let count = 0;
-            let min = Number.MAX_VALUE;
-            let max = 0;
-
-            Object.keys(data).forEach(index => {
-                if (data[index]['title'] === title) {
-                    Object.keys(data[index]['data']).forEach(state => {
-                        const value = data[index]['data'][state][year][option];
-                        sum += value;
-                        count++;
-                        min = Math.min(min, value);
-                        max = Math.max(max, value);
-                    });
-                }
-            });
-
-            if (count === 0) {
-                reject(new Error("No data available"));
-                return;
-            }
-            const average = sum / count;
-            //console.log([average, min, max]);
-            resolve([average, min, max]);
-        });
-
-    });
-}
-
 
 function createChart(e) {
     let chartStatus = Chart.getChart("timechart")
