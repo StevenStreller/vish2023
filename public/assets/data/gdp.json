@@ -1,0 +1,288 @@
+{
+  "title": "BIP",
+  "source": "https://www.statistikportal.de/de/vgrdl/ergebnisse-laenderebene/bruttoinlandsprodukt-bruttowertschoepfung/bip",
+  "options": [
+    "Bruttoinlandsprodukt"
+  ],
+  "years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "data": {
+    "Baden-Württemberg": {
+      "2018": {
+        "Bruttoinlandsprodukt": "516670"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "525347"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "509322"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "538948"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "572837"
+      }
+    },
+    "Bayern": {
+      "2018": {
+        "Bruttoinlandsprodukt": "620277"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "643982"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "630530"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "666388"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "716784"
+      }
+    },
+    "Berlin": {
+      "2018": {
+        "Bruttoinlandsprodukt": "149391"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "157131"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "156762"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "165457"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "179379"
+      }
+    },
+    "Brandenburg": {
+      "2018": {
+        "Bruttoinlandsprodukt": "72708"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "76024"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "75757"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "80562"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "88800"
+      }
+    },
+    "Bremen": {
+      "2018": {
+        "Bruttoinlandsprodukt": "32929"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "33177"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "32166"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "35151"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "38698"
+      }
+    },
+    "Hamburg": {
+      "2018": {
+        "Bruttoinlandsprodukt": "118961"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "124855"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "119941"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "130873"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "144220"
+      }
+    },
+    "Hessen": {
+      "2018": {
+        "Bruttoinlandsprodukt": "286128"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "295779"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "288127"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "303310"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "323352"
+      }
+    },
+    "Mecklenburg-Vorpommern": {
+      "2018": {
+        "Bruttoinlandsprodukt": "44332"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "47571"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "46942"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "49871"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "53440"
+      }
+    },
+    "Niedersachsen": {
+      "2018": {
+        "Bruttoinlandsprodukt": "297590"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "310744"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "303696"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "315720"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "339414"
+      }
+    },
+    "Nordrhein-Westfalen": {
+      "2018": {
+        "Bruttoinlandsprodukt": "703065"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "717359"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "707186"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "742818"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "793790"
+      }
+    },
+    "Rheinland-Pfalz": {
+      "2018": {
+        "Bruttoinlandsprodukt": "143060"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "146985"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "144558"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "162169"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "171699"
+      }
+    },
+    "Saarland": {
+      "2018": {
+        "Bruttoinlandsprodukt": "35871"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "35855"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "34628"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "36112"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "38505"
+      }
+    },
+    "Sachsen": {
+      "2018": {
+        "Bruttoinlandsprodukt": "125180"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "130348"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "128679"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "134984"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "146511"
+      }
+    },
+    "Sachsen-Anhalt": {
+      "2018": {
+        "Bruttoinlandsprodukt": "62039"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "64692"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "64198"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "68253"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "75436"
+      }
+    },
+    "Schleswig-Holstein": {
+      "2018": {
+        "Bruttoinlandsprodukt": "95008"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "99607"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "99696"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "104709"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "112755"
+      }
+    },
+    "Thüringen": {
+      "2018": {
+        "Bruttoinlandsprodukt": "62240"
+      },
+      "2019": {
+        "Bruttoinlandsprodukt": "63803"
+      },
+      "2020": {
+        "Bruttoinlandsprodukt": "63241"
+      },
+      "2021": {
+        "Bruttoinlandsprodukt": "66424"
+      },
+      "2022": {
+        "Bruttoinlandsprodukt": "71430"
+      }
+    }
+  }
+}
