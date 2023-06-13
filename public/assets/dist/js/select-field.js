@@ -55,7 +55,5 @@ function reloadChildSelects(data, currentParentIndex, childElement, yearsElement
         option.innerHTML = data[currentParentIndex]['years'][i];
         yearsElement.appendChild(option);
     }
-    console.log("currentParentIndex" + currentParentIndex);
 
-    // document.getElementById(`info[${currentParentIndex}]`).innerHTML = data[currentParentIndex]['description'] ?? 'No description available.';
 }
