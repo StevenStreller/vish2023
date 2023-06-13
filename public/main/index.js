@@ -498,8 +498,12 @@ async function calculateAverageMinMax(year, title, option) {
 
 function createChart(e) {
     let chartStatus = Chart.getChart("timechart")
+    let chart2Status = Chart.getChart("timechart2")
     if (chartStatus != undefined) {
         chartStatus.destroy();
+    }
+    if (chart2Status != undefined) {
+        chart2Status.destroy();
     }
     let name = e.target.feature.properties.name;
     console.log(name);
@@ -516,7 +520,19 @@ function createChart(e) {
                 data = data[index]['data'][name];
                 console.log(data);
                 console.log('TEST');
-                let chart = buildChart(data, name)
+                let chart = buildChart(data, name, "timechart")
+                fillChart(chart, data)
+            }
+        });
+    })
+    let title2 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
+    loadData(name, null, title2).then(data => {
+        Object.keys(data).forEach(index => {
+            if (data[index]['title']  === title2) {
+                data = data[index]['data'][name];
+                console.log(data);
+                console.log('TEST');
+                let chart = buildChart(data, name, "timechart2")
                 fillChart(chart, data)
             }
         });

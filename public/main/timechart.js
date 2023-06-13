@@ -7,12 +7,12 @@ const colors = [
     "#73D2DE",
 ]
 
-function buildChart(data, name) {
+function buildChart(data, name, chartId) {
     'use strict'
 
-    const ctx = document.getElementById('timechart')
+    const ctx = document.getElementById(chartId)
     return new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         options: {
             plugins: {
                 title: {
@@ -39,7 +39,7 @@ function fillChart(chart, data) {
             pointBackgroundColor: colors[i],
         })
     }
-    Object.keys(data).forEach((year, index) => {
+    Object.keys(data).forEach((year) => {
         chart.data.labels.push(year)
         Object.keys(data[year]).forEach((type, index) => {
             console.log(data[year][type])
