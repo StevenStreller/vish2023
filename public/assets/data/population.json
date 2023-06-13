@@ -1,0 +1,93 @@
+{
+  "title": "Population",
+  "source": "https://de.statista.com/statistik/daten/studie/71085/umfrage/verteilung-der-einwohnerzahl-nach-bundeslaendern/",
+  "description": "Population - Number of inhabitants in the federal states in Germany on 31. December 2021",
+  "options": [
+    "in Thousands"
+  ],
+  "years": [
+    2021
+  ],
+  "data": {
+    "Baden-Württemberg": {
+      "2021": {
+        "in Thousands": "11125"
+      }
+    },
+    "Bayern": {
+      "2021": {
+        "in Thousands": "13177"
+      }
+    },
+    "Berlin": {
+      "2021": {
+        "in Thousands": "3677"
+      }
+    },
+    "Brandenburg": {
+      "2021": {
+        "in Thousands": "2538"
+      }
+    },
+    "Bremen": {
+      "2021": {
+        "in Thousands": "676"
+      }
+    },
+    "Hamburg": {
+     "2021": {
+        "in Thousands": "1854"
+      }
+    },
+    "Hessen": {
+      "2021": {
+        "in Thousands": "6295"
+      }
+    },
+    "Mecklenburg-Vorpommern": {
+      "2021": {
+        "in Thousands": "1611"
+      }
+    },
+    "Niedersachsen": {
+      "2021": {
+        "in Thousands": "8027"
+      }
+    },
+    "Nordrhein-Westfalen": {
+      "2021": {
+        "in Thousands": "17925"
+      }
+    },
+    "Rheinland-Pfalz": {
+       "2021": {
+        "in Thousands": "4106"
+      }
+    },
+    "Saarland": {
+       "2021": {
+        "in Thousands": "982"
+      }
+    },
+    "Sachsen": {
+       "2021": {
+        "in Thousands": "4043"
+      }
+    },
+    "Sachsen-Anhalt": {
+       "2021": {
+        "in Thousands": "2169"
+      }
+    },
+    "Schleswig-Holstein": {
+       "2021": {
+        "in Thousands": "2922"
+      }
+    },
+    "Thüringen": {
+      "2021": {
+        "in Thousands": "2109"
+      }
+    }
+  }
+}
