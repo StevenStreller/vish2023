@@ -41,26 +41,12 @@ info.update = function (props) {
 };
 
 function refreshMapWidth() {
-    var mapContainer = document.getElementById('map-container');
+    let mapContainer = document.getElementById('map-container');
     mapContainer.style.width = '100%';
     map.invalidateSize();
 }
 
 async function updateInfoData(props) {
-    //return new Promise((resolve) => {
-    //    let selectedState = props.name;
-    //    if (props && selectedState) {
-    //            loadStates(selectedState, getCurrentYear(), async (err, data) => {
-    //                const contents = `<b>${props.name}</b><br>
-    //    <i class="fa-solid fa-tree-city fa-fw me-2"></i>${((data['außerorts (ohne Autobahnen)'] + data['innerorts']) / (await loadStreetInfrastructure(props.name))['Nicht Autobahnen']).toLocaleString('de-DE')} Unfälle außerorts ohne Autobahn<br>
-    //    <i class="fa-solid fa-road fa-fw me-2"></i>${(data['auf Autobahnen'] / (await loadStreetInfrastructure(props.name))['Autobahnen']).toLocaleString('de-DE')} Autbahnunfälle pro Kilometer/Jahr<br>
-    //    <i class="fa-solid fa-equals fa-fw me-2"></i>${(data['Insgesamt'] / (await loadStreetInfrastructure(props.name))['Gesamt']).toLocaleString('de-DE')} Unfälle insgesamt pro Kilometer/Jahr<br>
-    //    <i class="fa-solid fa-equals fa-fw me-2"></i>${await calculateAverage(getCurrentYear()).then(value => value.toLocaleString('de-DE'))} Durchschnitt`;
-    //                resolve(contents);
-    //            });
-    //    }
-    //});
-
     return new Promise((resolve) => {
 
         let year0 = parseInt(document.getElementById('years[0]').options[document.getElementById('years[0]').value].innerHTML);
@@ -356,50 +342,6 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
-
-
-
-function loadStates(state, year, callback) {
-    let accidents;
-
-    fetch('../assets/data/car-accidents.json')
-        .then(response => response.json())
-        .then(response => {
-            if (state === null && year !== null) {
-                Object.keys(response).forEach(currentState => {
-                    Object.keys(response[currentState]).forEach(currentYear => {
-                        if (parseInt(currentYear)!== parseInt(year)) {
-                            delete response[currentState][currentYear];
-                        }
-                    })
-                })
-                accidents = response;
-            } else if (state !== null && year !== null) {
-                accidents = response[state][year];
-            } else if (state !== null && year == null) {
-                accidents = response[state];
-            } else {
-                accidents = response;
-            }
-
-            callback(null, accidents);
-        })
-        .catch(error => {
-            console.error('Fehler beim Laden der JSON-Datei:', error);
-        });
-}
-
-function loadStreetInfrastructure(state) {
-    return fetch('../assets/data/street-infrastructure.json')
-        .then(response => response.json())
-        .then(response => {
-            for (let key in response) {
-                if (response[key]['Bundesland'] === state) {
-                    return response[key];
-                }
-            }
-        })
-}
 
 function createChart(e) {
 
