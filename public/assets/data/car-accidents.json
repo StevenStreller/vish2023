@@ -1,898 +1,905 @@
 {
-  "Baden-Württemberg": {
-    "2012": {
-      "innerorts": 210722,
-      "außerorts (ohne Autobahnen)": 61173,
-      "auf Autobahnen": 16014,
-      "Insgesamt": 287909
-    },
-    "2013": {
-      "innerorts": 214219,
-      "außerorts (ohne Autobahnen)": 61229,
-      "auf Autobahnen": 16100,
-      "Insgesamt": 291548
-    },
-    "2015": {
-      "innerorts": 229140,
-      "außerorts (ohne Autobahnen)": 61987,
-      "auf Autobahnen": 17416,
-      "Insgesamt": 308543
-    },
-    "2016": {
-      "innerorts": 233892,
-      "außerorts (ohne Autobahnen)": 62192,
-      "auf Autobahnen": 18775,
-      "Insgesamt": 314859
-    },
-    "2017": {
-      "innerorts": 241458,
-      "außerorts (ohne Autobahnen)": 64924,
-      "auf Autobahnen": 20035,
-      "Insgesamt": 326417
-    },
-    "2018": {
-      "innerorts": 242853,
-      "außerorts (ohne Autobahnen)": 62295,
-      "auf Autobahnen": 19041,
-      "Insgesamt": 324189
-    },
-    "2019": {
-      "innerorts": 245998,
-      "außerorts (ohne Autobahnen)": 63544,
-      "auf Autobahnen": 18352,
-      "Insgesamt": 327894
-    },
-    "2020": {
-      "innerorts": 203558,
-      "außerorts (ohne Autobahnen)": 52915,
-      "auf Autobahnen": 12794,
-      "Insgesamt": 269267
-    },
-    "2021": {
-      "innerorts": 204558,
-      "außerorts (ohne Autobahnen)": 54806,
-      "auf Autobahnen": 14118,
-      "Insgesamt": 273482
-    }
-  },
-  "Bayern": {
-    "2012": {
-      "innerorts": 231348,
-      "außerorts (ohne Autobahnen)": 106197,
-      "auf Autobahnen": 26828,
-      "Insgesamt": 364373
-    },
-    "2013": {
-      "innerorts": 239957,
-      "außerorts (ohne Autobahnen)": 104939,
-      "auf Autobahnen": 27586,
-      "Insgesamt": 372482
-    },
-    "2015": {
-      "innerorts": 249618,
-      "außerorts (ohne Autobahnen)": 111799,
-      "auf Autobahnen": 29708,
-      "Insgesamt": 391125
-    },
-    "2016": {
-      "innerorts": 255392,
-      "außerorts (ohne Autobahnen)": 110870,
-      "auf Autobahnen": 31838,
-      "Insgesamt": 398100
-    },
-    "2017": {
-      "innerorts": 256775,
-      "außerorts (ohne Autobahnen)": 115077,
-      "auf Autobahnen": 33099,
-      "Insgesamt": 404951
-    },
-    "2018": {
-      "innerorts": 262270,
-      "außerorts (ohne Autobahnen)": 116038,
-      "auf Autobahnen": 31944,
-      "Insgesamt": 410252
-    },
-    "2019": {
-      "innerorts": 264013,
-      "außerorts (ohne Autobahnen)": 120529,
-      "auf Autobahnen": 32069,
-      "Insgesamt": 416611
-    },
-    "2020": {
-      "innerorts": 215998,
-      "außerorts (ohne Autobahnen)": 106506,
-      "auf Autobahnen": 22907,
-      "Insgesamt": 345411
-    },
-    "2021": {
-      "innerorts": 217800,
-      "außerorts (ohne Autobahnen)": 115606,
-      "auf Autobahnen": 25596,
-      "Insgesamt": 359002
-    }
-  },
-  "Berlin": {
-    "2012": {
-      "innerorts": 127943,
-      "außerorts (ohne Autobahnen)": 0,
-      "auf Autobahnen": 2839,
-      "Insgesamt": 130782
-    },
-    "2013": {
-      "innerorts": 128111,
-      "außerorts (ohne Autobahnen)": 0,
-      "auf Autobahnen": 2819,
-      "Insgesamt": 130930
-    },
-    "2015": {
-      "innerorts": 134978,
-      "außerorts (ohne Autobahnen)": 0,
-      "auf Autobahnen": 2755,
-      "Insgesamt": 137733
-    },
-    "2016": {
-      "innerorts": 138384,
-      "außerorts (ohne Autobahnen)": 0,
-      "auf Autobahnen": 2770,
-      "Insgesamt": 141154
-    },
-    "2017": {
-      "innerorts": 140517,
-      "außerorts (ohne Autobahnen)": 0,
-      "auf Autobahnen": 2925,
-      "Insgesamt": 143442
-    },
-    "2018": {
-      "innerorts": 141288,
-      "außerorts (ohne Autobahnen)": 0,
-      "auf Autobahnen": 3038,
-      "Insgesamt": 144326
-    },
-    "2019": {
-      "innerorts": 144162,
-      "außerorts (ohne Autobahnen)": 1,
-      "auf Autobahnen": 3167,
-      "Insgesamt": 147330
-    },
-    "2020": {
-      "innerorts": 123928,
-      "außerorts (ohne Autobahnen)": 0,
-      "auf Autobahnen": 2359,
-      "Insgesamt": 126287
-    },
-    "2021": {
-      "innerorts": 125059,
-      "außerorts (ohne Autobahnen)": 0,
-      "auf Autobahnen": 2568,
-      "Insgesamt": 127627
-    }
-  },
-  "Brandenburg": {
-    "2012": {
-      "innerorts": 53046,
-      "außerorts (ohne Autobahnen)": 21829,
-      "auf Autobahnen": 5979,
-      "Insgesamt": 80854
-    },
-    "2013": {
-      "innerorts": 53027,
-      "außerorts (ohne Autobahnen)": 21804,
-      "auf Autobahnen": 6334,
-      "Insgesamt": 81165
-    },
-    "2015": {
-      "innerorts": 53021,
-      "außerorts (ohne Autobahnen)": 21690,
-      "auf Autobahnen": 6267,
-      "Insgesamt": 80978
-    },
-    "2016": {
-      "innerorts": 53502,
-      "außerorts (ohne Autobahnen)": 22089,
-      "auf Autobahnen": 7021,
-      "Insgesamt": 82612
-    },
-    "2017": {
-      "innerorts": 54319,
-      "außerorts (ohne Autobahnen)": 22821,
-      "auf Autobahnen": 8311,
-      "Insgesamt": 85451
-    },
-    "2018": {
-      "innerorts": 53471,
-      "außerorts (ohne Autobahnen)": 20840,
-      "auf Autobahnen": 8151,
-      "Insgesamt": 82462
-    },
-    "2019": {
-      "innerorts": 53861,
-      "außerorts (ohne Autobahnen)": 22129,
-      "auf Autobahnen": 7964,
-      "Insgesamt": 83954
-    },
-    "2020": {
-      "innerorts": 46923,
-      "außerorts (ohne Autobahnen)": 19520,
-      "auf Autobahnen": 5450,
-      "Insgesamt": 71893
-    },
-    "2021": {
-      "innerorts": 47375,
-      "außerorts (ohne Autobahnen)": 18879,
-      "auf Autobahnen": 6197,
-      "Insgesamt": 72451
-    }
-  },
-  "Bremen": {
-    "2012": {
-      "innerorts": 20339,
-      "außerorts (ohne Autobahnen)": 44,
-      "auf Autobahnen": 705,
-      "Insgesamt": 21088
-    },
-    "2013": {
-      "innerorts": 20801,
-      "außerorts (ohne Autobahnen)": 44,
-      "auf Autobahnen": 811,
-      "Insgesamt": 21656
-    },
-    "2015": {
-      "innerorts": 21240,
-      "außerorts (ohne Autobahnen)": 297,
-      "auf Autobahnen": 858,
-      "Insgesamt": 22395
-    },
-    "2016": {
-      "innerorts": 20955,
-      "außerorts (ohne Autobahnen)": 283,
-      "auf Autobahnen": 1023,
-      "Insgesamt": 22261
-    },
-    "2017": {
-      "innerorts": 22309,
-      "außerorts (ohne Autobahnen)": 396,
-      "auf Autobahnen": 1393,
-      "Insgesamt": 24098
-    },
-    "2018": {
-      "innerorts": 22373,
-      "außerorts (ohne Autobahnen)": 448,
-      "auf Autobahnen": 1533,
-      "Insgesamt": 24354
-    },
-    "2019": {
-      "innerorts": 21989,
-      "außerorts (ohne Autobahnen)": 464,
-      "auf Autobahnen": 1527,
-      "Insgesamt": 23980
-    },
-    "2020": {
-      "innerorts": 18810,
-      "außerorts (ohne Autobahnen)": 358,
-      "auf Autobahnen": 995,
-      "Insgesamt": 20163
-    },
-    "2021": {
-      "innerorts": 18777,
-      "außerorts (ohne Autobahnen)": 340,
-      "auf Autobahnen": 886,
-      "Insgesamt": 20003
-    }
-  },
-  "Hamburg": {
-    "2012": {
-      "innerorts": 62558,
-      "außerorts (ohne Autobahnen)": 235,
-      "auf Autobahnen": 2897,
-      "Insgesamt": 65690
-    },
-    "2013": {
-      "innerorts": 62207,
-      "außerorts (ohne Autobahnen)": 298,
-      "auf Autobahnen": 2392,
-      "Insgesamt": 64897
-    },
-    "2015": {
-      "innerorts": 64387,
-      "außerorts (ohne Autobahnen)": 238,
-      "auf Autobahnen": 2571,
-      "Insgesamt": 67196
-    },
-    "2016": {
-      "innerorts": 64963,
-      "außerorts (ohne Autobahnen)": 299,
-      "auf Autobahnen": 3215,
-      "Insgesamt": 68477
-    },
-    "2017": {
-      "innerorts": 64401,
-      "außerorts (ohne Autobahnen)": 299,
-      "auf Autobahnen": 3260,
-      "Insgesamt": 67960
-    },
-    "2018": {
-      "innerorts": 63892,
-      "außerorts (ohne Autobahnen)": 229,
-      "auf Autobahnen": 3407,
-      "Insgesamt": 67528
-    },
-    "2019": {
-      "innerorts": 65116,
-      "außerorts (ohne Autobahnen)": 338,
-      "auf Autobahnen": 3537,
-      "Insgesamt": 68991
-    },
-    "2020": {
-      "innerorts": 55137,
-      "außerorts (ohne Autobahnen)": 287,
-      "auf Autobahnen": 2777,
-      "Insgesamt": 58201
-    },
-    "2021": {
-      "innerorts": 56373,
-      "außerorts (ohne Autobahnen)": 269,
-      "auf Autobahnen": 2832,
-      "Insgesamt": 59474
-    }
-  },
-  "Hessen": {
-    "2012": {
-      "innerorts": 85859,
-      "außerorts (ohne Autobahnen)": 32661,
-      "auf Autobahnen": 14825,
-      "Insgesamt": 133345
-    },
-    "2013": {
-      "innerorts": 86027,
-      "außerorts (ohne Autobahnen)": 30894,
-      "auf Autobahnen": 14682,
-      "Insgesamt": 131603
-    },
-    "2015": {
-      "innerorts": 86407,
-      "außerorts (ohne Autobahnen)": 33511,
-      "auf Autobahnen": 15679,
-      "Insgesamt": 135597
-    },
-    "2016": {
-      "innerorts": 90610,
-      "außerorts (ohne Autobahnen)": 33529,
-      "auf Autobahnen": 16941,
-      "Insgesamt": 141080
-    },
-    "2017": {
-      "innerorts": 95871,
-      "außerorts (ohne Autobahnen)": 36329,
-      "auf Autobahnen": 17717,
-      "Insgesamt": 149917
-    },
-    "2018": {
-      "innerorts": 95695,
-      "außerorts (ohne Autobahnen)": 34007,
-      "auf Autobahnen": 17157,
-      "Insgesamt": 146859
-    },
-    "2019": {
-      "innerorts": 96828,
-      "außerorts (ohne Autobahnen)": 34709,
-      "auf Autobahnen": 17393,
-      "Insgesamt": 148930
-    },
-    "2020": {
-      "innerorts": 79965,
-      "außerorts (ohne Autobahnen)": 30482,
-      "auf Autobahnen": 12163,
-      "Insgesamt": 122610
-    },
-    "2021": {
-      "innerorts": 83491,
-      "außerorts (ohne Autobahnen)": 32922,
-      "auf Autobahnen": 13823,
-      "Insgesamt": 130236
-    }
-  },
-  "Mecklenburg-Vorpommern": {
-    "2012": {
-      "innerorts": 32394,
-      "außerorts (ohne Autobahnen)": 19924,
-      "auf Autobahnen": 2591,
-      "Insgesamt": 54909
-    },
-    "2013": {
-      "innerorts": 33123,
-      "außerorts (ohne Autobahnen)": 19130,
-      "auf Autobahnen": 2357,
-      "Insgesamt": 54610
-    },
-    "2015": {
-      "innerorts": 34202,
-      "außerorts (ohne Autobahnen)": 19211,
-      "auf Autobahnen": 2664,
-      "Insgesamt": 56077
-    },
-    "2016": {
-      "innerorts": 34335,
-      "außerorts (ohne Autobahnen)": 19993,
-      "auf Autobahnen": 2643,
-      "Insgesamt": 56971
-    },
-    "2017": {
-      "innerorts": 34727,
-      "außerorts (ohne Autobahnen)": 20807,
-      "auf Autobahnen": 2829,
-      "Insgesamt": 58363
-    },
-    "2018": {
-      "innerorts": 34890,
-      "außerorts (ohne Autobahnen)": 19765,
-      "auf Autobahnen": 2822,
-      "Insgesamt": 57477
-    },
-    "2019": {
-      "innerorts": 35274,
-      "außerorts (ohne Autobahnen)": 21875,
-      "auf Autobahnen": 2904,
-      "Insgesamt": 60053
-    },
-    "2020": {
-      "innerorts": 30843,
-      "außerorts (ohne Autobahnen)": 21106,
-      "auf Autobahnen": 2510,
-      "Insgesamt": 54459
-    },
-    "2021": {
-      "innerorts": 30845,
-      "außerorts (ohne Autobahnen)": 20627,
-      "auf Autobahnen": 2584,
-      "Insgesamt": 54056
-    }
-  },
-  "Niedersachsen": {
-    "2012": {
-      "innerorts": 126528,
-      "außerorts (ohne Autobahnen)": 70981,
-      "auf Autobahnen": 13594,
-      "Insgesamt": 211103
-    },
-    "2013": {
-      "innerorts": 128738,
-      "außerorts (ohne Autobahnen)": 69795,
-      "auf Autobahnen": 14096,
-      "Insgesamt": 212629
-    },
-    "2015": {
-      "innerorts": 136320,
-      "außerorts (ohne Autobahnen)": 59477,
-      "auf Autobahnen": 15290,
-      "Insgesamt": 211087
-    },
-    "2016": {
-      "innerorts": 137070,
-      "außerorts (ohne Autobahnen)": 61043,
-      "auf Autobahnen": 16992,
-      "Insgesamt": 215105
-    },
-    "2017": {
-      "innerorts": 138275,
-      "außerorts (ohne Autobahnen)": 61030,
-      "auf Autobahnen": 15971,
-      "Insgesamt": 215276
-    },
-    "2018": {
-      "innerorts": 135515,
-      "außerorts (ohne Autobahnen)": 58554,
-      "auf Autobahnen": 16142,
-      "Insgesamt": 210211
-    },
-    "2019": {
-      "innerorts": 138095,
-      "außerorts (ohne Autobahnen)": 63920,
-      "auf Autobahnen": 15690,
-      "Insgesamt": 217705
-    },
-    "2020": {
-      "innerorts": 116147,
-      "außerorts (ohne Autobahnen)": 54902,
-      "auf Autobahnen": 12809,
-      "Insgesamt": 183858
-    },
-    "2021": {
-      "innerorts": 119828,
-      "außerorts (ohne Autobahnen)": 58506,
-      "auf Autobahnen": 13707,
-      "Insgesamt": 192041
-    }
-  },
-  "Nordrhein-Westfalen": {
-    "2012": {
-      "innerorts": 475694,
-      "außerorts (ohne Autobahnen)": 64518,
-      "auf Autobahnen": 36497,
-      "Insgesamt": 576709
-    },
-    "2013": {
-      "innerorts": 474512,
-      "außerorts (ohne Autobahnen)": 62763,
-      "auf Autobahnen": 36311,
-      "Insgesamt": 573586
-    },
-    "2015": {
-      "innerorts": 507515,
-      "außerorts (ohne Autobahnen)": 65221,
-      "auf Autobahnen": 37967,
-      "Insgesamt": 610703
-    },
-    "2016": {
-      "innerorts": 528776,
-      "außerorts (ohne Autobahnen)": 69341,
-      "auf Autobahnen": 41870,
-      "Insgesamt": 639987
-    },
-    "2017": {
-      "innerorts": 537396,
-      "außerorts (ohne Autobahnen)": 74872,
-      "auf Autobahnen": 41541,
-      "Insgesamt": 653809
-    },
-    "2018": {
-      "innerorts": 546092,
-      "außerorts (ohne Autobahnen)": 73472,
-      "auf Autobahnen": 42680,
-      "Insgesamt": 662244
-    },
-    "2019": {
-      "innerorts": 559011,
-      "außerorts (ohne Autobahnen)": 75432,
-      "auf Autobahnen": 45164,
-      "Insgesamt": 679607
-    },
-    "2020": {
-      "innerorts": 455299,
-      "außerorts (ohne Autobahnen)": 67933,
-      "auf Autobahnen": 31234,
-      "Insgesamt": 554466
-    },
-    "2021": {
-      "innerorts": 470612,
-      "außerorts (ohne Autobahnen)": 73285,
-      "auf Autobahnen": 36285,
-      "Insgesamt": 580182
-    }
-  },
-  "Rheinland-Pfalz": {
-    "2012": {
-      "innerorts": 84014,
-      "außerorts (ohne Autobahnen)": 41271,
-      "auf Autobahnen": 8146,
-      "Insgesamt": 133431
-    },
-    "2013": {
-      "innerorts": 85042,
-      "außerorts (ohne Autobahnen)": 39342,
-      "auf Autobahnen": 8097,
-      "Insgesamt": 132481
-    },
-    "2015": {
-      "innerorts": 87025,
-      "außerorts (ohne Autobahnen)": 41580,
-      "auf Autobahnen": 8836,
-      "Insgesamt": 137441
-    },
-    "2016": {
-      "innerorts": 91613,
-      "außerorts (ohne Autobahnen)": 41976,
-      "auf Autobahnen": 9082,
-      "Insgesamt": 142671
-    },
-    "2017": {
-      "innerorts": 92669,
-      "außerorts (ohne Autobahnen)": 43941,
-      "auf Autobahnen": 9250,
-      "Insgesamt": 145860
-    },
-    "2018": {
-      "innerorts": 93701,
-      "außerorts (ohne Autobahnen)": 42152,
-      "auf Autobahnen": 8425,
-      "Insgesamt": 144278
-    },
-    "2019": {
-      "innerorts": 93435,
-      "außerorts (ohne Autobahnen)": 42737,
-      "auf Autobahnen": 8647,
-      "Insgesamt": 144819
-    },
-    "2020": {
-      "innerorts": 78857,
-      "außerorts (ohne Autobahnen)": 37683,
-      "auf Autobahnen": 6721,
-      "Insgesamt": 123261
-    },
-    "2021": {
-      "innerorts": 79401,
-      "außerorts (ohne Autobahnen)": 39457,
-      "auf Autobahnen": 6864,
-      "Insgesamt": 125722
-    }
-  },
-  "Saarland": {
-    "2012": {
-      "innerorts": 23851,
-      "außerorts (ohne Autobahnen)": 5394,
-      "auf Autobahnen": 2586,
-      "Insgesamt": 31831
-    },
-    "2013": {
-      "innerorts": 23565,
-      "außerorts (ohne Autobahnen)": 5615,
-      "auf Autobahnen": 2701,
-      "Insgesamt": 31881
-    },
-    "2015": {
-      "innerorts": 24625,
-      "außerorts (ohne Autobahnen)": 6251,
-      "auf Autobahnen": 2523,
-      "Insgesamt": 33399
-    },
-    "2016": {
-      "innerorts": 25438,
-      "außerorts (ohne Autobahnen)": 6357,
-      "auf Autobahnen": 2905,
-      "Insgesamt": 34700
-    },
-    "2017": {
-      "innerorts": 25121,
-      "außerorts (ohne Autobahnen)": 6812,
-      "auf Autobahnen": 2768,
-      "Insgesamt": 34701
-    },
-    "2018": {
-      "innerorts": 25324,
-      "außerorts (ohne Autobahnen)": 6287,
-      "auf Autobahnen": 2692,
-      "Insgesamt": 34303
-    },
-    "2019": {
-      "innerorts": 25974,
-      "außerorts (ohne Autobahnen)": 6672,
-      "auf Autobahnen": 2619,
-      "Insgesamt": 35265
-    },
-    "2020": {
-      "innerorts": 21228,
-      "außerorts (ohne Autobahnen)": 5484,
-      "auf Autobahnen": 2124,
-      "Insgesamt": 28836
-    },
-    "2021": {
-      "innerorts": 22083,
-      "außerorts (ohne Autobahnen)": 5936,
-      "auf Autobahnen": 2084,
-      "Insgesamt": 30103
-    }
-  },
-  "Sachsen": {
-    "2012": {
-      "innerorts": 82863,
-      "außerorts (ohne Autobahnen)": 22807,
-      "auf Autobahnen": 5120,
-      "Insgesamt": 110790
-    },
-    "2013": {
-      "innerorts": 82076,
-      "außerorts (ohne Autobahnen)": 21900,
-      "auf Autobahnen": 5339,
-      "Insgesamt": 109315
-    },
-    "2015": {
-      "innerorts": 80991,
-      "außerorts (ohne Autobahnen)": 21962,
-      "auf Autobahnen": 5700,
-      "Insgesamt": 108653
-    },
-    "2016": {
-      "innerorts": 82018,
-      "außerorts (ohne Autobahnen)": 21681,
-      "auf Autobahnen": 6037,
-      "Insgesamt": 109736
-    },
-    "2017": {
-      "innerorts": 81813,
-      "außerorts (ohne Autobahnen)": 21856,
-      "auf Autobahnen": 5954,
-      "Insgesamt": 109623
-    },
-    "2018": {
-      "innerorts": 80050,
-      "außerorts (ohne Autobahnen)": 21234,
-      "auf Autobahnen": 6000,
-      "Insgesamt": 107284
-    },
-    "2019": {
-      "innerorts": 80049,
-      "außerorts (ohne Autobahnen)": 21762,
-      "auf Autobahnen": 5690,
-      "Insgesamt": 107501
-    },
-    "2020": {
-      "innerorts": 69998,
-      "außerorts (ohne Autobahnen)": 18713,
-      "auf Autobahnen": 4731,
-      "Insgesamt": 93442
-    },
-    "2021": {
-      "innerorts": 69721,
-      "außerorts (ohne Autobahnen)": 19213,
-      "auf Autobahnen": 5595,
-      "Insgesamt": 94529
-    }
-  },
-  "Sachsen-Anhalt": {
-    "2012": {
-      "innerorts": 51334,
-      "außerorts (ohne Autobahnen)": 20915,
-      "auf Autobahnen": 4206,
-      "Insgesamt": 76455
-    },
-    "2013": {
-      "innerorts": 50945,
-      "außerorts (ohne Autobahnen)": 20608,
-      "auf Autobahnen": 4531,
-      "Insgesamt": 76084
-    },
-    "2015": {
-      "innerorts": 49833,
-      "außerorts (ohne Autobahnen)": 20005,
-      "auf Autobahnen": 4538,
-      "Insgesamt": 74376
-    },
-    "2016": {
-      "innerorts": 49773,
-      "außerorts (ohne Autobahnen)": 20697,
-      "auf Autobahnen": 4743,
-      "Insgesamt": 75213
-    },
-    "2017": {
-      "innerorts": 49468,
-      "außerorts (ohne Autobahnen)": 20835,
-      "auf Autobahnen": 4808,
-      "Insgesamt": 75111
-    },
-    "2018": {
-      "innerorts": 48620,
-      "außerorts (ohne Autobahnen)": 20377,
-      "auf Autobahnen": 4506,
-      "Insgesamt": 73503
-    },
-    "2019": {
-      "innerorts": 49377,
-      "außerorts (ohne Autobahnen)": 20844,
-      "auf Autobahnen": 4801,
-      "Insgesamt": 75022
-    },
-    "2020": {
-      "innerorts": 42766,
-      "außerorts (ohne Autobahnen)": 18827,
-      "auf Autobahnen": 4012,
-      "Insgesamt": 65605
-    },
-    "2021": {
-      "innerorts": 43610,
-      "außerorts (ohne Autobahnen)": 18834,
-      "auf Autobahnen": 4397,
-      "Insgesamt": 66841
-    }
-  },
-  "Schleswig-Holstein": {
-    "2012": {
-      "innerorts": 46333,
-      "außerorts (ohne Autobahnen)": 17224,
-      "auf Autobahnen": 3739,
-      "Insgesamt": 67296
-    },
-    "2013": {
-      "innerorts": 50104,
-      "außerorts (ohne Autobahnen)": 20950,
-      "auf Autobahnen": 3980,
-      "Insgesamt": 75034
-    },
-    "2015": {
-      "innerorts": 57711,
-      "außerorts (ohne Autobahnen)": 23004,
-      "auf Autobahnen": 4631,
-      "Insgesamt": 85346
-    },
-    "2016": {
-      "innerorts": 57903,
-      "außerorts (ohne Autobahnen)": 23076,
-      "auf Autobahnen": 4464,
-      "Insgesamt": 85443
-    },
-    "2017": {
-      "innerorts": 60204,
-      "außerorts (ohne Autobahnen)": 24855,
-      "auf Autobahnen": 5046,
-      "Insgesamt": 90105
-    },
-    "2018": {
-      "innerorts": 61628,
-      "außerorts (ohne Autobahnen)": 24378,
-      "auf Autobahnen": 4701,
-      "Insgesamt": 90707
-    },
-    "2019": {
-      "innerorts": 63130,
-      "außerorts (ohne Autobahnen)": 24333,
-      "auf Autobahnen": 4746,
-      "Insgesamt": 92209
-    },
-    "2020": {
-      "innerorts": 53226,
-      "außerorts (ohne Autobahnen)": 22996,
-      "auf Autobahnen": 3344,
-      "Insgesamt": 79566
-    },
-    "2021": {
-      "innerorts": 53348,
-      "außerorts (ohne Autobahnen)": 24761,
-      "auf Autobahnen": 3366,
-      "Insgesamt": 81475
-    }
-  },
-  "Thüringen": {
-    "2012": {
-      "innerorts": 36340,
-      "außerorts (ohne Autobahnen)": 14561,
-      "auf Autobahnen": 4377,
-      "Insgesamt": 55278
-    },
-    "2013": {
-      "innerorts": 36650,
-      "außerorts (ohne Autobahnen)": 13423,
-      "auf Autobahnen": 4037,
-      "Insgesamt": 54110
-    },
-    "2015": {
-      "innerorts": 37906,
-      "außerorts (ohne Autobahnen)": 14583,
-      "auf Autobahnen": 3693,
-      "Insgesamt": 56182
-    },
-    "2016": {
-      "innerorts": 38805,
-      "außerorts (ohne Autobahnen)": 14405,
-      "auf Autobahnen": 3748,
-      "Insgesamt": 56958
-    },
-    "2017": {
-      "innerorts": 39215,
-      "außerorts (ohne Autobahnen)": 14845,
-      "auf Autobahnen": 3954,
-      "Insgesamt": 58014
-    },
-    "2018": {
-      "innerorts": 38633,
-      "außerorts (ohne Autobahnen)": 14102,
-      "auf Autobahnen": 3756,
-      "Insgesamt": 56491
-    },
-    "2019": {
-      "innerorts": 39526,
-      "außerorts (ohne Autobahnen)": 12553,
-      "auf Autobahnen": 3711,
-      "Insgesamt": 55790
-    },
-    "2020": {
-      "innerorts": 32604,
-      "außerorts (ohne Autobahnen)": 12115,
-      "auf Autobahnen": 3201,
-      "Insgesamt": 47920
-    },
-    "2021": {
-      "innerorts": 31884,
-      "außerorts (ohne Autobahnen)": 12354,
-      "auf Autobahnen": 3476,
-      "Insgesamt": 47714
+  "title": "Car accidents",
+  "source": "https://www.govdata.de/web/guest/daten/-/details/unfalle-polizeilich-erfasste-bundeslander-jahreunfallkategorie-ortslage",
+  "options": ["Urban", "Out of town (without motorways)", "On motorways", "In total"],
+  "years": [2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+  "description": "Accidents registered by the police by federal states, years and location",
+  "data": {
+    "Baden-Württemberg": {
+      "2012": {
+        "Urban": 210722,
+        "Out of town (without motorways)": 61173,
+        "On motorways": 16014,
+        "In total": 287909
+      },
+      "2013": {
+        "Urban": 214219,
+        "Out of town (without motorways)": 61229,
+        "On motorways": 16100,
+        "In total": 291548
+      },
+      "2015": {
+        "Urban": 229140,
+        "Out of town (without motorways)": 61987,
+        "On motorways": 17416,
+        "In total": 308543
+      },
+      "2016": {
+        "Urban": 233892,
+        "Out of town (without motorways)": 62192,
+        "On motorways": 18775,
+        "In total": 314859
+      },
+      "2017": {
+        "Urban": 241458,
+        "Out of town (without motorways)": 64924,
+        "On motorways": 20035,
+        "In total": 326417
+      },
+      "2018": {
+        "Urban": 242853,
+        "Out of town (without motorways)": 62295,
+        "On motorways": 19041,
+        "In total": 324189
+      },
+      "2019": {
+        "Urban": 245998,
+        "Out of town (without motorways)": 63544,
+        "On motorways": 18352,
+        "In total": 327894
+      },
+      "2020": {
+        "Urban": 203558,
+        "Out of town (without motorways)": 52915,
+        "On motorways": 12794,
+        "In total": 269267
+      },
+      "2021": {
+        "Urban": 204558,
+        "Out of town (without motorways)": 54806,
+        "On motorways": 14118,
+        "In total": 273482
+      }
+    },
+    "Bayern": {
+      "2012": {
+        "Urban": 231348,
+        "Out of town (without motorways)": 106197,
+        "On motorways": 26828,
+        "In total": 364373
+      },
+      "2013": {
+        "Urban": 239957,
+        "Out of town (without motorways)": 104939,
+        "On motorways": 27586,
+        "In total": 372482
+      },
+      "2015": {
+        "Urban": 249618,
+        "Out of town (without motorways)": 111799,
+        "On motorways": 29708,
+        "In total": 391125
+      },
+      "2016": {
+        "Urban": 255392,
+        "Out of town (without motorways)": 110870,
+        "On motorways": 31838,
+        "In total": 398100
+      },
+      "2017": {
+        "Urban": 256775,
+        "Out of town (without motorways)": 115077,
+        "On motorways": 33099,
+        "In total": 404951
+      },
+      "2018": {
+        "Urban": 262270,
+        "Out of town (without motorways)": 116038,
+        "On motorways": 31944,
+        "In total": 410252
+      },
+      "2019": {
+        "Urban": 264013,
+        "Out of town (without motorways)": 120529,
+        "On motorways": 32069,
+        "In total": 416611
+      },
+      "2020": {
+        "Urban": 215998,
+        "Out of town (without motorways)": 106506,
+        "On motorways": 22907,
+        "In total": 345411
+      },
+      "2021": {
+        "Urban": 217800,
+        "Out of town (without motorways)": 115606,
+        "On motorways": 25596,
+        "In total": 359002
+      }
+    },
+    "Berlin": {
+      "2012": {
+        "Urban": 127943,
+        "Out of town (without motorways)": 0,
+        "On motorways": 2839,
+        "In total": 130782
+      },
+      "2013": {
+        "Urban": 128111,
+        "Out of town (without motorways)": 0,
+        "On motorways": 2819,
+        "In total": 130930
+      },
+      "2015": {
+        "Urban": 134978,
+        "Out of town (without motorways)": 0,
+        "On motorways": 2755,
+        "In total": 137733
+      },
+      "2016": {
+        "Urban": 138384,
+        "Out of town (without motorways)": 0,
+        "On motorways": 2770,
+        "In total": 141154
+      },
+      "2017": {
+        "Urban": 140517,
+        "Out of town (without motorways)": 0,
+        "On motorways": 2925,
+        "In total": 143442
+      },
+      "2018": {
+        "Urban": 141288,
+        "Out of town (without motorways)": 0,
+        "On motorways": 3038,
+        "In total": 144326
+      },
+      "2019": {
+        "Urban": 144162,
+        "Out of town (without motorways)": 1,
+        "On motorways": 3167,
+        "In total": 147330
+      },
+      "2020": {
+        "Urban": 123928,
+        "Out of town (without motorways)": 0,
+        "On motorways": 2359,
+        "In total": 126287
+      },
+      "2021": {
+        "Urban": 125059,
+        "Out of town (without motorways)": 0,
+        "On motorways": 2568,
+        "In total": 127627
+      }
+    },
+    "Brandenburg": {
+      "2012": {
+        "Urban": 53046,
+        "Out of town (without motorways)": 21829,
+        "On motorways": 5979,
+        "In total": 80854
+      },
+      "2013": {
+        "Urban": 53027,
+        "Out of town (without motorways)": 21804,
+        "On motorways": 6334,
+        "In total": 81165
+      },
+      "2015": {
+        "Urban": 53021,
+        "Out of town (without motorways)": 21690,
+        "On motorways": 6267,
+        "In total": 80978
+      },
+      "2016": {
+        "Urban": 53502,
+        "Out of town (without motorways)": 22089,
+        "On motorways": 7021,
+        "In total": 82612
+      },
+      "2017": {
+        "Urban": 54319,
+        "Out of town (without motorways)": 22821,
+        "On motorways": 8311,
+        "In total": 85451
+      },
+      "2018": {
+        "Urban": 53471,
+        "Out of town (without motorways)": 20840,
+        "On motorways": 8151,
+        "In total": 82462
+      },
+      "2019": {
+        "Urban": 53861,
+        "Out of town (without motorways)": 22129,
+        "On motorways": 7964,
+        "In total": 83954
+      },
+      "2020": {
+        "Urban": 46923,
+        "Out of town (without motorways)": 19520,
+        "On motorways": 5450,
+        "In total": 71893
+      },
+      "2021": {
+        "Urban": 47375,
+        "Out of town (without motorways)": 18879,
+        "On motorways": 6197,
+        "In total": 72451
+      }
+    },
+    "Bremen": {
+      "2012": {
+        "Urban": 20339,
+        "Out of town (without motorways)": 44,
+        "On motorways": 705,
+        "In total": 21088
+      },
+      "2013": {
+        "Urban": 20801,
+        "Out of town (without motorways)": 44,
+        "On motorways": 811,
+        "In total": 21656
+      },
+      "2015": {
+        "Urban": 21240,
+        "Out of town (without motorways)": 297,
+        "On motorways": 858,
+        "In total": 22395
+      },
+      "2016": {
+        "Urban": 20955,
+        "Out of town (without motorways)": 283,
+        "On motorways": 1023,
+        "In total": 22261
+      },
+      "2017": {
+        "Urban": 22309,
+        "Out of town (without motorways)": 396,
+        "On motorways": 1393,
+        "In total": 24098
+      },
+      "2018": {
+        "Urban": 22373,
+        "Out of town (without motorways)": 448,
+        "On motorways": 1533,
+        "In total": 24354
+      },
+      "2019": {
+        "Urban": 21989,
+        "Out of town (without motorways)": 464,
+        "On motorways": 1527,
+        "In total": 23980
+      },
+      "2020": {
+        "Urban": 18810,
+        "Out of town (without motorways)": 358,
+        "On motorways": 995,
+        "In total": 20163
+      },
+      "2021": {
+        "Urban": 18777,
+        "Out of town (without motorways)": 340,
+        "On motorways": 886,
+        "In total": 20003
+      }
+    },
+    "Hamburg": {
+      "2012": {
+        "Urban": 62558,
+        "Out of town (without motorways)": 235,
+        "On motorways": 2897,
+        "In total": 65690
+      },
+      "2013": {
+        "Urban": 62207,
+        "Out of town (without motorways)": 298,
+        "On motorways": 2392,
+        "In total": 64897
+      },
+      "2015": {
+        "Urban": 64387,
+        "Out of town (without motorways)": 238,
+        "On motorways": 2571,
+        "In total": 67196
+      },
+      "2016": {
+        "Urban": 64963,
+        "Out of town (without motorways)": 299,
+        "On motorways": 3215,
+        "In total": 68477
+      },
+      "2017": {
+        "Urban": 64401,
+        "Out of town (without motorways)": 299,
+        "On motorways": 3260,
+        "In total": 67960
+      },
+      "2018": {
+        "Urban": 63892,
+        "Out of town (without motorways)": 229,
+        "On motorways": 3407,
+        "In total": 67528
+      },
+      "2019": {
+        "Urban": 65116,
+        "Out of town (without motorways)": 338,
+        "On motorways": 3537,
+        "In total": 68991
+      },
+      "2020": {
+        "Urban": 55137,
+        "Out of town (without motorways)": 287,
+        "On motorways": 2777,
+        "In total": 58201
+      },
+      "2021": {
+        "Urban": 56373,
+        "Out of town (without motorways)": 269,
+        "On motorways": 2832,
+        "In total": 59474
+      }
+    },
+    "Hessen": {
+      "2012": {
+        "Urban": 85859,
+        "Out of town (without motorways)": 32661,
+        "On motorways": 14825,
+        "In total": 133345
+      },
+      "2013": {
+        "Urban": 86027,
+        "Out of town (without motorways)": 30894,
+        "On motorways": 14682,
+        "In total": 131603
+      },
+      "2015": {
+        "Urban": 86407,
+        "Out of town (without motorways)": 33511,
+        "On motorways": 15679,
+        "In total": 135597
+      },
+      "2016": {
+        "Urban": 90610,
+        "Out of town (without motorways)": 33529,
+        "On motorways": 16941,
+        "In total": 141080
+      },
+      "2017": {
+        "Urban": 95871,
+        "Out of town (without motorways)": 36329,
+        "On motorways": 17717,
+        "In total": 149917
+      },
+      "2018": {
+        "Urban": 95695,
+        "Out of town (without motorways)": 34007,
+        "On motorways": 17157,
+        "In total": 146859
+      },
+      "2019": {
+        "Urban": 96828,
+        "Out of town (without motorways)": 34709,
+        "On motorways": 17393,
+        "In total": 148930
+      },
+      "2020": {
+        "Urban": 79965,
+        "Out of town (without motorways)": 30482,
+        "On motorways": 12163,
+        "In total": 122610
+      },
+      "2021": {
+        "Urban": 83491,
+        "Out of town (without motorways)": 32922,
+        "On motorways": 13823,
+        "In total": 130236
+      }
+    },
+    "Mecklenburg-Vorpommern": {
+      "2012": {
+        "Urban": 32394,
+        "Out of town (without motorways)": 19924,
+        "On motorways": 2591,
+        "In total": 54909
+      },
+      "2013": {
+        "Urban": 33123,
+        "Out of town (without motorways)": 19130,
+        "On motorways": 2357,
+        "In total": 54610
+      },
+      "2015": {
+        "Urban": 34202,
+        "Out of town (without motorways)": 19211,
+        "On motorways": 2664,
+        "In total": 56077
+      },
+      "2016": {
+        "Urban": 34335,
+        "Out of town (without motorways)": 19993,
+        "On motorways": 2643,
+        "In total": 56971
+      },
+      "2017": {
+        "Urban": 34727,
+        "Out of town (without motorways)": 20807,
+        "On motorways": 2829,
+        "In total": 58363
+      },
+      "2018": {
+        "Urban": 34890,
+        "Out of town (without motorways)": 19765,
+        "On motorways": 2822,
+        "In total": 57477
+      },
+      "2019": {
+        "Urban": 35274,
+        "Out of town (without motorways)": 21875,
+        "On motorways": 2904,
+        "In total": 60053
+      },
+      "2020": {
+        "Urban": 30843,
+        "Out of town (without motorways)": 21106,
+        "On motorways": 2510,
+        "In total": 54459
+      },
+      "2021": {
+        "Urban": 30845,
+        "Out of town (without motorways)": 20627,
+        "On motorways": 2584,
+        "In total": 54056
+      }
+    },
+    "Niedersachsen": {
+      "2012": {
+        "Urban": 126528,
+        "Out of town (without motorways)": 70981,
+        "On motorways": 13594,
+        "In total": 211103
+      },
+      "2013": {
+        "Urban": 128738,
+        "Out of town (without motorways)": 69795,
+        "On motorways": 14096,
+        "In total": 212629
+      },
+      "2015": {
+        "Urban": 136320,
+        "Out of town (without motorways)": 59477,
+        "On motorways": 15290,
+        "In total": 211087
+      },
+      "2016": {
+        "Urban": 137070,
+        "Out of town (without motorways)": 61043,
+        "On motorways": 16992,
+        "In total": 215105
+      },
+      "2017": {
+        "Urban": 138275,
+        "Out of town (without motorways)": 61030,
+        "On motorways": 15971,
+        "In total": 215276
+      },
+      "2018": {
+        "Urban": 135515,
+        "Out of town (without motorways)": 58554,
+        "On motorways": 16142,
+        "In total": 210211
+      },
+      "2019": {
+        "Urban": 138095,
+        "Out of town (without motorways)": 63920,
+        "On motorways": 15690,
+        "In total": 217705
+      },
+      "2020": {
+        "Urban": 116147,
+        "Out of town (without motorways)": 54902,
+        "On motorways": 12809,
+        "In total": 183858
+      },
+      "2021": {
+        "Urban": 119828,
+        "Out of town (without motorways)": 58506,
+        "On motorways": 13707,
+        "In total": 192041
+      }
+    },
+    "Nordrhein-Westfalen": {
+      "2012": {
+        "Urban": 475694,
+        "Out of town (without motorways)": 64518,
+        "On motorways": 36497,
+        "In total": 576709
+      },
+      "2013": {
+        "Urban": 474512,
+        "Out of town (without motorways)": 62763,
+        "On motorways": 36311,
+        "In total": 573586
+      },
+      "2015": {
+        "Urban": 507515,
+        "Out of town (without motorways)": 65221,
+        "On motorways": 37967,
+        "In total": 610703
+      },
+      "2016": {
+        "Urban": 528776,
+        "Out of town (without motorways)": 69341,
+        "On motorways": 41870,
+        "In total": 639987
+      },
+      "2017": {
+        "Urban": 537396,
+        "Out of town (without motorways)": 74872,
+        "On motorways": 41541,
+        "In total": 653809
+      },
+      "2018": {
+        "Urban": 546092,
+        "Out of town (without motorways)": 73472,
+        "On motorways": 42680,
+        "In total": 662244
+      },
+      "2019": {
+        "Urban": 559011,
+        "Out of town (without motorways)": 75432,
+        "On motorways": 45164,
+        "In total": 679607
+      },
+      "2020": {
+        "Urban": 455299,
+        "Out of town (without motorways)": 67933,
+        "On motorways": 31234,
+        "In total": 554466
+      },
+      "2021": {
+        "Urban": 470612,
+        "Out of town (without motorways)": 73285,
+        "On motorways": 36285,
+        "In total": 580182
+      }
+    },
+    "Rheinland-Pfalz": {
+      "2012": {
+        "Urban": 84014,
+        "Out of town (without motorways)": 41271,
+        "On motorways": 8146,
+        "In total": 133431
+      },
+      "2013": {
+        "Urban": 85042,
+        "Out of town (without motorways)": 39342,
+        "On motorways": 8097,
+        "In total": 132481
+      },
+      "2015": {
+        "Urban": 87025,
+        "Out of town (without motorways)": 41580,
+        "On motorways": 8836,
+        "In total": 137441
+      },
+      "2016": {
+        "Urban": 91613,
+        "Out of town (without motorways)": 41976,
+        "On motorways": 9082,
+        "In total": 142671
+      },
+      "2017": {
+        "Urban": 92669,
+        "Out of town (without motorways)": 43941,
+        "On motorways": 9250,
+        "In total": 145860
+      },
+      "2018": {
+        "Urban": 93701,
+        "Out of town (without motorways)": 42152,
+        "On motorways": 8425,
+        "In total": 144278
+      },
+      "2019": {
+        "Urban": 93435,
+        "Out of town (without motorways)": 42737,
+        "On motorways": 8647,
+        "In total": 144819
+      },
+      "2020": {
+        "Urban": 78857,
+        "Out of town (without motorways)": 37683,
+        "On motorways": 6721,
+        "In total": 123261
+      },
+      "2021": {
+        "Urban": 79401,
+        "Out of town (without motorways)": 39457,
+        "On motorways": 6864,
+        "In total": 125722
+      }
+    },
+    "Saarland": {
+      "2012": {
+        "Urban": 23851,
+        "Out of town (without motorways)": 5394,
+        "On motorways": 2586,
+        "In total": 31831
+      },
+      "2013": {
+        "Urban": 23565,
+        "Out of town (without motorways)": 5615,
+        "On motorways": 2701,
+        "In total": 31881
+      },
+      "2015": {
+        "Urban": 24625,
+        "Out of town (without motorways)": 6251,
+        "On motorways": 2523,
+        "In total": 33399
+      },
+      "2016": {
+        "Urban": 25438,
+        "Out of town (without motorways)": 6357,
+        "On motorways": 2905,
+        "In total": 34700
+      },
+      "2017": {
+        "Urban": 25121,
+        "Out of town (without motorways)": 6812,
+        "On motorways": 2768,
+        "In total": 34701
+      },
+      "2018": {
+        "Urban": 25324,
+        "Out of town (without motorways)": 6287,
+        "On motorways": 2692,
+        "In total": 34303
+      },
+      "2019": {
+        "Urban": 25974,
+        "Out of town (without motorways)": 6672,
+        "On motorways": 2619,
+        "In total": 35265
+      },
+      "2020": {
+        "Urban": 21228,
+        "Out of town (without motorways)": 5484,
+        "On motorways": 2124,
+        "In total": 28836
+      },
+      "2021": {
+        "Urban": 22083,
+        "Out of town (without motorways)": 5936,
+        "On motorways": 2084,
+        "In total": 30103
+      }
+    },
+    "Sachsen": {
+      "2012": {
+        "Urban": 82863,
+        "Out of town (without motorways)": 22807,
+        "On motorways": 5120,
+        "In total": 110790
+      },
+      "2013": {
+        "Urban": 82076,
+        "Out of town (without motorways)": 21900,
+        "On motorways": 5339,
+        "In total": 109315
+      },
+      "2015": {
+        "Urban": 80991,
+        "Out of town (without motorways)": 21962,
+        "On motorways": 5700,
+        "In total": 108653
+      },
+      "2016": {
+        "Urban": 82018,
+        "Out of town (without motorways)": 21681,
+        "On motorways": 6037,
+        "In total": 109736
+      },
+      "2017": {
+        "Urban": 81813,
+        "Out of town (without motorways)": 21856,
+        "On motorways": 5954,
+        "In total": 109623
+      },
+      "2018": {
+        "Urban": 80050,
+        "Out of town (without motorways)": 21234,
+        "On motorways": 6000,
+        "In total": 107284
+      },
+      "2019": {
+        "Urban": 80049,
+        "Out of town (without motorways)": 21762,
+        "On motorways": 5690,
+        "In total": 107501
+      },
+      "2020": {
+        "Urban": 69998,
+        "Out of town (without motorways)": 18713,
+        "On motorways": 4731,
+        "In total": 93442
+      },
+      "2021": {
+        "Urban": 69721,
+        "Out of town (without motorways)": 19213,
+        "On motorways": 5595,
+        "In total": 94529
+      }
+    },
+    "Sachsen-Anhalt": {
+      "2012": {
+        "Urban": 51334,
+        "Out of town (without motorways)": 20915,
+        "On motorways": 4206,
+        "In total": 76455
+      },
+      "2013": {
+        "Urban": 50945,
+        "Out of town (without motorways)": 20608,
+        "On motorways": 4531,
+        "In total": 76084
+      },
+      "2015": {
+        "Urban": 49833,
+        "Out of town (without motorways)": 20005,
+        "On motorways": 4538,
+        "In total": 74376
+      },
+      "2016": {
+        "Urban": 49773,
+        "Out of town (without motorways)": 20697,
+        "On motorways": 4743,
+        "In total": 75213
+      },
+      "2017": {
+        "Urban": 49468,
+        "Out of town (without motorways)": 20835,
+        "On motorways": 4808,
+        "In total": 75111
+      },
+      "2018": {
+        "Urban": 48620,
+        "Out of town (without motorways)": 20377,
+        "On motorways": 4506,
+        "In total": 73503
+      },
+      "2019": {
+        "Urban": 49377,
+        "Out of town (without motorways)": 20844,
+        "On motorways": 4801,
+        "In total": 75022
+      },
+      "2020": {
+        "Urban": 42766,
+        "Out of town (without motorways)": 18827,
+        "On motorways": 4012,
+        "In total": 65605
+      },
+      "2021": {
+        "Urban": 43610,
+        "Out of town (without motorways)": 18834,
+        "On motorways": 4397,
+        "In total": 66841
+      }
+    },
+    "Schleswig-Holstein": {
+      "2012": {
+        "Urban": 46333,
+        "Out of town (without motorways)": 17224,
+        "On motorways": 3739,
+        "In total": 67296
+      },
+      "2013": {
+        "Urban": 50104,
+        "Out of town (without motorways)": 20950,
+        "On motorways": 3980,
+        "In total": 75034
+      },
+      "2015": {
+        "Urban": 57711,
+        "Out of town (without motorways)": 23004,
+        "On motorways": 4631,
+        "In total": 85346
+      },
+      "2016": {
+        "Urban": 57903,
+        "Out of town (without motorways)": 23076,
+        "On motorways": 4464,
+        "In total": 85443
+      },
+      "2017": {
+        "Urban": 60204,
+        "Out of town (without motorways)": 24855,
+        "On motorways": 5046,
+        "In total": 90105
+      },
+      "2018": {
+        "Urban": 61628,
+        "Out of town (without motorways)": 24378,
+        "On motorways": 4701,
+        "In total": 90707
+      },
+      "2019": {
+        "Urban": 63130,
+        "Out of town (without motorways)": 24333,
+        "On motorways": 4746,
+        "In total": 92209
+      },
+      "2020": {
+        "Urban": 53226,
+        "Out of town (without motorways)": 22996,
+        "On motorways": 3344,
+        "In total": 79566
+      },
+      "2021": {
+        "Urban": 53348,
+        "Out of town (without motorways)": 24761,
+        "On motorways": 3366,
+        "In total": 81475
+      }
+    },
+    "Thüringen": {
+      "2012": {
+        "Urban": 36340,
+        "Out of town (without motorways)": 14561,
+        "On motorways": 4377,
+        "In total": 55278
+      },
+      "2013": {
+        "Urban": 36650,
+        "Out of town (without motorways)": 13423,
+        "On motorways": 4037,
+        "In total": 54110
+      },
+      "2015": {
+        "Urban": 37906,
+        "Out of town (without motorways)": 14583,
+        "On motorways": 3693,
+        "In total": 56182
+      },
+      "2016": {
+        "Urban": 38805,
+        "Out of town (without motorways)": 14405,
+        "On motorways": 3748,
+        "In total": 56958
+      },
+      "2017": {
+        "Urban": 39215,
+        "Out of town (without motorways)": 14845,
+        "On motorways": 3954,
+        "In total": 58014
+      },
+      "2018": {
+        "Urban": 38633,
+        "Out of town (without motorways)": 14102,
+        "On motorways": 3756,
+        "In total": 56491
+      },
+      "2019": {
+        "Urban": 39526,
+        "Out of town (without motorways)": 12553,
+        "On motorways": 3711,
+        "In total": 55790
+      },
+      "2020": {
+        "Urban": 32604,
+        "Out of town (without motorways)": 12115,
+        "On motorways": 3201,
+        "In total": 47920
+      },
+      "2021": {
+        "Urban": 31884,
+        "Out of town (without motorways)": 12354,
+        "On motorways": 3476,
+        "In total": 47714
+      }
     }
   }
 }

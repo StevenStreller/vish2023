@@ -1,9 +1,10 @@
 {
-  "title": "Kohlendioxidemissionenn",
+  "title": "Carbon emissions",
   "source": "https://www.statistikportal.de/de/ugrdl/ergebnisse/gase/co2",
   "options": [
-    "in Tonnen"
+    "in Tons"
   ],
+  "description": "Energy-related CO2 emissions from primary energy consumption 1990 – 2021 by federal state",
   "years": [
     2010,
     2014,
@@ -17,418 +18,418 @@
   "data": {
     "Baden-Württemberg": {
       "2010": {
-        "in Tonnen": 67831
+        "in Tons": 67831
       },
       "2014": {
-        "in Tonnen": 65420
+        "in Tons": 65420
       },
       "2015": {
-        "in Tonnen": 66786
+        "in Tons": 66786
       },
       "2016": {
-        "in Tonnen": 68670
+        "in Tons": 68670
       },
       "2017": {
-        "in Tonnen": 69201
+        "in Tons": 69201
       },
       "2018": {
-        "in Tonnen": 66286
+        "in Tons": 66286
       },
       "2019": {
-        "in Tonnen": 63818
+        "in Tons": 63818
       },
       "2020": {
-        "in Tonnen": 58537
+        "in Tons": 58537
       }
     },
     "Bayern": {
       "2010": {
-        "in Tonnen": 76684
+        "in Tons": 76684
       },
       "2014": {
-        "in Tonnen": 71185
+        "in Tons": 71185
       },
       "2015": {
-        "in Tonnen": 72223
+        "in Tons": 72223
       },
       "2016": {
-        "in Tonnen": 73674
+        "in Tons": 73674
       },
       "2017": {
-        "in Tonnen": 73491
+        "in Tons": 73491
       },
       "2018": {
-        "in Tonnen": 72277
+        "in Tons": 72277
       },
       "2019": {
-        "in Tonnen": 73584
+        "in Tons": 73584
       },
       "2020": {
-        "in Tonnen": 70117
+        "in Tons": 70117
       }
     },
     "Berlin": {
       "2010": {
-        "in Tonnen": 18897
+        "in Tons": 18897
       },
       "2014": {
-        "in Tonnen": 16310
+        "in Tons": 16310
       },
       "2015": {
-        "in Tonnen": 15700
+        "in Tons": 15700
       },
       "2016": {
-        "in Tonnen": 16016
+        "in Tons": 16016
       },
       "2017": {
-        "in Tonnen": 15752
+        "in Tons": 15752
       },
       "2018": {
-        "in Tonnen": 14511
+        "in Tons": 14511
       },
       "2019": {
-        "in Tonnen": 13675
+        "in Tons": 13675
       },
       "2020": {
-        "in Tonnen": 12855
+        "in Tons": 12855
       }
     },
     "Brandenburg": {
       "2010": {
-        "in Tonnen": 56478
+        "in Tons": 56478
       },
       "2014": {
-        "in Tonnen": 56004
+        "in Tons": 56004
       },
       "2015": {
-        "in Tonnen": 56077
+        "in Tons": 56077
       },
       "2016": {
-        "in Tonnen": 56317
+        "in Tons": 56317
       },
       "2017": {
-        "in Tonnen": 55841
+        "in Tons": 55841
       },
       "2018": {
-        "in Tonnen": 56351
+        "in Tons": 56351
       },
       "2019": {
-        "in Tonnen": 48844
+        "in Tons": 48844
       },
       "2020": {
-        "in Tonnen": 43512
+        "in Tons": 43512
       }
     },
     "Bremen": {
       "2010": {
-        "in Tonnen": 14037
+        "in Tons": 14037
       },
       "2014": {
-        "in Tonnen": 12755
+        "in Tons": 12755
       },
       "2015": {
-        "in Tonnen": 13267
+        "in Tons": 13267
       },
       "2016": {
-        "in Tonnen": 12846
+        "in Tons": 12846
       },
       "2017": {
-        "in Tonnen": 13340
+        "in Tons": 13340
       },
       "2018": {
-        "in Tonnen": 12415
+        "in Tons": 12415
       },
       "2019": {
-        "in Tonnen": 11443
+        "in Tons": 11443
       },
       "2020": {
-        "in Tonnen": 9217
+        "in Tons": 9217
       }
     },
     "Hamburg": {
       "2010": {
-        "in Tonnen": 11625
+        "in Tons": 11625
       },
       "2014": {
-        "in Tonnen": 11629
+        "in Tons": 11629
       },
       "2015": {
-        "in Tonnen": 14613
+        "in Tons": 14613
       },
       "2016": {
-        "in Tonnen": 15181
+        "in Tons": 15181
       },
       "2017": {
-        "in Tonnen": 15780
+        "in Tons": 15780
       },
       "2018": {
-        "in Tonnen": 16012
+        "in Tons": 16012
       },
       "2019": {
-        "in Tonnen": 14651
+        "in Tons": 14651
       },
       "2020": {
-        "in Tonnen": 10988
+        "in Tons": 10988
       }
     },
     "Hessen": {
       "2010": {
-        "in Tonnen": 38562
+        "in Tons": 38562
       },
       "2014": {
-        "in Tonnen": 33892
+        "in Tons": 33892
       },
       "2015": {
-        "in Tonnen": 35703
+        "in Tons": 35703
       },
       "2016": {
-        "in Tonnen": 36970
+        "in Tons": 36970
       },
       "2017": {
-        "in Tonnen": 36011
+        "in Tons": 36011
       },
       "2018": {
-        "in Tonnen": 34240
+        "in Tons": 34240
       },
       "2019": {
-        "in Tonnen": 34468
+        "in Tons": 34468
       },
       "2020": {
-        "in Tonnen": 31698
+        "in Tons": 31698
       }
     },
     "Mecklenburg-Vorpommern": {
       "2010": {
-        "in Tonnen": 11080
+        "in Tons": 11080
       },
       "2014": {
-        "in Tonnen": 10684
+        "in Tons": 10684
       },
       "2015": {
-        "in Tonnen": 10255
+        "in Tons": 10255
       },
       "2016": {
-        "in Tonnen": 10646
+        "in Tons": 10646
       },
       "2017": {
-        "in Tonnen": 9784
+        "in Tons": 9784
       },
       "2018": {
-        "in Tonnen": 9161
+        "in Tons": 9161
       },
       "2019": {
-        "in Tonnen": 0
+        "in Tons": 0
       },
       "2020": {
-        "in Tonnen": 0
+        "in Tons": 0
       }
     },
     "Niedersachsen": {
       "2010": {
-        "in Tonnen": 67803
+        "in Tons": 67803
       },
       "2014": {
-        "in Tonnen": 66223
+        "in Tons": 66223
       },
       "2015": {
-        "in Tonnen": 65593
+        "in Tons": 65593
       },
       "2016": {
-        "in Tonnen": 65258
+        "in Tons": 65258
       },
       "2017": {
-        "in Tonnen": 64040
+        "in Tons": 64040
       },
       "2018": {
-        "in Tonnen": 62974
+        "in Tons": 62974
       },
       "2019": {
-        "in Tonnen": 59911
+        "in Tons": 59911
       },
       "2020": {
-        "in Tonnen": 57119
+        "in Tons": 57119
       }
     },
     "Nordrhein-Westfalen": {
       "2010": {
-        "in Tonnen": 273556
+        "in Tons": 273556
       },
       "2014": {
-        "in Tonnen": 258132
+        "in Tons": 258132
       },
       "2015": {
-        "in Tonnen": 253148
+        "in Tons": 253148
       },
       "2016": {
-        "in Tonnen": 254266
+        "in Tons": 254266
       },
       "2017": {
-        "in Tonnen": 238477
+        "in Tons": 238477
       },
       "2018": {
-        "in Tonnen": 233771
+        "in Tons": 233771
       },
       "2019": {
-        "in Tonnen": 209338
+        "in Tons": 209338
       },
       "2020": {
-        "in Tonnen": 188790
+        "in Tons": 188790
       }
     },
     "Rheinland-Pfalz": {
       "2010": {
-        "in Tonnen": 27313
+        "in Tons": 27313
       },
       "2014": {
-        "in Tonnen": 25318
+        "in Tons": 25318
       },
       "2015": {
-        "in Tonnen": 25847
+        "in Tons": 25847
       },
       "2016": {
-        "in Tonnen": 26338
+        "in Tons": 26338
       },
       "2017": {
-        "in Tonnen": 26629
+        "in Tons": 26629
       },
       "2018": {
-        "in Tonnen": 25942
+        "in Tons": 25942
       },
       "2019": {
-        "in Tonnen": 26709
+        "in Tons": 26709
       },
       "2020": {
-        "in Tonnen": 26045
+        "in Tons": 26045
       }
     },
     "Saarland": {
       "2010": {
-        "in Tonnen": 19287
+        "in Tons": 19287
       },
       "2014": {
-        "in Tonnen": 20864
+        "in Tons": 20864
       },
       "2015": {
-        "in Tonnen": 21638
+        "in Tons": 21638
       },
       "2016": {
-        "in Tonnen": 0
+        "in Tons": 0
       },
       "2017": {
-        "in Tonnen": 0
+        "in Tons": 0
       },
       "2018": {
-        "in Tonnen": 0
+        "in Tons": 0
       },
       "2019": {
-        "in Tonnen": 0
+        "in Tons": 0
       },
       "2020": {
-        "in Tonnen": 0
+        "in Tons": 0
       }
     },
     "Sachsen": {
       "2010": {
-        "in Tonnen": 46402
+        "in Tons": 46402
       },
       "2014": {
-        "in Tonnen": 47869
+        "in Tons": 47869
       },
       "2015": {
-        "in Tonnen": 46849
+        "in Tons": 46849
       },
       "2016": {
-        "in Tonnen": 47270
+        "in Tons": 47270
       },
       "2017": {
-        "in Tonnen": 49035
+        "in Tons": 49035
       },
       "2018": {
-        "in Tonnen": 48753
+        "in Tons": 48753
       },
       "2019": {
-        "in Tonnen": 45404
+        "in Tons": 45404
       },
       "2020": {
-        "in Tonnen": 0
+        "in Tons": 0
       }
     },
     "Sachsen-Anhalt": {
       "2010": {
-        "in Tonnen": 27287
+        "in Tons": 27287
       },
       "2014": {
-        "in Tonnen": 25509
+        "in Tons": 25509
       },
       "2015": {
-        "in Tonnen": 25125
+        "in Tons": 25125
       },
       "2016": {
-        "in Tonnen": 25403
+        "in Tons": 25403
       },
       "2017": {
-        "in Tonnen": 25383
+        "in Tons": 25383
       },
       "2018": {
-        "in Tonnen": 26894
+        "in Tons": 26894
       },
       "2019": {
-        "in Tonnen": 24056
+        "in Tons": 24056
       },
       "2020": {
-        "in Tonnen": 0
+        "in Tons": 0
       }
     },
     "Schleswig-Holstein": {
       "2010": {
-        "in Tonnen": 19357
+        "in Tons": 19357
       },
       "2014": {
-        "in Tonnen": 18262
+        "in Tons": 18262
       },
       "2015": {
-        "in Tonnen": 18305
+        "in Tons": 18305
       },
       "2016": {
-        "in Tonnen": 18120
+        "in Tons": 18120
       },
       "2017": {
-        "in Tonnen": 18100
+        "in Tons": 18100
       },
       "2018": {
-        "in Tonnen": 18005
+        "in Tons": 18005
       },
       "2019": {
-        "in Tonnen": 16677
+        "in Tons": 16677
       },
       "2020": {
-        "in Tonnen": 16351
+        "in Tons": 16351
       }
     },
     "Thüringen": {
       "2010": {
-        "in Tonnen": 10749
+        "in Tons": 10749
       },
       "2014": {
-        "in Tonnen": 9878
+        "in Tons": 9878
       },
       "2015": {
-        "in Tonnen": 9941
+        "in Tons": 9941
       },
       "2016": {
-        "in Tonnen": 10306
+        "in Tons": 10306
       },
       "2017": {
-        "in Tonnen": 10411
+        "in Tons": 10411
       },
       "2018": {
-        "in Tonnen": 10543
+        "in Tons": 10543
       },
       "2019": {
-        "in Tonnen": 10395
+        "in Tons": 10395
       },
       "2020": {
-        "in Tonnen": 9963
+        "in Tons": 9963
       }
     }
   }

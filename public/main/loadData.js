@@ -1,8 +1,8 @@
 function loadData(state = null, year = null, title = null, options = null) {
     let files = [
-        "../assets/data/car-accidents-2.json",
-        "../assets/data/vehicle-registrations-2.json",
-        "../assets/data/street-infrastructure-2.json",
+        "../assets/data/car-accidents.json",
+        "../assets/data/vehicle-registrations.json",
+        "../assets/data/street-infrastructure.json",
         "../assets/data/gdp.json",
         "../assets/data/co2.json",
         "../assets/data/population.json"

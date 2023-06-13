@@ -1,9 +1,10 @@
 {
-  "title": "Bruttoinlandsprodukt",
+  "title": "GDP",
   "source": "https://www.statistikportal.de/de/vgrdl/ergebnisse-laenderebene/bruttoinlandsprodukt-bruttowertschoepfung/bip",
   "options": [
-    "in Millionen (€)"
+    "in Millions (€)"
   ],
+  "description": "Gross domestic product up to 2022 - in current prices - provisional results by federal state",
   "years": [
     2018,
     2019,
@@ -14,274 +15,274 @@
   "data": {
     "Baden-Württemberg": {
       "2018": {
-        "in Millionen (€)": "516670"
+        "in Millions (€)": "516670"
       },
       "2019": {
-        "in Millionen (€)": "525347"
+        "in Millions (€)": "525347"
       },
       "2020": {
-        "in Millionen (€)": "509322"
+        "in Millions (€)": "509322"
       },
       "2021": {
-        "in Millionen (€)": "538948"
+        "in Millions (€)": "538948"
       },
       "2022": {
-        "in Millionen (€)": "572837"
+        "in Millions (€)": "572837"
       }
     },
     "Bayern": {
       "2018": {
-        "in Millionen (€)": "620277"
+        "in Millions (€)": "620277"
       },
       "2019": {
-        "in Millionen (€)": "643982"
+        "in Millions (€)": "643982"
       },
       "2020": {
-        "in Millionen (€)": "630530"
+        "in Millions (€)": "630530"
       },
       "2021": {
-        "in Millionen (€)": "666388"
+        "in Millions (€)": "666388"
       },
       "2022": {
-        "in Millionen (€)": "716784"
+        "in Millions (€)": "716784"
       }
     },
     "Berlin": {
       "2018": {
-        "in Millionen (€)": "149391"
+        "in Millions (€)": "149391"
       },
       "2019": {
-        "in Millionen (€)": "157131"
+        "in Millions (€)": "157131"
       },
       "2020": {
-        "in Millionen (€)": "156762"
+        "in Millions (€)": "156762"
       },
       "2021": {
-        "in Millionen (€)": "165457"
+        "in Millions (€)": "165457"
       },
       "2022": {
-        "in Millionen (€)": "179379"
+        "in Millions (€)": "179379"
       }
     },
     "Brandenburg": {
       "2018": {
-        "in Millionen (€)": "72708"
+        "in Millions (€)": "72708"
       },
       "2019": {
-        "in Millionen (€)": "76024"
+        "in Millions (€)": "76024"
       },
       "2020": {
-        "in Millionen (€)": "75757"
+        "in Millions (€)": "75757"
       },
       "2021": {
-        "in Millionen (€)": "80562"
+        "in Millions (€)": "80562"
       },
       "2022": {
-        "in Millionen (€)": "88800"
+        "in Millions (€)": "88800"
       }
     },
     "Bremen": {
       "2018": {
-        "in Millionen (€)": "32929"
+        "in Millions (€)": "32929"
       },
       "2019": {
-        "in Millionen (€)": "33177"
+        "in Millions (€)": "33177"
       },
       "2020": {
-        "in Millionen (€)": "32166"
+        "in Millions (€)": "32166"
       },
       "2021": {
-        "in Millionen (€)": "35151"
+        "in Millions (€)": "35151"
       },
       "2022": {
-        "in Millionen (€)": "38698"
+        "in Millions (€)": "38698"
       }
     },
     "Hamburg": {
       "2018": {
-        "in Millionen (€)": "118961"
+        "in Millions (€)": "118961"
       },
       "2019": {
-        "in Millionen (€)": "124855"
+        "in Millions (€)": "124855"
       },
       "2020": {
-        "in Millionen (€)": "119941"
+        "in Millions (€)": "119941"
       },
       "2021": {
-        "in Millionen (€)": "130873"
+        "in Millions (€)": "130873"
       },
       "2022": {
-        "in Millionen (€)": "144220"
+        "in Millions (€)": "144220"
       }
     },
     "Hessen": {
       "2018": {
-        "in Millionen (€)": "286128"
+        "in Millions (€)": "286128"
       },
       "2019": {
-        "in Millionen (€)": "295779"
+        "in Millions (€)": "295779"
       },
       "2020": {
-        "in Millionen (€)": "288127"
+        "in Millions (€)": "288127"
       },
       "2021": {
-        "in Millionen (€)": "303310"
+        "in Millions (€)": "303310"
       },
       "2022": {
-        "in Millionen (€)": "323352"
+        "in Millions (€)": "323352"
       }
     },
     "Mecklenburg-Vorpommern": {
       "2018": {
-        "in Millionen (€)": "44332"
+        "in Millions (€)": "44332"
       },
       "2019": {
-        "in Millionen (€)": "47571"
+        "in Millions (€)": "47571"
       },
       "2020": {
-        "in Millionen (€)": "46942"
+        "in Millions (€)": "46942"
       },
       "2021": {
-        "in Millionen (€)": "49871"
+        "in Millions (€)": "49871"
       },
       "2022": {
-        "in Millionen (€)": "53440"
+        "in Millions (€)": "53440"
       }
     },
     "Niedersachsen": {
       "2018": {
-        "in Millionen (€)": "297590"
+        "in Millions (€)": "297590"
       },
       "2019": {
-        "in Millionen (€)": "310744"
+        "in Millions (€)": "310744"
       },
       "2020": {
-        "in Millionen (€)": "303696"
+        "in Millions (€)": "303696"
       },
       "2021": {
-        "in Millionen (€)": "315720"
+        "in Millions (€)": "315720"
       },
       "2022": {
-        "in Millionen (€)": "339414"
+        "in Millions (€)": "339414"
       }
     },
     "Nordrhein-Westfalen": {
       "2018": {
-        "in Millionen (€)": "703065"
+        "in Millions (€)": "703065"
       },
       "2019": {
-        "in Millionen (€)": "717359"
+        "in Millions (€)": "717359"
       },
       "2020": {
-        "in Millionen (€)": "707186"
+        "in Millions (€)": "707186"
       },
       "2021": {
-        "in Millionen (€)": "742818"
+        "in Millions (€)": "742818"
       },
       "2022": {
-        "in Millionen (€)": "793790"
+        "in Millions (€)": "793790"
       }
     },
     "Rheinland-Pfalz": {
       "2018": {
-        "in Millionen (€)": "143060"
+        "in Millions (€)": "143060"
       },
       "2019": {
-        "in Millionen (€)": "146985"
+        "in Millions (€)": "146985"
       },
       "2020": {
-        "in Millionen (€)": "144558"
+        "in Millions (€)": "144558"
       },
       "2021": {
-        "in Millionen (€)": "162169"
+        "in Millions (€)": "162169"
       },
       "2022": {
-        "in Millionen (€)": "171699"
+        "in Millions (€)": "171699"
       }
     },
     "Saarland": {
       "2018": {
-        "in Millionen (€)": "35871"
+        "in Millions (€)": "35871"
       },
       "2019": {
-        "in Millionen (€)": "35855"
+        "in Millions (€)": "35855"
       },
       "2020": {
-        "in Millionen (€)": "34628"
+        "in Millions (€)": "34628"
       },
       "2021": {
-        "in Millionen (€)": "36112"
+        "in Millions (€)": "36112"
       },
       "2022": {
-        "in Millionen (€)": "38505"
+        "in Millions (€)": "38505"
       }
     },
     "Sachsen": {
       "2018": {
-        "in Millionen (€)": "125180"
+        "in Millions (€)": "125180"
       },
       "2019": {
-        "in Millionen (€)": "130348"
+        "in Millions (€)": "130348"
       },
       "2020": {
-        "in Millionen (€)": "128679"
+        "in Millions (€)": "128679"
       },
       "2021": {
-        "in Millionen (€)": "134984"
+        "in Millions (€)": "134984"
       },
       "2022": {
-        "in Millionen (€)": "146511"
+        "in Millions (€)": "146511"
       }
     },
     "Sachsen-Anhalt": {
       "2018": {
-        "in Millionen (€)": "62039"
+        "in Millions (€)": "62039"
       },
       "2019": {
-        "in Millionen (€)": "64692"
+        "in Millions (€)": "64692"
       },
       "2020": {
-        "in Millionen (€)": "64198"
+        "in Millions (€)": "64198"
       },
       "2021": {
-        "in Millionen (€)": "68253"
+        "in Millions (€)": "68253"
       },
       "2022": {
-        "in Millionen (€)": "75436"
+        "in Millions (€)": "75436"
       }
     },
     "Schleswig-Holstein": {
       "2018": {
-        "in Millionen (€)": "95008"
+        "in Millions (€)": "95008"
       },
       "2019": {
-        "in Millionen (€)": "99607"
+        "in Millions (€)": "99607"
       },
       "2020": {
-        "in Millionen (€)": "99696"
+        "in Millions (€)": "99696"
       },
       "2021": {
-        "in Millionen (€)": "104709"
+        "in Millions (€)": "104709"
       },
       "2022": {
-        "in Millionen (€)": "112755"
+        "in Millions (€)": "112755"
       }
     },
     "Thüringen": {
       "2018": {
-        "in Millionen (€)": "62240"
+        "in Millions (€)": "62240"
       },
       "2019": {
-        "in Millionen (€)": "63803"
+        "in Millions (€)": "63803"
       },
       "2020": {
-        "in Millionen (€)": "63241"
+        "in Millions (€)": "63241"
       },
       "2021": {
-        "in Millionen (€)": "66424"
+        "in Millions (€)": "66424"
       },
       "2022": {
-        "in Millionen (€)": "71430"
+        "in Millions (€)": "71430"
       }
     }
   }

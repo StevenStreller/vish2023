@@ -1,130 +1,153 @@
-[
-  {
-    "Bundesland": "Baden-Württemberg",
-    "Autobahnen": 1054,
-    "Bundesstrassen": 4186,
-    "Landstrassen": 10066,
-    "Nicht Autobahnen": 14252,
-    "Gesamt": 15306
-  },
-  {
-    "Bundesland": "Bayern",
-    "Autobahnen": 2548,
-    "Bundesstrassen": 6024,
-    "Landstrassen": 14506,
-    "Nicht Autobahnen": 20530,
-    "Gesamt": 23078
-  },
-  {
-    "Bundesland": "Berlin",
-    "Autobahnen": 77,
-    "Bundesstrassen": 161,
-    "Landstrassen": 0,
-    "Nicht Autobahnen": 161,
-    "Gesamt": 238
-  },
-  {
-    "Bundesland": "Brandenburg",
-    "Autobahnen": 806,
-    "Bundesstrassen": 2740,
-    "Landstrassen": 5649,
-    "Nicht Autobahnen": 8389,
-    "Gesamt": 9195
-  },
-  {
-    "Bundesland": "Bremen",
-    "Autobahnen": 80,
-    "Bundesstrassen": 34,
-    "Landstrassen": 0,
-    "Nicht Autobahnen": 34,
-    "Gesamt": 114
-  },
-  {
-    "Bundesland": "Hamburg",
-    "Autobahnen": 76,
-    "Bundesstrassen": 114,
-    "Landstrassen": 0,
-    "Nicht Autobahnen": 114,
-    "Gesamt": 190
-  },
-  {
-    "Bundesland": "Hessen",
-    "Autobahnen": 996,
-    "Bundesstrassen": 2989,
-    "Landstrassen": 7197,
-    "Nicht Autobahnen": 10186,
-    "Gesamt": 11182
-  },
-  {
-    "Bundesland": "Mecklenburg-Vorpommern",
-    "Autobahnen": 578,
-    "Bundesstrassen": 1927,
-    "Landstrassen": 3378,
-    "Nicht Autobahnen": 5305,
-    "Gesamt": 5883
-  },
-  {
-    "Bundesland": "Niedersachsen",
-    "Autobahnen": 1452,
-    "Bundesstrassen": 4658,
-    "Landstrassen": 8248,
-    "Nicht Autobahnen": 12906,
-    "Gesamt": 14358
-  },
-  {
-    "Bundesland": "Nordrhein-Westfalen",
-    "Autobahnen": 2260,
-    "Bundesstrassen": 4424,
-    "Landstrassen": 13081,
-    "Nicht Autobahnen": 17505,
-    "Gesamt": 19765
-  },
-  {
-    "Bundesland": "Rheinland-Pfalz",
-    "Autobahnen": 877,
-    "Bundesstrassen": 2875,
-    "Landstrassen": 7235,
-    "Nicht Autobahnen": 10110,
-    "Gesamt": 10987
-  },
-  {
-    "Bundesland": "Saarland",
-    "Autobahnen": 240,
-    "Bundesstrassen": 310,
-    "Landstrassen": 872,
-    "Nicht Autobahnen": 1182,
-    "Gesamt": 1422
-  },
-  {
-    "Bundesland": "Sachsen",
-    "Autobahnen": 575,
-    "Bundesstrassen": 2302,
-    "Landstrassen": 4773,
-    "Nicht Autobahnen": 7075,
-    "Gesamt": 7650
-  },
-  {
-    "Bundesland": "Sachsen-Anhalt",
-    "Autobahnen": 507,
-    "Bundesstrassen": 2046,
-    "Landstrassen": 4048,
-    "Nicht Autobahnen": 6094,
-    "Gesamt": 6601
-  },
-  {
-    "Bundesland": "Schleswig-Holstein",
-    "Autobahnen": 545,
-    "Bundesstrassen": 1532,
-    "Landstrassen": 3672,
-    "Nicht Autobahnen": 5204,
-    "Gesamt": 5749
-  },
-  {
-    "Bundesland": "Thüringen",
-    "Autobahnen": 521,
-    "Bundesstrassen": 1503,
-    "Landstrassen": 4137,
-    "Nicht Autobahnen": 5640,
-    "Gesamt": 6161
+{
+  "title": "Road network length",
+  "source": "https://de.statista.com/statistik/daten/studie/36454/umfrage/laenge-der-strassen-des-ueberoertlichen-verkehrs-in-deutschland/",
+  "options": ["Motorways", "National roads", "Country roads", "National and country roads", "In Total"],
+  "years": [2021],
+  "description": "Road network length in Germany by federal state by road type on 1 January 2021",
+  "data": {
+    "Baden-Württemberg": {
+      "2021": {
+        "Motorways": 1054,
+        "National roads": 4186,
+        "Country roads": 10066,
+        "National and country roads": 14252,
+        "In Total": 15306
+      }
+    },
+    "Bayern": {
+      "2021": {
+        "Motorways": 2548,
+        "National roads": 6024,
+        "Country roads": 14506,
+        "National and country roads": 20530,
+        "In Total": 23078
+      }
+    },
+    "Berlin": {
+      "2021": {
+        "Motorways": 77,
+        "National roads": 161,
+        "Country roads": 0,
+        "National and country roads": 161,
+        "In Total": 238
+      }
+    },
+    "Brandenburg": {
+      "2021": {
+        "Motorways": 806,
+        "National roads": 2740,
+        "Country roads": 5649,
+        "National and country roads": 8389,
+        "In Total": 9195
+      }
+    },
+    "Bremen": {
+      "2021": {
+        "Motorways": 80,
+        "National roads": 34,
+        "Country roads": 0,
+        "National and country roads": 34,
+        "In Total": 114
+      }
+    },
+    "Hamburg": {
+      "2021": {
+        "Motorways": 76,
+        "National roads": 114,
+        "Country roads": 0,
+        "National and country roads": 114,
+        "In Total": 190
+      }
+    },
+    "Hessen": {
+      "2021": {
+        "Motorways": 996,
+        "National roads": 2989,
+        "Country roads": 7197,
+        "National and country roads": 10186,
+        "In Total": 11182
+      }
+    },
+    "Mecklenburg-Vorpommern": {
+      "2021": {
+        "Motorways": 578,
+        "National roads": 1927,
+        "Country roads": 3378,
+        "National and country roads": 5305,
+        "In Total": 5883
+      }
+    },
+    "Niedersachsen": {
+      "2021": {
+        "Motorways": 1452,
+        "National roads": 4658,
+        "Country roads": 8248,
+        "National and country roads": 12906,
+        "In Total": 14358
+      }
+    },
+    "Nordrhein-Westfalen": {
+      "2021": {
+        "Motorways": 2260,
+        "National roads": 4424,
+        "Country roads": 13081,
+        "National and country roads": 17505,
+        "In Total": 19765
+      }
+    },
+    "Rheinland-Pfalz": {
+      "2021": {
+        "Motorways": 877,
+        "National roads": 2875,
+        "Country roads": 7235,
+        "National and country roads": 10110,
+        "In Total": 10987
+      }
+    },
+    "Saarland": {
+      "2021": {
+        "Motorways": 240,
+        "National roads": 310,
+        "Country roads": 872,
+        "National and country roads": 1182,
+        "In Total": 1422
+      }
+    },
+    "Sachsen": {
+      "2021": {
+        "Motorways": 575,
+        "National roads": 2302,
+        "Country roads": 4773,
+        "National and country roads": 7075,
+        "In Total": 7650
+      }
+    },
+    "Sachsen-Anhalt": {
+      "2021": {
+        "Motorways": 507,
+        "National roads": 2046,
+        "Country roads": 4048,
+        "National and country roads": 6094,
+        "In Total": 6601
+      }
+    },
+    "Schleswig-Holstein": {
+      "2021": {
+        "Motorways": 545,
+        "National roads": 1532,
+        "Country roads": 3672,
+        "National and country roads": 5204,
+        "In Total": 5749
+      }
+    },
+    "Thüringen": {
+      "2021": {
+        "Motorways": 521,
+        "National roads": 1503,
+        "Country roads": 4137,
+        "National and country roads": 5640,
+        "In Total": 6161
+      }
+    }
   }
-]
+}
