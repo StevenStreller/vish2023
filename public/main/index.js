@@ -40,6 +40,12 @@ info.update = function (props) {
         })
 };
 
+function refreshMapWidth() {
+    var mapContainer = document.getElementById('map-container');
+    mapContainer.style.width = '100%';
+    map.invalidateSize();
+}
+
 async function updateInfoData(props) {
     //return new Promise((resolve) => {
     //    let selectedState = props.name;
@@ -396,22 +402,28 @@ function loadStreetInfrastructure(state) {
 }
 
 function createChart(e) {
+
+    let cardChart = document.getElementById('card-chart');
+    let cardMap = document.getElementById('card-map');
+    cardChart.classList.remove('d-none');
+
+    cardMap.classList.remove('col-md-12');
+    cardMap.classList.add('col-md-7');
+
+    refreshMapWidth();
+
+
     let chartStatus = Chart.getChart("timechart")
     let chart2Status = Chart.getChart("timechart2")
-    if (chartStatus != undefined) {
+    if (chartStatus !== undefined) {
         chartStatus.destroy();
     }
-    if (chart2Status != undefined) {
+    if (chart2Status !== undefined) {
         chart2Status.destroy();
     }
     let name = e.target.feature.properties.name;
-    console.log(name);
     zoomToFeature(e)
-    // prepareData(name, "../assets/data/car-accidents.json").then(data => {
-    //     console.log(data);
-    //     let chart = buildChart(data, name)
-    //     fillChart(chart, data)
-    // })
+
     let title = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
     loadData(name, null, title).then(data => {
         Object.keys(data).forEach(index => {
@@ -440,11 +452,9 @@ function createChart(e) {
     })
 
 }
-function prepareData(state, dataPath) {
-    d = fetch(dataPath)
-        .then(response => response.json())
-        .then(response => {
-            return response[state]
-        })
-    return d
-}
+document.querySelector('body > div > div > main > div > div > div.row > div.col-12.col-md-5.align-self-center > div > div.card-header > button').addEventListener('click', () => {
+    document.getElementById('card-chart').classList.add('d-none');
+    document.getElementById('card-map').classList.add('col-md-12');
+    refreshMapWidth();
+
+});
