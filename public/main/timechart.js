@@ -48,10 +48,8 @@ function fillChart(chart, data) {
     Object.keys(data).forEach((year) => {
         chart.data.labels.push(year)
         Object.keys(data[year]).forEach((type, index) => {
-            console.log(data[year][type])
             chart.data.datasets[index].data.push(data[year][type])
         })
     })
     chart.update()
-    console.log(chart.data.datasets)
 }

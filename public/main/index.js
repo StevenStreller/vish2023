@@ -1,36 +1,75 @@
+/**********************
+ *     VARIABLES      *
+ **********************/
+
+/**
+ * @TODO
+ */
 const map = L.map('map').setView([51.1657, 10.4515], 6);
 
+/**
+ * @TODO
+ *
+ * @type {HTMLElement}
+ */
+const currentYear = document.getElementById('years[0]');
+
+/**
+ * @TODO
+ */
+const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+/**
+ * @TODO
+ */
+const info = L.control();
+
+
 let bounds = L.latLngBounds(L.latLng(47.2701, 5.8662), L.latLng(55.0998, 15.0419));
+let chartType = 'line';
+let stateValueMap0 = {};
+let stateValueMap1 = {};
+let normalizedStateData = {};
+let secondChoiceCheckBoxWasChecked = false;
+let geoJson;
+
+
+/**********************
+ *     LISTENERS      *
+ **********************/
+
+document.getElementById('refreshMapButton').addEventListener('click', () => reloadGeoJSON());
+document.getElementById('bar-type').addEventListener('click', () => setChartType('bar'))
+document.getElementById('line-type').addEventListener('click', () => setChartType('line'))
+
+
 map.setMaxBounds(bounds);
 map.on('drag', function() {
     map.panInsideBounds(bounds, { animate: false });
 });
 
-var chartType = 'line'
-document.getElementById('refreshMapButton').addEventListener('click', () => reloadGeoJSON());
-document.getElementById('bar-type').addEventListener('click', () => setChartType('bar'))
-document.getElementById('line-type').addEventListener('click', () => setChartType('line'))
 
-const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+/**********************
+ *     FUNCTIONS      *
+ **********************/
 
-const currentYear = document.getElementById('years[0]');
+function setChartType(type) {
+    chartType = type
+}
+
 function getCurrentYear() {
     return currentYear.options[currentYear.selectedIndex].innerHTML;
 }
 
+function refreshMapWidth() {
+    document.getElementById('map-container').style.width = '100%';
+    map.invalidateSize();
+}
 
-let stateValueMap0 = {};
-let stateValueMap1 = {};
-let normalizedStateData = {};
-let secondChoiceCheckBoxWasChecked = false;
-
-// control that shows state info on hover
-const info = L.control();
-
-info.onAdd = function (map) {
+info.onAdd = function () {
     this._div = L.DomUtil.create('div', 'bg-light p-2 rounded-3');
     this.update();
     return this._div;
@@ -43,50 +82,54 @@ info.update = function (props) {
         })
 };
 
-function refreshMapWidth() {
-    let mapContainer = document.getElementById('map-container');
-    mapContainer.style.width = '100%';
-    map.invalidateSize();
-}
+
 
 async function updateInfoData(props) {
     return new Promise((resolve) => {
 
-        let year0 = parseInt(document.getElementById('years[0]').options[document.getElementById('years[0]').value].innerHTML);
-        let title0 = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
-        let option0 = document.getElementById('childSelect[0]').options[document.getElementById('childSelect[0]').value].innerHTML;
+        let year = [];
+        let title = [];
+        let option = [];
 
-        let year1 = parseInt(document.getElementById('years[1]').options[document.getElementById('years[1]').value].innerHTML);
-        let title1 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
-        let option1 = document.getElementById('childSelect[1]').options[document.getElementById('childSelect[1]').value].innerHTML;
+        for (let i = 0; i <= 1; i++) {
+            year[i] = parseInt(document.getElementById(`years[${i}]`).options[document.getElementById(`years[${i}]`).value]?.innerHTML);
+            title[i] = document.getElementById(`parentSelect[${i}]`).options[document.getElementById(`parentSelect[${i}]`).value]?.innerHTML;
+            option[i] = document.getElementById(`childSelect[${i}]`).options[document.getElementById(`childSelect[${i}]`).value]?.innerHTML;
+        }
 
-        let selectedState = props.name;
-        if (props && selectedState) {
+        /** @TODO: Kann weg, oder? Habs durch Zeile 94-98 ersetzt  */
+        // let year0 = parseInt(document.getElementById('years[0]').options[document.getElementById('years[0]').value].innerHTML);
+        // let title0 = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
+        // let option0 = document.getElementById('childSelect[0]').options[document.getElementById('childSelect[0]').value].innerHTML;
+        //
+        // let year1 = parseInt(document.getElementById('years[1]').options[document.getElementById('years[1]').value].innerHTML);
+        // let title1 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
+        // let option1 = document.getElementById('childSelect[1]').options[document.getElementById('childSelect[1]').value].innerHTML;
+
+
+        if (props) {
+            let selectedState = props.name;
             let contents;
             if(secondChoiceCheckBoxWasChecked) {
                 contents = `
                 <h4 class="text-center">🇩🇪 ${props.name}</h4>
                 
-                <i class="fa-solid fa-divide fa-fw me-2" style="visibility:hidden; "></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " " + year0}<br>
+                <i class="fa-solid fa-divide fa-fw me-2" style="visibility:hidden; "></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title[0] + " " + option[0] + " " + year[0]}<br>
                 <div class="me-4" style="border-bottom: solid 2px #1e3050 ;">
-                <i class="fa-solid fa-divide fa-fw me-2" ></i>${(stateValueMap1[selectedState]).toLocaleString('de-DE') + " " + title1 + " " + option1 + " " + year1}<br>
-                </div>                
-`;
+                <i class="fa-solid fa-divide fa-fw me-2" ></i>${(stateValueMap1[selectedState]).toLocaleString('de-DE') + " " + title[1] + " " + option[1] + " " + year[1]}<br>
+                </div>`;
 
-                if (title0 === title1 && option0 === option1) {
-                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " " + year0 + " / " + year1}<br>`;
+                if (title[0] === title[1] && option[0] === option[1]) {
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title[0] + " " + option[0] + " " + year[0] + " / " + year[1]}<br>`;
                 } else {
-                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0 + " / " + title1 + " " + option1}<br>`;
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + title[0] + " " + option[0] + " / " + title[1] + " " + option[1]}<br>`;
                 }
             }
             else {
-
                 contents = `
                 <h4 class="text-center">🇩🇪 ${props.name}</h4>
-                <b>${year0}</b>
-                <br>
-                    <i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title0 + " " + option0}<br>
-                   `;
+                <b>${year[0]}</b>
+                <br><i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + title[0] + " " + option[0]}<br>`;
             }
 
             let minMaxAvg = getMinMaxAvg(normalizedStateData);
@@ -95,8 +138,6 @@ async function updateInfoData(props) {
              <i class="fa-solid fa-arrow-up fa-fw me-2"></i>${(minMaxAvg[1]).toLocaleString('de-DE') + " Maximum"}<br>
              <i class="fa-solid fa-gauge fa-fw me-2"></i>${((Math.round(minMaxAvg[2]*1000)/1000)).toLocaleString('de-DE') + " Average"}<br>
             `;
-
-
             resolve(contents);
         }
     });
@@ -105,9 +146,7 @@ async function updateInfoData(props) {
 
 info.addTo(map);
 
-function setChartType(type) {
-    chartType = type
-}
+
 function lerp(x1,x2,fx1,fx2,x){
     //console.log(fx1 + "+ (" + x + "-" + x1 + ") * ((" + fx2 + "-"+fx1 +") / ("+x2 + "-" + x1 + "));");
     if(Math.abs(x2-x1) < 0.00000001)
@@ -196,7 +235,7 @@ function RGBtoHEX(rgb){
 }
 
 
-function style(feature) {
+function style() {
     return {
         weight: 2,
         opacity: 1,
@@ -220,13 +259,12 @@ function highlightFeature(e) {
      info.update(layer.feature.properties);
 }
 
-let geojson;
+
 
 
 function reloadGeoJSON() {
-    //console.log(currentYear.options[currentYear.value].innerHTML);
-    if (geojson) {
-        map.removeLayer(geojson);
+    if (geoJson) {
+        map.removeLayer(geoJson);
     }
 
     let year0 = parseInt(document.getElementById('years[0]').options[document.getElementById('years[0]').value].innerHTML);
@@ -281,7 +319,7 @@ function reloadGeoJSON() {
     ).then(() =>
         {
             // Neue GeoJSON-Schicht erstellen und zur Karte hinzufügen
-            geojson = L.geoJson(statesData, {
+            geoJson = L.geoJson(statesData, {
                 style,
                 onEachFeature: async function (feature, layer) {
 
@@ -330,7 +368,7 @@ function changeColors() {
     reloadGeoJSON();
 }
 
-legend.onAdd = function (map) {
+legend.onAdd = function () {
 
     const div = L.DomUtil.create('div', 'bg-light p-2 rounded-3');
     let labels = [];
@@ -374,8 +412,6 @@ function createChart(e) {
         Object.keys(data).forEach(index => {
             if (data[index]['title']  === title) {
                 data = data[index]['data'][name];
-                console.log(data);
-                console.log('TEST');
                 let chart = buildChart(data, title, "timeChart[0]", chartType)
                 fillChart(chart, data)
             }
@@ -386,8 +422,6 @@ function createChart(e) {
         Object.keys(data).forEach(index => {
             if (data[index]['title']  === title2) {
                 data = data[index]['data'][name];
-                console.log(data);
-                console.log('TEST');
                 let chart = buildChart(data, title2, "timeChart[1]", chartType)
                 fillChart(chart, data)
             }
