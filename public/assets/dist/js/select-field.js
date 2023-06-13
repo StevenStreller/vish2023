@@ -1,37 +1,39 @@
-generateOptions(document.getElementById('parentSelect[0]'), document.getElementById('childSelect[0]'), document.getElementById('years[0]'));
-generateOptions(document.getElementById('parentSelect[1]'), document.getElementById('childSelect[1]'), document.getElementById('years[1]'));
+generateOptions(document.getElementById('parentSelect[0]'), document.getElementById('childSelect[0]'), document.getElementById('years[0]'), document.getElementById('info[0]'));
+generateOptions(document.getElementById('parentSelect[1]'), document.getElementById('childSelect[1]'), document.getElementById('years[1]'), document.getElementById('info[1]'));
 
 
-function generateOptions(parentElement, childElement, yearsElement) {
+function generateOptions(parentElement, childElement, yearsElement, infoElement) {
 
     parentElement.addEventListener('change', function (event) {
-        updateSelect2(event.target.value, childElement, yearsElement);
+        updateSelect2(event.target.value, childElement, yearsElement, infoElement);
     })
 
-    loadData()
-        .then(function (data) {
+    loadData().then(function (data) {
             for (let i = 0; i < data.length; i++) {
                 let option = document.createElement('option');
                 option.value = i;
                 option.innerHTML = data[i]['title'];
                 parentElement.appendChild(option);
             }
-
             reloadChildSelects(data, 0, childElement, yearsElement);
-        })
-        .catch(function (error) {
+            reloadInfo(infoElement, data[0]['description']);
+        }).catch(function (error) {
             console.error(error);
         });
 }
 
+function reloadInfo(infoElement, text) {
+    infoElement.innerHTML = text ?? 'No description available.';
+}
 
-
-function updateSelect2(currentParentIndex, childElement, yearsElement) {
+function updateSelect2(currentParentIndex, childElement, yearsElement, infoElement) {
     childElement.innerHTML = "";
     yearsElement.innerHTML = "";
 
     loadData().then(function (data) {
             reloadChildSelects(data, currentParentIndex, childElement, yearsElement);
+        reloadInfo(infoElement, data[currentParentIndex]['description']);
+
         })
         .catch(function (error) {
             console.error(error);
@@ -53,4 +55,5 @@ function reloadChildSelects(data, currentParentIndex, childElement, yearsElement
         option.innerHTML = data[currentParentIndex]['years'][i];
         yearsElement.appendChild(option);
     }
+
 }
