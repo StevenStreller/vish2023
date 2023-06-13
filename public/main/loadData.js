@@ -4,6 +4,7 @@ function loadData(state = null, year = null, title = null, options = null) {
         "../assets/data/vehicle-registrations-2.json",
         "../assets/data/street-infrastructure-2.json",
         "../assets/data/gdp.json",
+        "../assets/data/co2.json"
     ];
 
     let promises = [];
