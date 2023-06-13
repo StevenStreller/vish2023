@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse">
-        <span class="navbar-text"><i class="fa-solid fa-car-burst fa-fw me-2"></i>Unfälle nach Bundesländer</span>
+        <span class="navbar-text"><i class="fa-solid fa-map fa-fw me-2"></i>Statistik Deutschland</span>
     </div>
 </nav>
 
@@ -32,21 +32,21 @@
             <div class="position-sticky pt-3 sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a aria-current="page" class="nav-link" href="../index.html">
-                            <i class="fa-solid fa-house fa-fw me-2"></i>
-                            Dashboard
+                        <a class="nav-link active" href="index.html">
+                            <i class="fa-solid fa-map fa-fw me-2"></i>
+                            Statistik Deutschland
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
-                            <i class="fa-solid fa-car-burst fa-fw me-2"></i>
-                            Unfälle nach Bundesländer
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-circle-question fa-fw me-2"></i>
+                            Background information
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
                             <i class="fa-solid fa-book-open-reader fa-fw me-2"></i>
-                            Quellen
+                            Sources
                         </a>
                     </li>
                 </ul>
@@ -54,7 +54,7 @@
                     <span>1. Auswahl</span>
                 </h6>
                 <div class="row nav flex-column ms-1 me-1">
-                    <div class="col-12 mt-3">
+                    <div class="col-12">
                         <div class="alert alert-primary mb-0" role="alert">
                             @TODO: Vielleicht eine Beschreibung die ebenfalls aus der JSON-Datei gelesen wird?
                         </div>
@@ -78,6 +78,11 @@
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
                         <span>2. Auswahl</span>
                     </h6>
+                    <div class="col-12 mb-3">
+                        <div class="alert alert-primary mb-0" role="alert">
+                            @TODO: Vielleicht eine Beschreibung die ebenfalls aus der JSON-Datei gelesen wird?
+                        </div>
+                    </div>
                     <div class="col-12">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="secondChoiceActive">
@@ -101,31 +106,6 @@
                     <div class="col-12">
                         <button class="btn btn-primary w-100" id="refreshMapButton" type="button"><i class="fa-solid fa-arrows-rotate fa-fw me-2"></i>Karte aktualisieren</button>
                     </div>
-                    <div class="col-12 mt-4">
-                        <div class="card card-body">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Auswahl 1</th>
-                                    <th scope="col">Auswahl 2</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">⌀</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">˜x</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -133,15 +113,6 @@
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-3">
             <div class="card mb-3">
                 <div class="card-body">
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <h5 class="mb-0">Beschreibung</h5>
-                        </div>
-                        <div class="card-body">
-
-                            <p class="card-text">Beschreibungstext</p>
-                        </div>
-                    </div>
                     <div class="row">
                         <div id="card-map" class="col-12 col-md-12">
                             <div id="map-container"><div class="mb-3 rounded-5" id="map"></div></div>
