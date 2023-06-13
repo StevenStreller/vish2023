@@ -358,8 +358,8 @@ function createChart(e) {
     refreshMapWidth();
 
 
-    let chartStatus = Chart.getChart("timechart")
-    let chart2Status = Chart.getChart("timechart2")
+    let chartStatus = Chart.getChart("timeChart[0]")
+    let chart2Status = Chart.getChart("timeChart[1]")
     if (chartStatus !== undefined) {
         chartStatus.destroy();
     }
@@ -376,7 +376,7 @@ function createChart(e) {
                 data = data[index]['data'][name];
                 console.log(data);
                 console.log('TEST');
-                let chart = buildChart(data, title, "timechart", chartType)
+                let chart = buildChart(data, title, "timeChart[0]", chartType)
                 fillChart(chart, data)
             }
         });
@@ -388,7 +388,7 @@ function createChart(e) {
                 data = data[index]['data'][name];
                 console.log(data);
                 console.log('TEST');
-                let chart = buildChart(data, title2, "timechart2", chartType)
+                let chart = buildChart(data, title2, "timeChart[1]", chartType)
                 fillChart(chart, data)
             }
         });

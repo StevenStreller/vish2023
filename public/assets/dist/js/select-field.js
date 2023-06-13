@@ -57,3 +57,15 @@ function reloadChildSelects(data, currentParentIndex, childElement, yearsElement
     }
 
 }
+
+/**
+ * Adds a change listener to the ID secondChoiceActive, which is responsible for showing and hiding the second select field.
+ */
+document.getElementById('secondChoiceActive').addEventListener('change', (event) => {
+    if (event.target.checked) {
+        document.getElementById('select-container[1]').classList.remove('d-none');
+    } else {
+        document.getElementById('select-container[1]').classList.add('d-none');
+
+    }
+});
