@@ -407,28 +407,51 @@ function createChart(e) {
     let name = e.target.feature.properties.name;
     zoomToFeature(e)
 
-    let title = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
-    loadData(name, null, title).then(data => {
-        Object.keys(data).forEach(index => {
-            if (data[index]['title']  === title) {
-                data = data[index]['data'][name];
-                let chart = buildChart(data, title, "timeChart[0]", chartType)
-                fillChart(chart, data)
-            }
-        });
-    })
-    let title2 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
-    loadData(name, null, title2).then(data => {
-        Object.keys(data).forEach(index => {
-            if (data[index]['title']  === title2) {
-                data = data[index]['data'][name];
-                let chart = buildChart(data, title2, "timeChart[1]", chartType)
-                fillChart(chart, data)
-            }
+
+    for (let i = 0; i <= 1; i++) {
+        let title = document.getElementById(`parentSelect[${i}]`).options[document.getElementById(`parentSelect[${i}]`).value].innerHTML;
+        loadData(name, null, title).then(data => {
+            Object.keys(data).forEach(index => {
+                if (data[index] && data[index]['title'] === title) {
+                    data = data[index]['data'][name];
+                    let chart = buildChart(data, title, `timeChart[${i}]`, chartType)
+                    fillChart(chart, data)
+                }
+            });
         });
 
+        /**
+         * Check if divide by second choice is enabled and if not, then show only one chart
+         */
+        if (!document.getElementById('secondChoiceActive').checked) {
+            break;
+        }
+    }
 
-    })
+    // let title = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
+    // loadData(name, null, title).then(data => {
+    //
+    //     Object.keys(data).forEach(index => {
+    //         console.log(data[index] !== {})
+    //         if (data[index]['title'] === title) {
+    //             data = data[index]['data'][name];
+    //             let chart = buildChart(data, title, "timeChart[0]", chartType)
+    //             fillChart(chart, data)
+    //         }
+    //     });
+    // });
+    // let title2 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
+    // loadData(name, null, title2).then(data => {
+    //     Object.keys(data).forEach(index => {
+    //         if (data[index]['title']  === title2) {
+    //             data = data[index]['data'][name];
+    //             let chart = buildChart(data, title2, "timeChart[1]", chartType)
+    //             fillChart(chart, data)
+    //         }
+    //     });
+    //
+    //
+    // })
 
 }
 document.querySelector('body > div > div > main > div > div > div.row > div.col-12.col-md-5.align-self-center > div > div.card-header > button').addEventListener('click', () => {
