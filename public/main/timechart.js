@@ -7,14 +7,19 @@ const colors = [
     "#73D2DE",
 ]
 
-function buildChart(data, name, chartId) {
+function buildChart(data, name, chartId, chartType) {
     'use strict'
 
     const ctx = document.getElementById(chartId)
     return new Chart(ctx, {
-        type: 'bar',
+        type: chartType,
         options: {
             plugins: {
+                legend: {
+                    labels: {
+                        usePointStyle: true
+                    }
+                },
                 title: {
                     display: true,
                     text: name,
@@ -37,6 +42,7 @@ function fillChart(chart, data) {
             borderColor: colors[i],
             borderWidth: 4,
             pointBackgroundColor: colors[i],
+            pointStyle: 'dash',
         })
     }
     Object.keys(data).forEach((year) => {

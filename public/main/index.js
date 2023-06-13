@@ -6,7 +6,10 @@ map.on('drag', function() {
     map.panInsideBounds(bounds, { animate: false });
 });
 
+var chartType = 'line'
 document.getElementById('refreshMapButton').addEventListener('click', () => reloadGeoJSON());
+document.getElementById('bar-type').addEventListener('click', () => setChartType('bar'))
+document.getElementById('line-type').addEventListener('click', () => setChartType('line'))
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -102,9 +105,9 @@ async function updateInfoData(props) {
 
 info.addTo(map);
 
-
-
-
+function setChartType(type) {
+    chartType = type
+}
 function lerp(x1,x2,fx1,fx2,x){
     //console.log(fx1 + "+ (" + x + "-" + x1 + ") * ((" + fx2 + "-"+fx1 +") / ("+x2 + "-" + x1 + "));");
     if(Math.abs(x2-x1) < 0.00000001)
@@ -373,7 +376,7 @@ function createChart(e) {
                 data = data[index]['data'][name];
                 console.log(data);
                 console.log('TEST');
-                let chart = buildChart(data, name, "timechart")
+                let chart = buildChart(data, title, "timechart", chartType)
                 fillChart(chart, data)
             }
         });
@@ -385,7 +388,7 @@ function createChart(e) {
                 data = data[index]['data'][name];
                 console.log(data);
                 console.log('TEST');
-                let chart = buildChart(data, name, "timechart2")
+                let chart = buildChart(data, title2, "timechart2", chartType)
                 fillChart(chart, data)
             }
         });
