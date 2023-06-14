@@ -7,7 +7,14 @@ const colors = [
     "#73D2DE",
 ]
 
-function buildChart(data, name, chartId, chartType) {
+/**
+ * Initializes a chart
+ * @param name Title of the chart
+ * @param chartId which chart to initialize (timeChart1 / timeChart2)
+ * @param chartType type of the chart i.e. bar, line etc.
+ * @returns {wn} chart object
+ */
+function buildChart(name, chartId, chartType) {
     'use strict'
 
     const ctx = document.getElementById(chartId)
@@ -29,20 +36,24 @@ function buildChart(data, name, chartId, chartType) {
     })
 }
 
+/**
+ * Fills the chart with specific values
+ * @param chart chart that is supposed to be filled
+ * @param data the data which the chart is filled with
+ */
 function fillChart(chart, data) {
     let years = Object.keys(data)
     let types = Object.keys(data[years[0]])
-    for(i = 0; i < types.length; i++) {
+    for (i = 0; i < types.length; i++) {
         chart.data.datasets.push({
             label: types[i],
-            data: [
-            ],
+            data: [],
             lineTension: 0,
-            backgroundColor: 'transparent',
+            backgroundColor: colors[i],
             borderColor: colors[i],
             borderWidth: 4,
             pointBackgroundColor: colors[i],
-            pointStyle: 'dash',
+            pointStyle: 'rect',
         })
     }
     Object.keys(data).forEach((year) => {

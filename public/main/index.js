@@ -450,6 +450,10 @@ legend.onAdd = function () {
 
 legend.addTo(map);
 
+/**
+ * Creates the charts which show the data in relation to the years
+ * @param e Event, which is emitted when clicking somewhere on the map
+ */
 function createChart(e) {
 
     let cardChart = document.getElementById('card-chart');
@@ -480,7 +484,7 @@ function createChart(e) {
             Object.keys(data).forEach(index => {
                 if (data[index] && data[index]['title'] === title) {
                     data = data[index]['data'][name];
-                    let chart = buildChart(data, title, `timeChart[${i}]`, chartType)
+                    let chart = buildChart(title, `timeChart[${i}]`, chartType)
                     fillChart(chart, data)
                 }
             });
@@ -493,30 +497,4 @@ function createChart(e) {
             break;
         }
     }
-
-    // let title = document.getElementById('parentSelect[0]').options[document.getElementById('parentSelect[0]').value].innerHTML;
-    // loadData(name, null, title).then(data => {
-    //
-    //     Object.keys(data).forEach(index => {
-    //         console.log(data[index] !== {})
-    //         if (data[index]['title'] === title) {
-    //             data = data[index]['data'][name];
-    //             let chart = buildChart(data, title, "timeChart[0]", chartType)
-    //             fillChart(chart, data)
-    //         }
-    //     });
-    // });
-    // let title2 = document.getElementById('parentSelect[1]').options[document.getElementById('parentSelect[1]').value].innerHTML;
-    // loadData(name, null, title2).then(data => {
-    //     Object.keys(data).forEach(index => {
-    //         if (data[index]['title']  === title2) {
-    //             data = data[index]['data'][name];
-    //             let chart = buildChart(data, title2, "timeChart[1]", chartType)
-    //             fillChart(chart, data)
-    //         }
-    //     });
-    //
-    //
-    // })
-
 }
