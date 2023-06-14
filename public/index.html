@@ -72,7 +72,7 @@
                                     <code>public/assets/data</code>. In the folder you will also find a <code>template.json</code>
                                     (absolute path <code>public/assets/data/template.json</code>), which is structured
                                     according to the schema
-                                    <div class="card mt-3">
+                                    <div class="card mt-3 mb-3">
                                         <div class="card-header"><code>template.json</code></div>
                                         <div class="card-body">
                                             <pre><code>
@@ -99,6 +99,18 @@
 }</code></pre>
                                         </div>
                                     </div>
+                                    Afterwards, the newly created JSON file (for example <code>example.json</code>) must
+                                    be placed in the directory <code>public/assets/data</code> and stored in the <code>main/loadData.js</code>
+                                    in the variable <code>files</code>.
+                                    <pre>
+                                        <code>
+let files = [
+    "../assets/data/car-accidents.json",
+    [...]
+    "../assets/data/example.json"
+];</code></pre>
+                                    That's it. Now it is possible to access the data via the select field and make
+                                    further exciting calculations.
                                     <h6 class="mt-3">Between which dates can I choose?</h6>
                                     Using the select fields on the left you can easily choose between the following:
                                     <ul>
