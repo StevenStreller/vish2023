@@ -1,0 +1,93 @@
+{
+  "title": "Area",
+  "source": "https://de.statista.com/statistik/daten/studie/154868/umfrage/flaeche-der-deutschen-bundeslaender/",
+  "description": "Area - Size of federal states in Germany on 31. December 2021",
+  "options": [
+    "Kilometers squared"
+  ],
+  "years": [
+    2021
+  ],
+  "data": {
+    "Baden-Württemberg": {
+      "2021": {
+        "Kilometers squared": "35748"
+      }
+    },
+    "Bayern": {
+      "2021": {
+        "Kilometers squared": "70542"
+      }
+    },
+    "Berlin": {
+      "2021": {
+        "Kilometers squared": "891"
+      }
+    },
+    "Brandenburg": {
+      "2021": {
+        "Kilometers squared": "29654"
+      }
+    },
+    "Bremen": {
+      "2021": {
+        "Kilometers squared": "419"
+      }
+    },
+    "Hamburg": {
+     "2021": {
+        "Kilometers squared": "755"
+      }
+    },
+    "Hessen": {
+      "2021": {
+        "Kilometers squared": "21116"
+      }
+    },
+    "Mecklenburg-Vorpommern": {
+      "2021": {
+        "Kilometers squared": "23295"
+      }
+    },
+    "Niedersachsen": {
+      "2021": {
+        "Kilometers squared": "47710"
+      }
+    },
+    "Nordrhein-Westfalen": {
+      "2021": {
+        "Kilometers squared": "34112"
+      }
+    },
+    "Rheinland-Pfalz": {
+       "2021": {
+        "Kilometers squared": "19858"
+      }
+    },
+    "Saarland": {
+       "2021": {
+        "Kilometers squared": "2572"
+      }
+    },
+    "Sachsen": {
+       "2021": {
+        "Kilometers squared": "18450"
+      }
+    },
+    "Sachsen-Anhalt": {
+       "2021": {
+        "Kilometers squared": "20464"
+      }
+    },
+    "Schleswig-Holstein": {
+       "2021": {
+        "Kilometers squared": "15804"
+      }
+    },
+    "Thüringen": {
+      "2021": {
+        "Kilometers squared": "16202"
+      }
+    }
+  }
+}

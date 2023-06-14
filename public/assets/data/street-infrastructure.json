@@ -3,7 +3,7 @@
   "source": "https://de.statista.com/statistik/daten/studie/36454/umfrage/laenge-der-strassen-des-ueberoertlichen-verkehrs-in-deutschland/",
   "options": ["Motorways", "National roads", "Country roads", "National and country roads", "In Total"],
   "years": [2021],
-  "description": "Road network length in Germany by federal state by road type on 1 January 2021",
+  "description": "Road network length in Germany by federal state by road type on 1 January 2021 in Kilometers",
   "data": {
     "Baden-Württemberg": {
       "2021": {

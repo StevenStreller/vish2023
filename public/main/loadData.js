@@ -15,7 +15,8 @@ function loadData(state = null, year = null, title = null, options = null) {
         "../assets/data/street-infrastructure.json",
         "../assets/data/gdp.json",
         "../assets/data/co2.json",
-        "../assets/data/population.json"
+        "../assets/data/population.json",
+        "../assets/data/area.json"
     ];
 
     let promises = [];
