@@ -450,6 +450,10 @@ legend.onAdd = function () {
 
 legend.addTo(map);
 
+/**
+ * Creates the charts which show the data in relation to the years
+ * @param e Event, which is emitted when clicking somewhere on the map
+ */
 function createChart(e) {
 
     let cardChart = document.getElementById('card-chart');
@@ -480,7 +484,7 @@ function createChart(e) {
             Object.keys(data).forEach(index => {
                 if (data[index] && data[index]['title'] === title) {
                     data = data[index]['data'][name];
-                    let chart = buildChart(data, title, `timeChart[${i}]`, chartType)
+                    let chart = buildChart(title, `timeChart[${i}]`, chartType)
                     fillChart(chart, data)
                 }
             });
