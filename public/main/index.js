@@ -45,6 +45,12 @@ document.getElementById('refreshMapButton').addEventListener('click', () => relo
 document.getElementById('bar-type').addEventListener('click', () => setChartType('bar'))
 document.getElementById('line-type').addEventListener('click', () => setChartType('line'))
 
+document.querySelector('body > div > div > main > div > div > div.row > div.col-12.col-md-5.align-self-center > div > div.card-header > button').addEventListener('click', () => {
+    document.getElementById('card-chart').classList.add('d-none');
+    document.getElementById('card-map').classList.add('col-md-12');
+    refreshMapWidth();
+
+});
 
 map.setMaxBounds(bounds);
 map.on('drag', function() {
@@ -60,9 +66,6 @@ function setChartType(type) {
     chartType = type
 }
 
-function getCurrentYear() {
-    return currentYear.options[currentYear.selectedIndex].innerHTML;
-}
 
 function refreshMapWidth() {
     document.getElementById('map-container').style.width = '100%';
@@ -454,9 +457,3 @@ function createChart(e) {
     // })
 
 }
-document.querySelector('body > div > div > main > div > div > div.row > div.col-12.col-md-5.align-self-center > div > div.card-header > button').addEventListener('click', () => {
-    document.getElementById('card-chart').classList.add('d-none');
-    document.getElementById('card-map').classList.add('col-md-12');
-    refreshMapWidth();
-
-});
