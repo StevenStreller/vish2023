@@ -1,3 +1,13 @@
+/**
+ * This function is responsible for fetching the data, optionally filtering it, and outputting it accordingly.
+ * By default, all filters are inactive and can be triggered by passing the appropriate parameters.
+ *
+ * @param state If you enter the name of the federal state (for example Hamburg), only data related to Hamburg will be displayed.
+ * @param year Through the year it is possible to obtain data only from a specific year
+ * @param title If you want to have only a certain file, you can pass the title. Here only files are displayed where the passed title corresponds to the title from the JSON file.
+ * @param options If you want to have only a certain value from a file, you can pass the option.
+ * @returns {Promise<Awaited<unknown>[]>}
+ */
 function loadData(state = null, year = null, title = null, options = null) {
     let files = [
         "../assets/data/car-accidents.json",
@@ -59,7 +69,7 @@ function loadData(state = null, year = null, title = null, options = null) {
 
                 return customizedResponse;
             }).catch(error => {
-                console.error('Fehler beim Laden der JSON-Datei:', error);
+                console.error('Error loading the JSON file:', error);
             });
 
         promises.push(promise);
