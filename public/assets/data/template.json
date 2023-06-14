@@ -1,0 +1,21 @@
+{
+    "title": "Example title",
+    "source": "Example source",
+    "options": ["Example", "Option"],
+    "description": "Example description",
+    "years": [2021],
+    "data": {
+        "Example state 1": {
+            "2021": {
+                "Example": 5152920,
+                "Option": 2942115
+            }
+        },
+        "Example state 2": {
+            "2021": {
+                "Example": 5152920,
+                "Option": 2942115
+            }
+        }
+    }
+}

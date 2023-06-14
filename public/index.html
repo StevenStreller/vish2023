@@ -40,17 +40,63 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12 col-md-8">
+                        <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="fa-solid fa-person-chalkboard fa-fw me-2"></i>Description
                                     </h5>
                                     <p class="card-text">This is a longer card with supporting text below as a natural
                                         lead-in to additional content. This content is a little bit longer.</p>
+                                    <h6 class="">Map and Leaflet.js</h6>
+                                    <p>In order to display a map of Germany, we have used the well-known JavaScript
+                                        library
+                                        <a href="https://leafletjs.com/">Leaflet.js</a>, which allows us to display
+                                        geographic information such as lines or polygons on the map by including
+                                        GeoJSON.</p>
+                                    <p>Fortunately, GeoJSON files already exist for Germany with different levels of
+                                        detail. Since our data only contains the federal state, we were only interested
+                                        in GeoJSON files that map the federal state level, which we found in the GitHub
+                                        repository of isellsoap (Repository: <a href="https://github.com/isellsoap/deutschlandGeoJSON">https://github.com/isellsoap/deutschlandGeoJSON</a>)</p>
+                                    <img src="assets/docs/federal-states-geo-json.png" class="img-fluid" alt="Federal States Germany GeoJSON">
+                                    <h6 class="mt-3">Pre processing</h6>
+                                    <h6>How can i add my own data to the map?</h6>
+                                    We have designed this web application in such a way that it is possible to add your
+                                    own files to the map in just a few steps. It is crucial that the files correspond to
+                                    the same JSON schema as already deposited files. The data can be viewed under
+                                    <code>public/assets/data</code>. In the folder you will also find a <code>template.json</code>
+                                    (absolute path <code>public/assets/data/template.json</code>), which is structured
+                                    according to the schema
+                                    <div class="card mt-3">
+                                        <div class="card-header"><code>template.json</code></div>
+                                        <div class="card-body">
+                                            <pre><code>
+{
+    "title": "Example title",
+    "source": "Example source",
+    "options": ["Example", "Option"],
+    "description": "Example description",
+    "years": [2021],
+    "data": {
+        "Example state 1": {
+            "2021": {
+                "Example": 5152920,
+                "Option": 2942115
+            }
+        },
+        "Example state 2": {
+            "2021": {
+                "Example": 5152920,
+                "Option": 2942115
+            }
+        }
+    }
+}</code></pre>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4 mb-3 mt-3 mt-sm-0">
+                        <div class="col-12 mb-3 mt-3">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="fa-solid fa-people-group fa-fw me-2"></i>Contributors
@@ -86,7 +132,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 mt-3">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="fa-solid fa-book-open-reader fa-fw me-2"></i>Sources
