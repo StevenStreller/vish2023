@@ -49,11 +49,11 @@ function fillChart(chart, data) {
             label: types[i],
             data: [],
             lineTension: 0,
-            backgroundColor: 'transparent',
+            backgroundColor: colors[i],
             borderColor: colors[i],
             borderWidth: 4,
             pointBackgroundColor: colors[i],
-            pointStyle: 'dash',
+            pointStyle: 'rect',
         })
     }
     Object.keys(data).forEach((year) => {
