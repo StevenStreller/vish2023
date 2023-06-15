@@ -45,9 +45,13 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="fa-solid fa-person-chalkboard fa-fw me-2"></i>Description
                                     </h5>
-                                    <p>This project was developed as part of the Visualization and HCI
+                                    <p>
+                                        This project was developed as part of the Visualization and HCI
                                         module in the summer semester of 2023 at Hannover University of Applied Sciences
                                         and Arts in the Master of Applied Computer Science program.</p>
+                                    <p>
+                                        You can find the <i class="fa-brands fa-github"></i> GitHub repository at the following link: <a href="https://github.com/StevenStreller/vish2023.git">https://github.com/StevenStreller/vish2023.git</a>
+                                    </p>
                                     <p></p>
                                     <h6 class="mt-3">Getting Started</h6>
                                     <p>There are several ways how to deploy the web application.</p>
@@ -85,8 +89,6 @@ vish2023:$ docker-compose up -d
                                     </p>
                                     <img src="assets/docs/federal-states-geo-json.png" class="img-fluid"
                                          alt="Federal States Germany GeoJSON">
-                                    <h6 class="mt-3">Pre processing</h6>
-                                    @TODO
                                     <h6 class="mt-3">How can i add my own data to the map?</h6>
                                     We have designed this web application in such a way that it is possible to add your
                                     own files to the map in just a few steps. It is crucial that the files correspond to
@@ -159,6 +161,7 @@ let files = [
                                                 <th scope="col">#</th>
                                                 <th scope="col">First-/ Lastname</th>
                                                 <th scope="col">Matriculation Number</th>
+                                                <th scope="col">GitHub Profile</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -166,16 +169,19 @@ let files = [
                                                 <th scope="row">1</th>
                                                 <td>Nicolai Böttger</td>
                                                 <td>1633638</td>
+                                                <td>TODO</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">2</th>
                                                 <td>Norbert Oskar Piotrkowicz</td>
                                                 <td>1717139</td>
+                                                <td><a href="https://github.com/Norkill">https://github.com/Norkill</a></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">3</th>
                                                 <td>Jon-Steven Streller</td>
                                                 <td>1717126</td>
+                                                <td><a href="https://github.com/StevenStreller">https://github.com/StevenStreller</a></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -253,6 +259,14 @@ let files = [
                                         </tr>
                                         <tr>
                                             <th scope="row">6</th>
+                                            <td>Area</td>
+                                            <td>Area - Size of federal states in Germany on 31. December 2021</td>
+                                            <td>
+                                                <a href="https://de.statista.com/statistik/daten/studie/154868/umfrage/flaeche-der-deutschen-bundeslaender/">https://de.statista.com/statistik/daten/studie/154868/umfrage/flaeche-der-deutschen-bundeslaender/</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
                                             <td>GeoJSON Germany</td>
                                             <td>Administrative borders of Germany</td>
                                             <td><a href="https://github.com/isellsoap/deutschlandGeoJSON">https://github.com/isellsoap/deutschlandGeoJSON</a>
