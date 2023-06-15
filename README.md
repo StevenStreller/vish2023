@@ -5,6 +5,10 @@ and Arts in the Master of Applied Computer Science program.
 You can find the <i class="fa-brands fa-github"></i> GitHub repository at the following link: https://github.com/StevenStreller/vish2023.git
 ## Getting Started
 There are several ways how to deploy the web application.
+
+### GitHub Pages
+Under the link https://stevenstreller.github.io/vish2023/ is already a provided web application
+
 ### Node.js
 ```
 ~:$ git clone https://github.com/StevenStreller/vish2023.git
