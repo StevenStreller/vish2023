@@ -41,14 +41,10 @@ let normalizedStateData = {};
  */
 let secondChoiceCheckBoxWasChecked = false;
 
-/**
- * @TODO
- */
+
 let geoJson;
 
-/**
- * @TODO
- */
+
 const legend = L.control({position: 'bottomright'});
 /**
  * Hue value for labels and for interpolation in case some value lay above average
