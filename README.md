@@ -4,9 +4,6 @@ module in the summer semester of 2023 at Hannover University of Applied Sciences
 and Arts in the Master of Applied Computer Science program.
 You can find the <i class="fa-brands fa-github"></i> GitHub repository at the following link: https://github.com/StevenStreller/vish2023.git
 
-# Explanation video
-![](public/assets/docs/vish23_video_Boettger_Piotrkowicz_Streller.mp4)
-
 ## Getting Started
 There are several ways how to deploy the web application.
 
