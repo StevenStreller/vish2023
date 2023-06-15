@@ -49,6 +49,28 @@
                                         module in the summer semester of 2023 at Hannover University of Applied Sciences
                                         and Arts in the Master of Applied Computer Science program.</p>
                                     <p></p>
+                                    <h6 class="mt-3">Getting Started</h6>
+                                    <p>There are several ways how to deploy the web application.</p>
+                                    <p><b>Node.js:</b></p>
+                                    <pre>
+<code>
+~:$ git clone https://github.com/StevenStreller/vish2023.git
+~:$ cd vish2023
+vish2023:$ npm install
+vish2023:$ npm run http-server
+</code>
+                                    </pre>
+                                    <p><b>Docker:</b> The project can also be easily deployed using <code>docker-compose.yml</code>.
+                                        In this case, the default port of the web application is <code>8080</code>. If
+                                        this port is
+                                        already occupied, it must be adjusted accordingly in the file.</p>
+                                    <pre>
+<code>
+~:$ git clone https://github.com/StevenStreller/vish2023.git
+~:$ cd vish2023
+vish2023:$ docker-compose up -d
+</code>
+                                    </pre>
                                     <h6 class="mt-3">Map and Leaflet.js</h6>
                                     <p>In order to display a map of Germany, we have used the well-known JavaScript
                                         library

@@ -2,22 +2,15 @@
  *     VARIABLES      *
  **********************/
 
-/**
- * @TODO
- */
 const map = L.map('map').setView([51.1657, 10.4515], 6);
 
-/**
- * @TODO
- */
+
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-/**
- * @TODO
- */
+
 const info = L.control();
 
 
@@ -88,8 +81,8 @@ document.querySelector('body > div > div > main > div > div > div.row > div.col-
 });
 
 map.setMaxBounds(bounds);
-map.on('drag', function() {
-    map.panInsideBounds(bounds, { animate: false });
+map.on('drag', function () {
+    map.panInsideBounds(bounds, {animate: false});
 });
 
 
@@ -151,7 +144,7 @@ async function updateInfoData(state) {
         if (state) {
             let selectedState = state.name;
             let contents;
-            if(secondChoiceCheckBoxWasChecked) {
+            if (secondChoiceCheckBoxWasChecked) {
                 contents = `
                 <h4 class="text-center">🇩🇪 ${state.name}</h4>
                 
@@ -165,8 +158,7 @@ async function updateInfoData(state) {
                 } else {
                     contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0] + " / " + ActiveOptions.title[1] + " " + ActiveOptions.option[1]}<br>`;
                 }
-            }
-            else {
+            } else {
                 contents = `
                 <h4 class="text-center">🇩🇪 ${state.name}</h4>
                 <b>${ActiveOptions.year[0]}</b>
@@ -177,7 +169,7 @@ async function updateInfoData(state) {
             contents += `
              <i class="fa-solid fa-arrow-down fa-fw me-2"></i>${(minMaxAvg[0]).toLocaleString('de-DE') + " Minimum"}<br>
              <i class="fa-solid fa-arrow-up fa-fw me-2"></i>${(minMaxAvg[1]).toLocaleString('de-DE') + " Maximum"}<br>
-             <i class="fa-solid fa-gauge fa-fw me-2"></i>${((Math.round(minMaxAvg[2]*1000)/1000)).toLocaleString('de-DE') + " Average"}<br>
+             <i class="fa-solid fa-gauge fa-fw me-2"></i>${((Math.round(minMaxAvg[2] * 1000) / 1000)).toLocaleString('de-DE') + " Average"}<br>
             `;
             resolve(contents);
         }
@@ -197,9 +189,9 @@ info.addTo(map);
  * @param x position of data point to be interpolated
  * @returns {*} value at x
  */
-function lerp(x1,x2,fx1,fx2,x){
+function lerp(x1, x2, fx1, fx2, x) {
     //console.log(fx1 + "+ (" + x + "-" + x1 + ") * ((" + fx2 + "-"+fx1 +") / ("+x2 + "-" + x1 + "));");
-    if(Math.abs(x2-x1) < 0.00000001)
+    if (Math.abs(x2 - x1) < 0.00000001)
         return fx1;
     return (fx1 + (x - x1) * ((fx2 - fx1) / (x2 - x1)));
 }
@@ -214,7 +206,9 @@ function lerp(x1,x2,fx1,fx2,x){
 function HSVtoRGB(h, s, v) {
     let r, g, b, i, f, p, q, t;
     if (arguments.length === 1) {
-        s = h.s; v = h.v; h = h.h;
+        s = h.s;
+        v = h.v;
+        h = h.h;
     }
     i = Math.floor(h * 6);
     f = h * 6 - i;
@@ -222,12 +216,36 @@ function HSVtoRGB(h, s, v) {
     q = v * (1 - f * s);
     t = v * (1 - (1 - f) * s);
     switch (i % 6) {
-        case 0: r = v; g = t; b = p; break;
-        case 1: r = q; g = v; b = p; break;
-        case 2: r = p; g = v; b = t; break;
-        case 3: r = p; g = q; b = v; break;
-        case 4: r = t; g = p; b = v; break;
-        case 5: r = v; g = p; b = q; break;
+        case 0:
+            r = v;
+            g = t;
+            b = p;
+            break;
+        case 1:
+            r = q;
+            g = v;
+            b = p;
+            break;
+        case 2:
+            r = p;
+            g = v;
+            b = t;
+            break;
+        case 3:
+            r = p;
+            g = q;
+            b = v;
+            break;
+        case 4:
+            r = t;
+            g = p;
+            b = v;
+            break;
+        case 5:
+            r = v;
+            g = p;
+            b = q;
+            break;
     }
     return {
         r: Math.round(r * 255),
@@ -241,13 +259,13 @@ function HSVtoRGB(h, s, v) {
  * @param stateValueData data in format {"key": value, ...}
  * @returns {[number, number, number]} array with [minimum, maximum, average]
  */
-function getMinMaxAvg(stateValueData){
+function getMinMaxAvg(stateValueData) {
     let min = Number.MAX_VALUE;
     let max = -Number.MAX_VALUE;
     let avg = 0;
     let cnt = 0;
-    for(let state in stateValueData){
-        if(isFinite(stateValueData[state])) { //skip weird values
+    for (let state in stateValueData) {
+        if (isFinite(stateValueData[state])) { //skip weird values
             max = Math.max(stateValueData[state], max);
             min = Math.min(stateValueData[state], min);
             avg += stateValueData[state];
@@ -265,21 +283,21 @@ function getMinMaxAvg(stateValueData){
  * @param data data for all states {"state": value, ...}
  * @returns {{}} colors as { "state": color #RRGGBB}
  */
-function getColorsFromData(data){
+function getColorsFromData(data) {
     //data is Object with state: value
     let minMaxAvg = getMinMaxAvg(data);
     let min = minMaxAvg[0];
     let max = minMaxAvg[1];
     let avg = minMaxAvg[2];
     let colors = {};
-    for(let state in data) {
+    for (let state in data) {
         let h;
         if (data[state] > avg) {
             //interpolate beetwen yellow(60) and green(120)
             h = lerp(avg, max, 60, currentBelowAverageColor, data[state]);
         } else {
             //interpolate beetwen yellow(60) and red(0)
-            h = lerp(avg, min,60, currentAboveAverageColor, data[state]);
+            h = lerp(avg, min, 60, currentAboveAverageColor, data[state]);
         }
         //Rounding error, so round()
         h = Math.round(h / 0.36) / 1000;
@@ -294,20 +312,24 @@ function getColorsFromData(data){
  * @param rgb rgb object with r,g,b number attributes
  * @returns {string} #rrggbb
  */
-function RGBtoHEX(rgb){
+function RGBtoHEX(rgb) {
     let hexR = rgb.r.toString(16);
-    if(hexR.length === 1) hexR = "0" + hexR;
+    if (hexR.length === 1) hexR = "0" + hexR;
 
     let hexG = rgb.g.toString(16);
-    if(hexG.length === 1) hexG = "0" + hexG;
+    if (hexG.length === 1) hexG = "0" + hexG;
 
     let hexB = rgb.b.toString(16);
-    if(hexB.length === 1) hexB = "0" + hexB;
+    if (hexB.length === 1) hexB = "0" + hexB;
 
     return '#' + hexR + hexG + hexB; //#ff1234
 }
 
 
+/**
+ * Defines the default design of the map
+ * @returns {{color: string, fillOpacity: number, weight: number, opacity: number, dashArray: string}}
+ */
 function style() {
     return {
         weight: 2,
@@ -318,6 +340,10 @@ function style() {
     };
 }
 
+/**
+ * Responsible when clicking on a state
+ * @param e
+ */
 function highlightFeature(e) {
     const layer = e.target;
 
@@ -329,7 +355,7 @@ function highlightFeature(e) {
     });
 
     layer.bringToFront();
-     info.update(layer.feature.properties);
+    info.update(layer.feature.properties);
 }
 
 
@@ -342,14 +368,14 @@ function reloadGeoJSON() {
     }
 
     let ActiveOptions = getActiveOptions();
-    //At time of update click
+    // At time of update click
     secondChoiceCheckBoxWasChecked = document.getElementById('secondChoiceActive').checked;
 
-    //Laden von daten hier, dann per Key-Value pairs get all A/B values and from that get avgs etc. and get color from that in "onEachFeature"
+    // Load data here, then per key-value pairs get all A/B values and from that get avgs etc. and from that get color in "onEachFeature".
 
 
     let colors;
-    loadData(null, ActiveOptions.year[0], ActiveOptions.title[0], ActiveOptions.option[0]).then( data0 =>{
+    loadData(null, ActiveOptions.year[0], ActiveOptions.title[0], ActiveOptions.option[0]).then(data0 => {
         Object.keys(data0).forEach(index => {
             if (data0[index]['title'] === ActiveOptions.title[0]) {
                 Object.keys(data0[index]['data']).forEach(state => {
@@ -358,40 +384,37 @@ function reloadGeoJSON() {
                 });
             }
         });
-    }).then( () =>
+    }).then(() =>
 
-    loadData(null, ActiveOptions.year[1], ActiveOptions.title[1], ActiveOptions.option[1]).then(data1 => {
-        Object.keys(data1).forEach(index => {
-            if (data1[index]['title'] === ActiveOptions.title[1]) {
-                Object.keys(data1[index]['data']).forEach(state => {
-                    stateValueMap1[state] = data1[index]['data'][state][ActiveOptions.year[1]][ActiveOptions.option[1]];
-                });
-            }
-        })
-    })).then(() => {
+        loadData(null, ActiveOptions.year[1], ActiveOptions.title[1], ActiveOptions.option[1]).then(data1 => {
+            Object.keys(data1).forEach(index => {
+                if (data1[index]['title'] === ActiveOptions.title[1]) {
+                    Object.keys(data1[index]['data']).forEach(state => {
+                        stateValueMap1[state] = data1[index]['data'][state][ActiveOptions.year[1]][ActiveOptions.option[1]];
+                    });
+                }
+            })
+        })).then(() => {
 
-        if(secondChoiceCheckBoxWasChecked)
-        {//if equal selections then do not divide
-            for (let state in stateValueMap0) {
-                normalizedStateData[state] = Math.round((stateValueMap0[state] / stateValueMap1[state]) * 1000) / 1000;
+            if (secondChoiceCheckBoxWasChecked) {//if equal selections then do not divide
+                for (let state in stateValueMap0) {
+                    normalizedStateData[state] = Math.round((stateValueMap0[state] / stateValueMap1[state]) * 1000) / 1000;
+                }
+            } else {
+                for (let state in stateValueMap0) {
+                    normalizedStateData[state] = Math.round(stateValueMap0[state] * 1000) / 1000;
+                }
             }
+            //console.log(normalizedStateData);
+            colors = getColorsFromData(normalizedStateData);
         }
-        else {
-            for (let state in stateValueMap0) {
-                normalizedStateData[state] = Math.round(stateValueMap0[state] * 1000) / 1000;
-            }
-        }
-        //console.log(normalizedStateData);
-        colors = getColorsFromData(normalizedStateData);
-    }
-    ).then(() =>
-        {
-            // Neue GeoJSON-Schicht erstellen und zur Karte hinzufügen
+    ).then(() => {
+            // Create new GeoJSON layer and add it to the map
             geoJson = L.geoJson(statesData, {
                 style,
                 onEachFeature: async function (feature, layer) {
 
-                    layer.setStyle({ fillColor: colors[feature.properties.name] }).on({
+                    layer.setStyle({fillColor: colors[feature.properties.name]}).on({
                         mouseover: highlightFeature,
                         mouseout: resetHighlight,
                         click: createChart
@@ -420,7 +443,7 @@ function swapColors() {
     let aboveLabel = document.getElementById('aboveAverageLabel');
     let belowLabel = document.getElementById('belowAverageLabel');
 
-    if(currentAboveAverageColor === 0){
+    if (currentAboveAverageColor === 0) {
         aboveLabel.style.background = "#00ff00";
         belowLabel.style.background = "#ff0000";
         currentAboveAverageColor = 120;

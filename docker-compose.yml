@@ -1,0 +1,8 @@
+version: '3.0'
+services:
+  vish2023:
+    image: nginx
+    volumes:
+      - "./public:/usr/share/nginx/html"
+    ports:
+      - "8080:80"

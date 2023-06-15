@@ -1,0 +1,10 @@
+{
+  "name": "vish2023",
+  "version": "1.0.0",
+  "scripts": {
+    "http-server": "http-server"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
