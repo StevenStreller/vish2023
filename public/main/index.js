@@ -148,28 +148,28 @@ async function updateInfoData(state) {
                 contents = `
                 <h4 class="text-center">🇩🇪 ${state.name}</h4>
                 
-                <i class="fa-solid fa-divide fa-fw me-2" style="visibility:hidden; "></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0] + " " + ActiveOptions.year[0]}<br>
+                <i class="fa-solid fa-divide fa-fw me-2" style="visibility:hidden; "></i>${(stateValueMap0[selectedState]) + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0] + " " + ActiveOptions.year[0]}<br>
                 <div class="me-4" style="border-bottom: solid 2px #1e3050 ;">
-                <i class="fa-solid fa-divide fa-fw me-2" ></i>${(stateValueMap1[selectedState]).toLocaleString('de-DE') + " " + ActiveOptions.title[1] + " " + ActiveOptions.option[1] + " " + ActiveOptions.year[1]}<br>
+                <i class="fa-solid fa-divide fa-fw me-2" ></i>${(stateValueMap1[selectedState]) + " " + ActiveOptions.title[1] + " " + ActiveOptions.option[1] + " " + ActiveOptions.year[1]}<br>
                 </div>`;
 
                 if (ActiveOptions.title[0] === ActiveOptions.title[1] && ActiveOptions.option[0] === ActiveOptions.option[1]) {
-                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0] + " " + ActiveOptions.year[0] + " / " + ActiveOptions.year[1]}<br>`;
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]) + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0] + " " + ActiveOptions.year[0] + " / " + ActiveOptions.year[1]}<br>`;
                 } else {
-                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]).toLocaleString('de-DE') + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0] + " / " + ActiveOptions.title[1] + " " + ActiveOptions.option[1]}<br>`;
+                    contents += `<i class="fa-solid fa-equals fa-fw me-2"></i>${(normalizedStateData[selectedState]) + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0] + " / " + ActiveOptions.title[1] + " " + ActiveOptions.option[1]}<br>`;
                 }
             } else {
                 contents = `
                 <h4 class="text-center">🇩🇪 ${state.name}</h4>
                 <b>${ActiveOptions.year[0]}</b>
-                <br><i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState]).toLocaleString('de-DE') + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0]}<br>`;
+                <br><i class="fa-solid fa-equals fa-fw me-2"></i>${(stateValueMap0[selectedState]) + " " + ActiveOptions.title[0] + " " + ActiveOptions.option[0]}<br>`;
             }
 
             let minMaxAvg = getMinMaxAvg(normalizedStateData);
             contents += `
-             <i class="fa-solid fa-arrow-down fa-fw me-2"></i>${(minMaxAvg[0]).toLocaleString('de-DE') + " Minimum"}<br>
-             <i class="fa-solid fa-arrow-up fa-fw me-2"></i>${(minMaxAvg[1]).toLocaleString('de-DE') + " Maximum"}<br>
-             <i class="fa-solid fa-gauge fa-fw me-2"></i>${((Math.round(minMaxAvg[2] * 1000) / 1000)).toLocaleString('de-DE') + " Average"}<br>
+             <i class="fa-solid fa-arrow-down fa-fw me-2"></i>${(minMaxAvg[0]) + " Minimum"}<br>
+             <i class="fa-solid fa-arrow-up fa-fw me-2"></i>${(minMaxAvg[1]) + " Maximum"}<br>
+             <i class="fa-solid fa-gauge fa-fw me-2"></i>${((Math.round(minMaxAvg[2] * 1000) / 1000)) + " Average"}<br>
             `;
             resolve(contents);
         }
@@ -294,10 +294,10 @@ function getColorsFromData(data) {
         let h;
         if (data[state] > avg) {
             //interpolate beetwen yellow(60) and green(120)
-            h = lerp(avg, max, 60, currentBelowAverageColor, data[state]);
+            h = lerp(avg, max, 60, currentAboveAverageColor, data[state]);
         } else {
             //interpolate beetwen yellow(60) and red(0)
-            h = lerp(avg, min, 60, currentAboveAverageColor, data[state]);
+            h = lerp(avg, min, 60, currentBelowAverageColor, data[state]);
         }
         //Rounding error, so round()
         h = Math.round(h / 0.36) / 1000;
@@ -444,15 +444,18 @@ function swapColors() {
     let belowLabel = document.getElementById('belowAverageLabel');
 
     if (currentAboveAverageColor === 0) {
-        aboveLabel.style.background = "#00ff00";
-        belowLabel.style.background = "#ff0000";
         currentAboveAverageColor = 120;
         currentBelowAverageColor = 0;
+
+
+        aboveLabel.style.background = RGBtoHEX(HSVtoRGB(Math.round(currentAboveAverageColor / 0.36) / 1000, 1.0, 1.0));
+        belowLabel.style.background = RGBtoHEX(HSVtoRGB(Math.round(currentBelowAverageColor / 0.36) / 1000, 1.0, 1.0));
+
     } else {
-        aboveLabel.style.background = "#ff0000";
-        belowLabel.style.background = "#00ff00";
         currentAboveAverageColor = 0;
         currentBelowAverageColor = 120;
+        aboveLabel.style.background = RGBtoHEX(HSVtoRGB(Math.round(currentAboveAverageColor / 0.36) / 1000, 1.0, 1.0));
+        belowLabel.style.background = RGBtoHEX(HSVtoRGB(Math.round(currentBelowAverageColor / 0.36) / 1000, 1.0, 1.0));
     }
     reloadGeoJSON();
 }
@@ -462,9 +465,9 @@ legend.onAdd = function () {
     const div = L.DomUtil.create('div', 'bg-light p-2 rounded-3');
     let labels = [];
 
-    labels.push(`<i class="pl-3 pe-3 me-2" id="aboveAverageLabel" style="background: #00ff00" onclick="swapColors()"></i> above average`);
+    labels.push(`<i class="pl-3 pe-3 me-2" id="aboveAverageLabel" style="background: #ff0000" onclick="swapColors()"></i> above average`);
     labels.push(`<i class="pl-3 pe-3 me-2" style="background: #ffff00" onclick="swapColors()"></i> average`);
-    labels.push(`<i class="pl-3 pe-3 me-2" id="belowAverageLabel" style="background: #ff0000" onclick="swapColors()"></i> below average`);
+    labels.push(`<i class="pl-3 pe-3 me-2" id="belowAverageLabel" style="background: #00ff00" onclick="swapColors()"></i> below average`);
 
     div.innerHTML = labels.join('<br>');
 

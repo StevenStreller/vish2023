@@ -3,7 +3,7 @@
   "source": "https://de.statista.com/statistik/daten/studie/154868/umfrage/flaeche-der-deutschen-bundeslaender/",
   "description": "Area - Size of federal states in Germany on 31. December 2021",
   "options": [
-    "Kilometers squared"
+    "Square kilometers"
   ],
   "years": [
     2021
@@ -11,82 +11,82 @@
   "data": {
     "Baden-Württemberg": {
       "2021": {
-        "Kilometers squared": "35748"
+        "Square kilometers": "35748"
       }
     },
     "Bayern": {
       "2021": {
-        "Kilometers squared": "70542"
+        "Square kilometers": "70542"
       }
     },
     "Berlin": {
       "2021": {
-        "Kilometers squared": "891"
+        "Square kilometers": "891"
       }
     },
     "Brandenburg": {
       "2021": {
-        "Kilometers squared": "29654"
+        "Square kilometers": "29654"
       }
     },
     "Bremen": {
       "2021": {
-        "Kilometers squared": "419"
+        "Square kilometers": "419"
       }
     },
     "Hamburg": {
      "2021": {
-        "Kilometers squared": "755"
+        "Square kilometers": "755"
       }
     },
     "Hessen": {
       "2021": {
-        "Kilometers squared": "21116"
+        "Square kilometers": "21116"
       }
     },
     "Mecklenburg-Vorpommern": {
       "2021": {
-        "Kilometers squared": "23295"
+        "Square kilometers": "23295"
       }
     },
     "Niedersachsen": {
       "2021": {
-        "Kilometers squared": "47710"
+        "Square kilometers": "47710"
       }
     },
     "Nordrhein-Westfalen": {
       "2021": {
-        "Kilometers squared": "34112"
+        "Square kilometers": "34112"
       }
     },
     "Rheinland-Pfalz": {
        "2021": {
-        "Kilometers squared": "19858"
+        "Square kilometers": "19858"
       }
     },
     "Saarland": {
        "2021": {
-        "Kilometers squared": "2572"
+        "Square kilometers": "2572"
       }
     },
     "Sachsen": {
        "2021": {
-        "Kilometers squared": "18450"
+        "Square kilometers": "18450"
       }
     },
     "Sachsen-Anhalt": {
        "2021": {
-        "Kilometers squared": "20464"
+        "Square kilometers": "20464"
       }
     },
     "Schleswig-Holstein": {
        "2021": {
-        "Kilometers squared": "15804"
+        "Square kilometers": "15804"
       }
     },
     "Thüringen": {
       "2021": {
-        "Kilometers squared": "16202"
+        "Square kilometers": "16202"
       }
     }
   }
